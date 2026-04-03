@@ -50,11 +50,12 @@ export default function SolutionDetailPage() {
           className="absolute inset-0 opacity-20"
           style={{ backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(26,111,219,0.4) 0%, transparent 65%)' }}
         ></div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="sol-detail-hero">
+        {/* Back button — fixed to top of viewport, above hero */}
+        <div className="absolute top-0 left-0 right-0 z-20 pt-24 pb-4" style={{ background: 'rgba(4,13,26,0.6)', backdropFilter: 'blur(8px)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Link
               to="/solutions"
-              className="inline-flex items-center gap-2 text-xs font-medium mb-8 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-medium transition-colors"
               style={{ color: 'rgba(77,158,255,0.8)' }}
               onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
               onMouseLeave={e => e.currentTarget.style.color = 'rgba(77,158,255,0.8)'}
@@ -64,13 +65,18 @@ export default function SolutionDetailPage() {
               </svg>
               All Solutions
             </Link>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+          <div className="sol-detail-hero">
             <span className="section-label light mb-4 block">Solution {solution.num}</span>
             <h1 className="text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">{solution.title}</h1>
             <p className="text-white/50 max-w-2xl text-sm leading-relaxed">{solution.shortDesc}</p>
           </div>
 
           {/* Hero image */}
-          <div className="mt-14 rounded-t-2xl overflow-hidden" style={{ height: '420px' }}>
+          <div className="mt-14 rounded-t-2xl overflow-hidden" style={{ height: '560px' }}>
             <img
               src={solution.image}
               alt={solution.title}
@@ -86,68 +92,119 @@ export default function SolutionDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             {/* Main content */}
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-medium mb-6" style={{ color: '#071525' }}>Overview</h2>
-              <p className="text-sm leading-relaxed mb-10" style={{ color: '#5A7896' }}>{solution.desc}</p>
+              {solution.sections ? (
+                /* Sectioned layout (e.g. VRF) */
+                <div className="space-y-16">
+                  {solution.sections.map((sec, i) => (
+                    <div key={sec.title}>
+                      {/* Section header */}
+                      <div className="flex items-center gap-3 mb-4">
+                        <span
+                          className="font-mono text-xs tracking-widest"
+                          style={{ color: '#4D9EFF' }}
+                        >
+                          {String(i + 1).padStart(2, '0')}
+                        </span>
+                        <span className="h-px w-8" style={{ background: 'rgba(26,111,219,0.3)' }}></span>
+                      </div>
+                      <h3 className="text-3xl font-medium mb-5" style={{ color: '#071525' }}>{sec.title}</h3>
 
-              <h3 className="text-xl font-medium mb-5" style={{ color: '#071525' }}>What We Deliver</h3>
-              <div className="space-y-3 mb-12">
-                {solution.features.map((f, i) => (
-                  <div
-                    key={f}
-                    className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
-                    style={{
-                      background: '#F2F6FC',
-                      border: '1px solid #E4EBF5',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = 'rgba(26,111,219,0.25)'
-                      e.currentTarget.style.background = 'rgba(26,111,219,0.04)'
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.borderColor = '#E4EBF5'
-                      e.currentTarget.style.background = '#F2F6FC'
-                    }}
-                  >
-                    <div
-                      className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-mono"
-                      style={{ background: '#1A6FDB', color: 'white' }}
-                    >
-                      {String(i + 1).padStart(2, '0')}
+                      {/* Text block */}
+                      <p className="text-base leading-relaxed mb-6" style={{ color: '#5A7896' }}>{sec.description}</p>
+                      <ul className="space-y-3 mb-10">
+                        {sec.points.map(pt => (
+                          <li key={pt} className="flex items-start gap-3 text-base" style={{ color: '#071525' }}>
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#1A6FDB' }}></span>
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* Full-width image(s) below text */}
+                      {sec.images ? (
+                        <div className="grid grid-cols-2 gap-4">
+                          {sec.images.map((src, idx) => (
+                            <div
+                              key={idx}
+                              className="rounded-2xl overflow-hidden shadow-lg"
+                              style={{ border: '1px solid rgba(26,111,219,0.1)', aspectRatio: '4/3' }}
+                            >
+                              <img
+                                src={src}
+                                alt={`${sec.title} ${idx + 1}`}
+                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div
+                          className="rounded-2xl overflow-hidden shadow-lg"
+                          style={{ border: '1px solid rgba(26,111,219,0.1)', height: '360px' }}
+                        >
+                          <img
+                            src={sec.image}
+                            alt={sec.title}
+                            className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                          />
+                        </div>
+                      )}
+
+                      {/* Divider (not after last) */}
+                      {i < solution.sections.length - 1 && (
+                        <div className="mt-16" style={{ height: '1px', background: '#E4EBF5' }}></div>
+                      )}
                     </div>
-                    <span className="text-sm font-medium" style={{ color: '#071525' }}>{f}</span>
-                  </div>
-                ))}
-              </div>
+                  ))}
 
-              <Link to="/#contact" className="cta-pill-dark text-primary text-sm font-medium">
-                <span>Request this Service</span>
-                <span className="icon"><ArrowIcon /></span>
-              </Link>
+                  <Link to="/#contact" className="cta-pill-dark text-primary text-sm font-medium">
+                    <span>Request this Service</span>
+                    <span className="icon"><ArrowIcon /></span>
+                  </Link>
+                </div>
+              ) : (
+                /* Default layout */
+                <>
+                  <h2 className="text-4xl font-medium mb-6" style={{ color: '#071525' }}>Overview</h2>
+                  <p className="text-base leading-relaxed mb-10" style={{ color: '#5A7896' }}>{solution.desc}</p>
+
+                  <h3 className="text-2xl font-medium mb-5" style={{ color: '#071525' }}>What We Deliver</h3>
+                  <div className="space-y-3 mb-12">
+                    {solution.features.map((f, i) => (
+                      <div
+                        key={f}
+                        className="flex items-center gap-4 p-5 rounded-xl transition-all duration-300 hover:-translate-y-0.5"
+                        style={{ background: '#F2F6FC', border: '1px solid #E4EBF5' }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.borderColor = 'rgba(26,111,219,0.25)'
+                          e.currentTarget.style.background = 'rgba(26,111,219,0.04)'
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.borderColor = '#E4EBF5'
+                          e.currentTarget.style.background = '#F2F6FC'
+                        }}
+                      >
+                        <div
+                          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-xs font-mono"
+                          style={{ background: '#1A6FDB', color: 'white' }}
+                        >
+                          {String(i + 1).padStart(2, '0')}
+                        </div>
+                        <span className="text-base font-medium" style={{ color: '#071525' }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link to="/#contact" className="cta-pill-dark text-primary text-sm font-medium">
+                    <span>Request this Service</span>
+                    <span className="icon"><ArrowIcon /></span>
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Sidebar */}
             <div className="space-y-6">
-              {/* Quick facts */}
-              <div
-                className="p-6 rounded-2xl"
-                style={{ background: '#040D1A', border: '1px solid rgba(255,255,255,0.06)' }}
-              >
-                <h4 className="text-white text-sm font-semibold mb-4 tracking-wider uppercase">Solution at a Glance</h4>
-                <div className="space-y-3">
-                  {[
-                    { label: 'Solution ID', value: solution.num },
-                    { label: 'Scope', value: solution.title },
-                  ].map(item => (
-                    <div key={item.label} className="flex justify-between items-center py-2"
-                      style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}
-                    >
-                      <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{item.label}</span>
-                      <span className="text-xs font-medium text-white">{item.value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Other solutions */}
               <div className="p-6 rounded-2xl" style={{ background: '#F2F6FC', border: '1px solid #E4EBF5' }}>
                 <h4 className="text-sm font-semibold mb-4" style={{ color: '#071525' }}>Other Solutions</h4>

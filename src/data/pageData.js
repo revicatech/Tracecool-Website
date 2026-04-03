@@ -1,84 +1,162 @@
 // ─── SOLUTIONS ───────────────────────────────────────────────
 export const solutions = [
   {
-    id: 'drawing-design',
+    id: 'vrf',
     num: '01',
-    title: 'Drawing Design',
-    shortDesc: 'Make customized piping designs by software accordingly after receiving the project drawing from clients.',
-    desc: 'Our drawing design service delivers precision-engineered HVAC layouts using industry-leading CAD and BIM software. From ductwork routing to refrigerant piping schematics, we ensure every drawing meets international standards and is installation-ready.',
+    title: 'VRF Solutions',
+    shortDesc: 'Energy-efficient, time-saving VRF systems tailored to your needs with end-to-end technical support.',
+    desc: 'At TRACE COOL, we deliver energy-efficient, time-saving VRF systems tailored to your needs. From the moment we receive your building drawings, our experienced technical team provides end-to-end support. Enjoy a smoother project execution and long-term operational savings.',
     features: [
-      'AutoCAD & Revit MEP design',
-      'Ductwork routing & sizing',
-      'Refrigerant piping schematics',
-      'Coordination with structural & electrical drawings',
-      'As-built documentation',
+      'Customized pipeline design',
+      'Precise system sizing & model selection',
+      'Installation material calculations',
+      'Start-up assistance',
+      'Onsite/remote technical guidance',
     ],
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
     imageSide: 'right',
+    sections: [
+      {
+        title: 'Consulting & Model Selection',
+        description: 'Expert pre-sales consultation to ensure project success and technical accuracy.',
+        points: [
+          'Technical and commercial VRF guidance',
+          'Efficient building plan and space analysis',
+          'Optimized equipment recommendations',
+          'Preliminary system designs and cost estimates',
+        ],
+        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
+      },
+      {
+        title: 'Piping Drawing Design',
+        description: 'Professional engineering layouts tailored to your specific project requirements.',
+        points: [
+          'Detailed schematics and equipment layouts',
+          'Accurate material procurement guides',
+          'Seamless HVAC implementation plans',
+          'Reduction of potential installation errors',
+        ],
+        image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80',
+      },
+      {
+        title: 'After-Sales Technical Support',
+        description: 'Comprehensive post-purchase care to ensure long-term system reliability.',
+        points: [
+          'Multichannel support (Email, Phone, Social Media)',
+          'Prompt technical problem-solving',
+          'Expert assistance throughout product lifecycle',
+          'Professional care for total peace of mind',
+        ],
+        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
+      },
+    ],
   },
   {
-    id: 'accessories-integration',
+    id: 'water-system',
     num: '02',
-    title: 'Accessories Integration',
-    shortDesc: 'Integrate all the necessary air conditioning accessories that the clients require for the HVAC system in one time.',
-    desc: 'We source, specify, and integrate all HVAC accessories — diffusers, grilles, dampers, sensors, valves, and controls — into a single cohesive supply. Our procurement expertise ensures compatibility, quality certification, and cost efficiency.',
+    title: 'Water System Solutions',
+    shortDesc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects.',
+    desc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects — whether for private developments or competitive tender bids. Simplify your project. Maximize your savings. Quality, consistency, and peace of mind.',
     features: [
-      'Single-source procurement',
-      'Compatibility verification',
-      'Factory acceptance testing',
-      'Certified components (DIN, CE, ASHRAE)',
-      'Full BOM documentation',
+      'All-in-One Sourcing: High-efficiency chillers, terminal units, and installation kits in one order.',
+      'Complete System Support: Cooling towers, pumps, hydraulic modules, and piping.',
+      'Project Flexibility: Tailored solutions for private projects or competitive tenders.',
     ],
     image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
     imageSide: 'left',
+    sections: [
+      {
+        title: 'Consulting & Model Selection',
+        description: 'Expert pre-sales support to design optimized water systems for commercial and industrial use.',
+        points: [
+          'In-depth building plan analysis and needs assessment',
+          'Ideal system configuration recommendations',
+          'Tailored solutions balancing performance and efficiency',
+          'Integration of engineering expertise with project specs',
+        ],
+        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
+      },
+      {
+        title: 'Project Drawing Design',
+        description: 'Precision-engineered technical drawings that act as a roadmap for successful installation.',
+        points: [
+          'Detailed piping schematics and equipment layouts',
+          'Customized connection diagrams',
+          'Guides for accurate material procurement',
+          'Minimized installation errors and seamless assembly',
+        ],
+        image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80',
+      },
+      {
+        title: 'After-Sales Technical Support',
+        description: 'Streamlined procurement and integrated logistics for faster project completion.',
+        points: [
+          'Complete customized system packages (Units + Accessories)',
+          'Coordinated shipments for all-in-one delivery',
+          'Elimination of multi-vendor sourcing hassles',
+          'Reduced logistical complexity and immediate installation readiness',
+        ],
+        image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
+      },
+    ],
   },
   {
-    id: 'technical-support',
+    id: 'ventilation',
     num: '03',
-    title: 'Technical Support',
-    shortDesc: 'Give close after-sales technical supports by our professional technical team thru remote conferences or paid on-site guidance.',
-    desc: 'TRACECOOL provides dedicated technical support through every phase of your project — from installation guidance to commissioning assistance and long-term troubleshooting. Our engineers are available via remote sessions or on-site visits globally.',
+    title: 'Ventilation Solutions',
+    shortDesc: 'Effortless ventilation projects with proven expertise and a full product range — A-to-Z in a single order.',
+    desc: 'At TRACE COOL, we make ventilation projects effortless with proven expertise and a full product range. A-to-Z solutions in a single order.',
     features: [
-      '24/7 remote support portal',
-      'Video-conference commissioning',
-      'On-site engineer dispatch',
-      'Fault diagnostics & root-cause analysis',
-      'Warranty management',
+      'All-in-One Supply: Fans, diffusers, dampers, and ducts from one trusted partner.',
+      'Expert-Backed Efficiency: Leveraging years of project experience for faster timelines.',
+      'Hassle-Free Process: Streamlined selection and delivery to focus on your project.',
     ],
     image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80',
     imageSide: 'right',
+    sections: [
+      {
+        title: 'Ventilation Solutions',
+        description: 'Comprehensive, one-stop ventilation systems backed by a robust supply chain.',
+        points: [
+          'Full product range: Fans, diffusers, dampers, and ductwork',
+          'Seamless end-to-end service from sourcing to delivery',
+          'Elimination of multiple-vendor coordination hassles',
+          'Tailored components for specific project requirements',
+        ],
+        images: [
+          'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80',
+          'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
+        ],
+      },
+    ],
   },
   {
-    id: 'model-selection',
+    id: 'control',
     num: '04',
-    title: 'Model Selection',
-    shortDesc: "Provide with suitable and efficient product model selection based on both clients' needs and our experience.",
-    desc: 'Choosing the right HVAC equipment is critical for performance, energy efficiency, and lifecycle cost. Our selection process combines thermal load calculations, operating condition analysis, and manufacturer data to pinpoint the optimal models for your project.',
+    title: 'Control Solutions',
+    shortDesc: 'Cutting-edge control solutions delivering precision climate management and seamless BMS integration.',
+    desc: "In today's era of green buildings, our cutting-edge solutions deliver precision climate management and seamless integration. Experience the future of HVAC Control with smarter, connected systems.",
     features: [
-      'Thermal load simulation (HAP / EnergyPlus)',
-      'Energy efficiency ratio benchmarking',
-      'Total lifecycle cost analysis',
-      'Multi-manufacturer comparison',
-      'Compliance with local energy codes',
+      'Seamless Connectivity: Integrate AC units, BMS systems, and administrators.',
+      'Cloud-Based Control: Remote IoT management from anywhere, anytime.',
+      'Flexible BMS Integration: Compatible with Modbus and BACnet protocols.',
+      'Sustainability & Efficiency: Optimize energy use and contribute to green building certifications.',
     ],
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
     imageSide: 'left',
-  },
-  {
-    id: 'goods-delivery',
-    num: '05',
-    title: 'Goods Delivery',
-    shortDesc: 'Ensure quality control before delivery and available to arrange goods consolidation assistance for clients.',
-    desc: 'Our logistics team manages the full supply chain from factory to site — quality inspection, export documentation, freight forwarding, customs clearance, and last-mile delivery. We specialise in consolidating multi-vendor orders into a single, coordinated shipment.',
-    features: [
-      'Pre-shipment factory inspection',
-      'Export & customs documentation',
-      'Sea, air, and land freight',
-      'Cargo consolidation service',
-      'Real-time shipment tracking',
+    sections: [
+      {
+        title: 'Control Solutions',
+        description: 'Advanced HVAC management using IoT technology for modern green buildings.',
+        points: [
+          'Seamless integration of AC units, BMS, and facility management',
+          'Cloud-based management for remote, real-time adjustments',
+          'Data-driven optimization to enhance energy efficiency',
+          'Reduced operational costs through intelligent monitoring',
+        ],
+        image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
+      },
     ],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
-    imageSide: 'right',
   },
 ]
 
@@ -206,8 +284,8 @@ export const products = [
   {
     id: 'vrf-vrv-systems',
     title: 'VRF / VRV Systems',
-    category: 'Refrigerant Systems',
-    subcategory: 'Variable Refrigerant Flow',
+    category: 'VRF Air Conditioner',
+    subcategory: 'Mini VRF',
     shortDesc: 'Variable refrigerant flow technology for flexible, zone-by-zone comfort in mid-rise to high-rise buildings.',
     desc: 'VRF/VRV systems offer unmatched flexibility for multi-zone climate control. A single outdoor unit connects to dozens of indoor units via refrigerant pipework, enabling each zone to be controlled independently. Heat recovery variants allow simultaneous heating and cooling across different zones, dramatically reducing energy consumption.',
     features: [
@@ -234,8 +312,8 @@ export const products = [
   {
     id: 'chiller-plants',
     title: 'Chiller Plants',
-    category: 'Central Cooling',
-    subcategory: 'Water-Cooled & Air-Cooled',
+    category: 'Chiller',
+    subcategory: 'Air Cooled Screw Chillers',
     shortDesc: 'Air-cooled and water-cooled centrifugal and screw chillers for large-scale commercial and industrial loads.',
     desc: 'Chiller plants form the backbone of large-scale cooling systems. TRACECOOL selects and engineers centrifugal, screw, and absorption chillers matched precisely to your load profile. From standalone rooftop units to district cooling plants, we deliver systems optimised for peak and part-load efficiency.',
     features: [
@@ -262,8 +340,8 @@ export const products = [
   {
     id: 'air-handling-units',
     title: 'Air Handling Units',
-    category: 'Air Distribution',
-    subcategory: 'Custom AHU',
+    category: 'Air Conditioner Accessories',
+    subcategory: 'Modular AHU (DX / Water)',
     shortDesc: 'Custom-engineered AHUs with EC fans, heat recovery coils, and integrated filtration stages.',
     desc: 'Air Handling Units are the heart of central ventilation systems. Our custom-engineered AHUs are built to exact project specifications — incorporating EC plug fans, multi-stage filtration, heating/cooling coils, humidification, and heat recovery in a single factory-tested package.',
     features: [
@@ -290,8 +368,8 @@ export const products = [
   {
     id: 'heat-pump-systems',
     title: 'Heat Pump Systems',
-    category: 'Refrigerant Systems',
-    subcategory: 'Air-Source & Ground-Source',
+    category: 'Air to water heat pump',
+    subcategory: 'Split Type Heat Pump',
     shortDesc: 'Air-source and ground-source heat pumps delivering near zero-emission heating and cooling year-round.',
     desc: 'Heat pumps extract thermal energy from the air, ground, or water to provide highly efficient heating and cooling. With COPs exceeding 4.5 in heating mode and near-zero direct emissions, they are the cornerstone of low-carbon building systems — particularly for net-zero projects.',
     features: [
@@ -318,8 +396,8 @@ export const products = [
   {
     id: 'smart-bms-controllers',
     title: 'Smart BMS Controllers',
-    category: 'Controls & Automation',
-    subcategory: 'AI-Driven BMS',
+    category: 'Accessory & Parts',
+    subcategory: 'For VRF',
     shortDesc: 'AI-driven building management systems with real-time analytics, remote access, and predictive control logic.',
     desc: 'Our Smart BMS Controllers unify all building services — HVAC, lighting, access, energy metering — into a single intelligent platform. Machine learning algorithms continuously optimise control sequences, predict maintenance needs, and identify energy waste, reducing operational costs significantly.',
     features: [
@@ -346,8 +424,8 @@ export const products = [
   {
     id: 'energy-recovery-ventilators',
     title: 'Energy Recovery Ventilators',
-    category: 'Ventilation',
-    subcategory: 'HRV / ERV Units',
+    category: 'Accessory & Parts',
+    subcategory: 'For RAC',
     shortDesc: 'High-efficiency ERV/HRV units capturing waste heat to pre-condition incoming fresh air and cut energy demand.',
     desc: 'Energy Recovery Ventilators recover thermal energy from exhaust air streams to pre-treat incoming fresh air, dramatically reducing the energy needed to condition it. Our ERV/HRV range covers everything from residential decentralised units to large central energy recovery cores for commercial buildings.',
     features: [
@@ -374,8 +452,8 @@ export const products = [
   {
     id: 'fan-coil-units',
     title: 'Fan Coil Units',
-    category: 'Air Distribution',
-    subcategory: 'Terminal Units',
+    category: 'Air Conditioner Accessories',
+    subcategory: 'Fan Coil Unit',
     shortDesc: 'High-efficiency 2-pipe and 4-pipe fan coil units for hotels, offices, and residential buildings.',
     desc: 'Fan coil units provide localised heating and cooling throughout a building connected to a central chilled/hot water system. Available in ceiling cassette, concealed horizontal, vertical console, and floor-standing configurations to suit any architectural requirement.',
     features: [
@@ -402,8 +480,8 @@ export const products = [
   {
     id: 'cooling-towers',
     title: 'Cooling Towers',
-    category: 'Central Cooling',
-    subcategory: 'Open / Closed Circuit',
+    category: 'Chiller',
+    subcategory: 'Water Cooled Screw Chillers',
     shortDesc: 'Open and closed-circuit cooling towers for rejecting heat from chiller condensers and industrial processes.',
     desc: 'Cooling towers are essential for water-cooled chiller systems, rejecting condenser heat to atmosphere. TRACECOOL selects and designs both induced-draft and forced-draft cooling towers — counter-flow and cross-flow configurations — with drift eliminators and Legionella control systems.',
     features: [
@@ -430,8 +508,8 @@ export const products = [
   {
     id: 'packaged-rooftop-units',
     title: 'Packaged Rooftop Units',
-    category: 'Refrigerant Systems',
-    subcategory: 'Rooftop / Self-Contained',
+    category: 'Rooftop & Package',
+    subcategory: 'Rooftop Packaged Unit',
     shortDesc: 'Self-contained packaged units combining cooling, heating, and ventilation in a single rooftop installation.',
     desc: 'Packaged Rooftop Units (RTUs) provide a self-contained HVAC solution — compressor, condenser, evaporator, and air handling all in one weatherproof casing. Ideal for single-storey retail, warehouses, and light commercial buildings where space and installation simplicity are priorities.',
     features: [
@@ -457,7 +535,15 @@ export const products = [
   },
 ]
 
-export const productCategories = [...new Set(products.map(p => p.category))]
+export const productCategories = [
+  { name: 'Accessory & Parts', subcategories: ['For RAC', 'For VRF'] },
+  { name: 'Air Conditioner Accessories', subcategories: ['Fan Coil Unit', 'Modular AHU (DX / Water)'] },
+  { name: 'Air to water heat pump', subcategories: ['Split Type Heat Pump'] },
+  { name: 'Chiller', subcategories: ['Air Cooled Screw Chillers', 'Air Cooled Scroll Chillers', 'Water Cooled Screw Chillers'] },
+  { name: 'Mini Split Air Conditioner', subcategories: ['Ductless mini split', 'Light Commercial Air Conditioner', 'Multi-Split', 'Window AC', 'Window Type'] },
+  { name: 'Rooftop & Package', subcategories: ['Rooftop Packaged Unit'] },
+  { name: 'VRF Air Conditioner', subcategories: ['Mini VRF'] },
+]
 
 // ─── AGENTS / BRANCHES ───────────────────────────────────────
 export const agents = [

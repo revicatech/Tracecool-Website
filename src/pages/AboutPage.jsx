@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import L from 'leaflet'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { agents, agentRegions, timeline } from '../data/pageData'
+import { agents, agentRegions } from '../data/pageData'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -48,6 +48,57 @@ const values = [
   { title: 'Energy Efficiency First', desc: 'We average a 35% reduction in energy consumption across all HVAC installations through intelligent design and automation.' },
   { title: 'Global Project Delivery', desc: 'Active project offices across Europe, Middle East, Asia and the Americas with local expertise and global engineering standards.' },
   { title: '24/7 Service & Support', desc: 'Round-the-clock emergency response and predictive maintenance keeping your systems at peak performance.' },
+]
+
+const philosophy = [
+  {
+    key: 'values',
+    label: 'Values',
+    text: 'We operate with integrity, embrace openness, foster collaboration, and celebrate shared success.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    ),
+  },
+  {
+    key: 'mission',
+    label: 'Mission',
+    text: 'Our commitment: to continuously create exceptional value for our customers.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    ),
+  },
+  {
+    key: 'vision',
+    label: 'Vision',
+    text: 'We aim to lead the HVAC industry and earn worldwide recognition as a trusted brand.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-9.394 0C6.606 8.604 9.094 6.5 12 6.5s5.394 2.104 6.394 5.5c-1 3.396-3.488 5.5-6.394 5.5S6.606 15.396 5.606 12z" />
+    ),
+  },
+]
+
+const coreBusiness = [
+  {
+    title: 'HVAC Products',
+    desc: 'We offer a complete selection of air conditioning products for residential, commercial, and industrial use, including accessories and spare parts.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+    ),
+  },
+  {
+    title: 'HVAC Solutions',
+    desc: 'A skilled technical team delivers customized solutions for VRF, water, ventilation, and control systems.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+    ),
+  },
+  {
+    title: 'HVAC Services',
+    desc: 'Enjoy seamless one-stop services: HVAC system design, professional installation training, efficient shipment consolidation, and reliable after-sales assistance.',
+    icon: (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+    ),
+  },
 ]
 
 // ── Interactive World Map ─────────────────────────────────────
@@ -231,45 +282,6 @@ function AgentsMap() {
   )
 }
 
-// ── Timeline ──────────────────────────────────────────────────
-function Timeline() {
-  return (
-    <div className="relative">
-      {/* vertical line */}
-      <div
-        className="absolute left-[11px] top-0 bottom-0 w-px hidden md:block"
-        style={{ background: 'linear-gradient(180deg, #1A6FDB 0%, rgba(26,111,219,0.15) 100%)' }}
-      ></div>
-      <div className="space-y-10 md:space-y-8">
-        {timeline.map((item, i) => (
-          <div key={item.year} className="flex gap-6 md:gap-10 items-start tl-item">
-            {/* Dot + year */}
-            <div className="flex-shrink-0 flex flex-col items-center">
-              <div
-                className="w-6 h-6 rounded-full border-2 flex items-center justify-center z-10 relative"
-                style={{ background: '#040D1A', borderColor: '#1A6FDB' }}
-              >
-                <div className="w-2 h-2 rounded-full" style={{ background: '#4D9EFF' }}></div>
-              </div>
-            </div>
-            {/* Content */}
-            <div className="flex-1 pb-2">
-              <span
-                className="text-xs font-mono font-bold tracking-widest mb-2 block"
-                style={{ color: '#4D9EFF' }}
-              >
-                {item.year}
-              </span>
-              <h4 className="text-base font-semibold mb-1.5" style={{ color: '#071525' }}>{item.title}</h4>
-              <p className="text-sm leading-relaxed" style={{ color: '#5A7896' }}>{item.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
-
 // ── Main Page ─────────────────────────────────────────────────
 export default function AboutPage() {
   const heroRef = useRef(null)
@@ -294,12 +306,21 @@ export default function AboutPage() {
       }
     )
 
-    // Timeline items
-    gsap.fromTo('.tl-item',
-      { opacity: 0, x: -30 },
+    // Philosophy items
+    gsap.fromTo('.phil-item',
+      { opacity: 0, y: 30 },
       {
-        opacity: 1, x: 0, duration: 0.8, stagger: 0.1, ease: 'power3.out',
-        scrollTrigger: { trigger: '#about-timeline', start: 'top 78%' }
+        opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+        scrollTrigger: { trigger: '#about-philosophy', start: 'top 80%' }
+      }
+    )
+
+    // Core business cards
+    gsap.fromTo('.core-card',
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1, y: 0, duration: 0.85, stagger: 0.15, ease: 'power3.out',
+        scrollTrigger: { trigger: '#about-core', start: 'top 80%' }
       }
     )
 
@@ -496,21 +517,98 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Timeline ──────────────────────────────────────────── */}
-      <section id="about-timeline" className="py-24">
+      {/* ── Philosophy ────────────────────────────────────────── */}
+      <section id="about-philosophy" className="py-24" style={{ background: '#fff' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <div className="section-label mb-5">Our History</div>
-              <div className="blue-line"></div>
-              <h2 className="text-4xl font-medium mb-6 leading-tight" style={{ color: '#071525' }}>
-                25 Years of<br />Engineering Milestones
-              </h2>
-              <p className="text-sm leading-relaxed" style={{ color: '#5A7896' }}>
-                From a small consulting firm in Worms to an international HVAC engineering group — our journey has been defined by technical ambition, client partnerships, and a relentless focus on performance.
-              </p>
+          <div className="text-center mb-16">
+            <div className="section-label justify-center mb-4">Philosophy</div>
+            <div className="blue-line mx-auto"></div>
+            <h2 className="text-4xl font-medium mt-4" style={{ color: '#071525' }}>What We Stand For</h2>
+          </div>
+
+          {/* Values / Mission / Vision */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {philosophy.map(({ key, label, text, icon }) => (
+              <div
+                key={key}
+                className="phil-item flex flex-col items-start p-8 rounded-2xl transition-all duration-350 hover:-translate-y-1"
+                style={{ background: '#F2F6FC', border: '1px solid #E4EBF5' }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.borderColor = 'rgba(26,111,219,0.3)'
+                  e.currentTarget.style.boxShadow = '0 16px 48px rgba(26,111,219,0.08)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.borderColor = '#E4EBF5'
+                  e.currentTarget.style.boxShadow = 'none'
+                }}
+              >
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                  style={{ background: 'rgba(26,111,219,0.1)' }}
+                >
+                  <svg className="w-6 h-6" style={{ color: '#1A6FDB' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {icon}
+                  </svg>
+                </div>
+                <span
+                  className="text-[10px] font-bold uppercase tracking-widest mb-3"
+                  style={{ color: '#1A6FDB' }}
+                >
+                  {label}
+                </span>
+                <p className="text-sm leading-relaxed" style={{ color: '#5A7896' }}>{text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Core Business */}
+          <div id="about-core">
+            <div className="flex items-center gap-4 mb-10">
+              <div style={{ flex: 1, height: '1px', background: '#E4EBF5' }}></div>
+              <span className="section-label">Core Business</span>
+              <div style={{ flex: 1, height: '1px', background: '#E4EBF5' }}></div>
             </div>
-            <Timeline />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {coreBusiness.map(({ title, desc, icon }, i) => (
+                <div
+                  key={title}
+                  className="core-card rounded-2xl overflow-hidden transition-all duration-350 hover:-translate-y-2"
+                  style={{
+                    background: 'linear-gradient(180deg, #040D1A 0%, #071525 100%)',
+                    border: '1px solid rgba(26,111,219,0.2)',
+                    boxShadow: '0 4px 24px rgba(4,13,26,0.12)',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'rgba(26,111,219,0.5)'
+                    e.currentTarget.style.boxShadow = '0 20px 56px rgba(26,111,219,0.15)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'rgba(26,111,219,0.2)'
+                    e.currentTarget.style.boxShadow = '0 4px 24px rgba(4,13,26,0.12)'
+                  }}
+                >
+                  <div className="p-8">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-6"
+                      style={{ background: 'rgba(26,111,219,0.2)' }}
+                    >
+                      <svg className="w-6 h-6" style={{ color: '#4D9EFF' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {icon}
+                      </svg>
+                    </div>
+                    <div
+                      className="text-[10px] font-bold uppercase tracking-widest mb-3"
+                      style={{ color: '#4D9EFF' }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </div>
+                    <h4 className="text-lg font-semibold text-white mb-3">{title}</h4>
+                    <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)' }}>{desc}</p>
+                  </div>
+                  <div style={{ height: '3px', background: 'linear-gradient(90deg, #1A6FDB, transparent)' }}></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

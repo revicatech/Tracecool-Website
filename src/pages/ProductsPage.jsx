@@ -16,30 +16,94 @@ function ArrowIcon() {
 
 function FilterCheckbox({ label, checked, onChange }) {
   return (
-    <label
-      className="flex items-center gap-2.5 cursor-pointer group select-none"
-    >
+    <label className="flex items-center gap-2.5 cursor-pointer group select-none">
       <div
-        className="w-5 h-5 rounded-md flex items-center justify-center flex-shrink-0 transition-all duration-200"
+        className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 transition-all duration-200"
         style={{
           background: checked ? '#1A6FDB' : 'transparent',
           border: checked ? '2px solid #1A6FDB' : '2px solid #C9D8EF',
         }}
       >
         {checked && (
-          <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
           </svg>
         )}
       </div>
       <input type="checkbox" checked={checked} onChange={onChange} className="hidden" />
       <span
-        className="text-sm transition-colors duration-200"
+        className="text-xs transition-colors duration-200"
         style={{ color: checked ? '#071525' : '#5A7896' }}
       >
         {label}
       </span>
     </label>
+  )
+}
+
+function CategoryAccordion({ cat, selectedSubcategories, onToggleSub }) {
+  const [open, setOpen] = useState(true)
+  const activeCount = cat.subcategories.filter(s => selectedSubcategories.includes(s)).length
+  const hasActive = activeCount > 0
+
+  return (
+    <div
+      className="rounded-xl overflow-hidden transition-all duration-200"
+      style={{
+        border: hasActive ? '1px solid rgba(26,111,219,0.3)' : '1px solid #E4EBF5',
+        background: hasActive ? 'rgba(26,111,219,0.03)' : 'white',
+      }}
+    >
+      {/* Category header */}
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-4 py-3 text-left"
+      >
+        <div className="flex items-center gap-2 flex-1 min-w-0">
+          <span
+            className="text-xs font-semibold leading-tight truncate"
+            style={{ color: hasActive ? '#1A6FDB' : '#071525' }}
+          >
+            {cat.name}
+          </span>
+          {hasActive && (
+            <span
+              className="text-[10px] font-bold px-1.5 py-0.5 rounded-full flex-shrink-0"
+              style={{ background: '#1A6FDB', color: 'white' }}
+            >
+              {activeCount}
+            </span>
+          )}
+        </div>
+        <svg
+          className="w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200 ml-2"
+          style={{
+            color: hasActive ? '#1A6FDB' : '#5A7896',
+            transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+          }}
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {/* Subcategories */}
+      {open && (
+        <div className="px-4 pb-3 space-y-2.5" style={{ borderTop: '1px solid #E4EBF5' }}>
+          <div className="pt-3">
+            {cat.subcategories.map(sub => (
+              <div key={sub} className="mb-2.5">
+                <FilterCheckbox
+                  label={sub}
+                  checked={selectedSubcategories.includes(sub)}
+                  onChange={() => onToggleSub(sub)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
 
@@ -114,7 +178,7 @@ function ProductCard({ product }) {
 }
 
 export default function ProductsPage() {
-  const [selectedCategories, setSelectedCategories] = useState([])
+  const [selectedSubcategories, setSelectedSubcategories] = useState([])
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -130,22 +194,24 @@ export default function ProductsPage() {
       { opacity: 0, y: 30 },
       { opacity: 1, y: 0, duration: 0.6, stagger: 0.08, ease: 'power3.out' }
     )
-  }, [selectedCategories, search])
+  }, [selectedSubcategories, search])
 
-  const toggleCategory = (cat) => {
-    setSelectedCategories(prev =>
-      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
+  const toggleSub = (sub) => {
+    setSelectedSubcategories(prev =>
+      prev.includes(sub) ? prev.filter(s => s !== sub) : [...prev, sub]
     )
   }
 
   const filtered = products.filter(p => {
-    const matchesCat = selectedCategories.length === 0 || selectedCategories.includes(p.category)
+    const matchesSub = selectedSubcategories.length === 0 || selectedSubcategories.includes(p.subcategory)
     const matchesSearch = search === '' ||
       p.title.toLowerCase().includes(search.toLowerCase()) ||
       p.category.toLowerCase().includes(search.toLowerCase()) ||
       p.subcategory.toLowerCase().includes(search.toLowerCase())
-    return matchesCat && matchesSearch
+    return matchesSub && matchesSearch
   })
+
+  const totalProducts = products.length
 
   return (
     <div style={{ background: '#fff', minHeight: '100vh' }}>
@@ -158,6 +224,13 @@ export default function ProductsPage() {
           className="absolute inset-0 opacity-25"
           style={{ backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(26,111,219,0.4) 0%, transparent 65%)' }}
         ></div>
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        ></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 prod-hero-content">
           <div className="section-label light mb-5">Product Portfolio</div>
           <h1 className="text-5xl lg:text-7xl font-medium text-white mb-6 leading-tight">
@@ -165,10 +238,41 @@ export default function ProductsPage() {
             <br />
             <span className="text-gradient italic font-light">Portfolio.</span>
           </h1>
-          <p className="text-white/50 max-w-xl text-sm leading-relaxed">
+          <p className="text-white/50 max-w-xl text-sm leading-relaxed mb-10">
             Industry-leading HVAC equipment — precision-selected, expertly integrated.
-            Browse our full range of {products.length} products across {productCategories.length} categories.
+            Browse our full range of {totalProducts} products across {productCategories.length} categories.
           </p>
+          {/* Category pills */}
+          <div className="flex flex-wrap gap-2">
+            {productCategories.map(cat => (
+              <button
+                key={cat.name}
+                onClick={() => {
+                  const allSubs = cat.subcategories
+                  const allSelected = allSubs.every(s => selectedSubcategories.includes(s))
+                  if (allSelected) {
+                    setSelectedSubcategories(prev => prev.filter(s => !allSubs.includes(s)))
+                  } else {
+                    setSelectedSubcategories(prev => [...new Set([...prev, ...allSubs])])
+                  }
+                }}
+                className="text-xs font-medium px-4 py-2 rounded-full transition-all duration-200"
+                style={{
+                  background: cat.subcategories.every(s => selectedSubcategories.includes(s))
+                    ? 'rgba(26,111,219,0.3)'
+                    : 'rgba(255,255,255,0.07)',
+                  border: cat.subcategories.every(s => selectedSubcategories.includes(s))
+                    ? '1px solid rgba(77,158,255,0.5)'
+                    : '1px solid rgba(255,255,255,0.12)',
+                  color: cat.subcategories.every(s => selectedSubcategories.includes(s))
+                    ? 'white'
+                    : 'rgba(255,255,255,0.6)',
+                }}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -178,17 +282,28 @@ export default function ProductsPage() {
           <div className="flex flex-col lg:flex-row gap-10">
 
             {/* Sidebar Filter */}
-            <aside className="lg:w-64 flex-shrink-0">
-              <div
-                className="rounded-2xl p-6 sticky top-28"
-                style={{ background: '#F2F6FC', border: '1px solid #E4EBF5' }}
-              >
-                <h3 className="text-sm font-semibold mb-5 uppercase tracking-widest" style={{ color: '#5A7896' }}>
-                  Filter Products
-                </h3>
+            <aside className="lg:w-72 flex-shrink-0">
+              <div className="sticky top-28">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-5">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest" style={{ color: '#5A7896' }}>
+                    Filter Products
+                  </h3>
+                  {selectedSubcategories.length > 0 && (
+                    <button
+                      onClick={() => setSelectedSubcategories([])}
+                      className="text-xs font-medium transition-colors"
+                      style={{ color: '#1A6FDB' }}
+                      onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
+                      onMouseLeave={e => e.currentTarget.style.color = '#1A6FDB'}
+                    >
+                      Clear all
+                    </button>
+                  )}
+                </div>
 
                 {/* Search */}
-                <div className="relative mb-6">
+                <div className="relative mb-5">
                   <svg
                     className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4"
                     style={{ color: '#5A7896' }}
@@ -213,41 +328,24 @@ export default function ProductsPage() {
                   />
                 </div>
 
-                {/* Category checkboxes */}
-                <div className="mb-5">
-                  <p className="text-xs font-semibold mb-3 uppercase tracking-wider" style={{ color: '#5A7896' }}>
-                    Category
-                  </p>
-                  <div className="space-y-3">
-                    {productCategories.map(cat => (
-                      <FilterCheckbox
-                        key={cat}
-                        label={cat}
-                        checked={selectedCategories.includes(cat)}
-                        onChange={() => toggleCategory(cat)}
-                      />
-                    ))}
-                  </div>
+                {/* Category accordions */}
+                <div className="space-y-2">
+                  {productCategories.map(cat => (
+                    <CategoryAccordion
+                      key={cat.name}
+                      cat={cat}
+                      selectedSubcategories={selectedSubcategories}
+                      onToggleSub={toggleSub}
+                    />
+                  ))}
                 </div>
-
-                {selectedCategories.length > 0 && (
-                  <button
-                    onClick={() => setSelectedCategories([])}
-                    className="text-xs font-medium transition-colors"
-                    style={{ color: '#1A6FDB' }}
-                    onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
-                    onMouseLeave={e => e.currentTarget.style.color = '#1A6FDB'}
-                  >
-                    Clear filters
-                  </button>
-                )}
 
                 {/* Count */}
                 <div
-                  className="mt-6 pt-5 text-xs"
+                  className="mt-5 pt-4 text-xs"
                   style={{ borderTop: '1px solid #E4EBF5', color: '#5A7896' }}
                 >
-                  Showing <span className="font-bold" style={{ color: '#071525' }}>{filtered.length}</span> of {products.length} products
+                  Showing <span className="font-bold" style={{ color: '#071525' }}>{filtered.length}</span> of {totalProducts} products
                 </div>
               </div>
             </aside>
@@ -255,16 +353,16 @@ export default function ProductsPage() {
             {/* Products Grid */}
             <div className="flex-1">
               {/* Active filter pills */}
-              {selectedCategories.length > 0 && (
+              {selectedSubcategories.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {selectedCategories.map(cat => (
+                  {selectedSubcategories.map(sub => (
                     <span
-                      key={cat}
+                      key={sub}
                       className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full cursor-pointer"
                       style={{ background: 'rgba(26,111,219,0.1)', color: '#1A6FDB', border: '1px solid rgba(26,111,219,0.2)' }}
-                      onClick={() => toggleCategory(cat)}
+                      onClick={() => toggleSub(sub)}
                     >
-                      {cat}
+                      {sub}
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
                       </svg>
