@@ -1,0 +1,140 @@
+{
+  "category": {
+    "name_en": "Mini Split Air Conditioner",
+    "name_ar": "مكيف سبليت صغير"
+  },
+  "subcategories": [
+    {
+      "_refKey": "ductless_mini_split",
+      "name_en": "Ductless Mini Split",
+      "name_ar": "سبليت صغير بدون مجاري"
+    }
+  ],
+  "products": [
+    {
+      "title_en": "TRACE COOL 60Hz R454B Inverter Heat Pump Duct Series Split AC",
+      "title_ar": "مكيف سبليت قنوات TRACE COOL بتردد 60Hz R454B انفرتر مضخة حرارية",
+      "shortDesc_en": "Duct series mini split with R454B refrigerant, horizontal and vertical installation, up to 8 static pressure stages, refrigerant leakage sensor, built-in pump, i-clean function, and WiFi with wired/wireless controller options.",
+      "shortDesc_ar": "مكيف سبليت قنوات مع وسيط R454B، تركيب أفقي وعمودي، حتى 8 مراحل ضغط ساكن، مستشعر تسرب الوسيط، مضخة مدمجة، وظيفة التنظيف الذكي، و WiFi مع خيارات تحكم سلكي ولاسلكي.",
+      "description_en": "TRACE COOL 60Hz R454B inverter heat pump duct series split air conditioner offering flexible installation and superior airflow control for ducted applications. Supports both horizontal and vertical installation to accommodate different space requirements and ceiling configurations. Features up to 8 static pressure stages for precise airflow adjustment, ensuring efficient air delivery across varying duct lengths and layouts. Equipped with a refrigerant leakage sensor that monitors for leaks in real-time, enhancing operational safety. Built-in pump facilitates condensate drainage, reducing maintenance tasks and simplifying installation. The i-clean function provides intelligent self-cleaning that keeps the air conditioner's interior clean and hygienic automatically. WiFi capability allows remote control of the unit via mobile devices from anywhere. Both wireless remote controller and wired controller options are available — the wireless controller offers convenience and mobility, while the wired controller provides a stable, always-connected control experience suitable for commercial and fixed installations. This duct series combines comprehensive functionality with ease of use, making it a reliable choice for residential and light commercial environments requiring concealed, ducted air conditioning.",
+      "description_ar": "مكيف سبليت قنوات TRACE COOL بتردد 60Hz مع وسيط R454B انفرتر مضخة حرارية يوفر مرونة في التركيب وتحكماً فائقاً في التدفق للتطبيقات المقناة. يدعم التركيب الأفقي والعمودي لاستيعاب متطلبات المساحات المختلفة وتكوينات الأسقف. يتميز بحتى 8 مراحل ضغط ساكن لتعديل دقيق لتدفق الهواء، مما يضمن توصيل هواء فعال عبر أطوال وتخطيطات قنوات متنوعة. مجهز بمستشعر تسرب وسيط التبريد الذي يراقب التسريبات في الوقت الحقيقي لتعزيز السلامة التشغيلية. مضخة مدمجة تسهل تصريف المكثفات وتقلل مهام الصيانة وتبسط التركيب. وظيفة التنظيف الذكي i-clean توفر تنظيفاً ذاتياً ذكياً يحافظ على نظافة المكيف الداخلية تلقائياً. إمكانية WiFi تتيح التحكم عن بُعد عبر الأجهزة المحمولة من أي مكان. تتوفر خيارات تحكم لاسلكي وسلكي — الريموت اللاسلكي يوفر الراحة والتنقل، بينما وحدة التحكم السلكية توفر تجربة تحكم مستقرة ودائمة الاتصال مناسبة للتركيبات التجارية والثابتة. سلسلة القنوات هذه تجمع بين الوظائف الشاملة وسهولة الاستخدام، مما يجعلها خياراً موثوقاً للبيئات السكنية والتجارية الخفيفة التي تتطلب تكييفاً مخفياً بالقنوات.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-r454b-inverter-heatpump-duct-series"
+      ],
+      "features": [
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "Horizontal and vertical installation for flexible space adaptation", "value_ar": "تركيب أفقي وعمودي لتكيف مرن مع المساحات" },
+        { "key_en": "Static Pressure", "key_ar": "الضغط الساكن", "value_en": "Up to 8 adjustable stages for efficient airflow across varying duct lengths", "value_ar": "حتى 8 مراحل قابلة للتعديل لتدفق هواء فعال عبر أطوال قنوات متنوعة" },
+        { "key_en": "Refrigerant Leak Sensor", "key_ar": "مستشعر تسرب الوسيط", "value_en": "Real-time monitoring for enhanced operational safety", "value_ar": "مراقبة في الوقت الحقيقي لتعزيز السلامة التشغيلية" },
+        { "key_en": "Built-in Pump", "key_ar": "مضخة مدمجة", "value_en": "Facilitates condensate drainage, reduces maintenance", "value_ar": "تسهل تصريف المكثفات وتقلل الصيانة" },
+        { "key_en": "i-Clean Function", "key_ar": "وظيفة التنظيف الذكي", "value_en": "Intelligent self-cleaning system for automatic interior hygiene", "value_ar": "نظام تنظيف ذاتي ذكي للنظافة الداخلية التلقائية" },
+        { "key_en": "WiFi & Remote", "key_ar": "WiFi والتحكم", "value_en": "WiFi remote via mobile; wireless and wired controller options available", "value_ar": "تحكم WiFi عن بُعد عبر الجوال؛ خيارات تحكم لاسلكي وسلكي متوفرة" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R454B Eco-Friendly", "value_ar": "R454B صديق للبيئة" }
+      ],
+      "isActive": true,
+      "order": 37
+    },
+    {
+      "title_en": "TRACE COOL® 60Hz 20 SEER2 R454B Heat Pump Inverter Split AC",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL® بتردد 60Hz وكفاءة 20 SEER2 R454B مضخة حرارية",
+      "shortDesc_en": "20 SEER2 heat pump inverter with R454B and ZERO technology, AHRI & ETL certified, advanced sleep mode with gradual temperature adjustment, strong heating down to -15°C, intelligent defrost, and WiFi smart control.",
+      "shortDesc_ar": "مكيف انفرتر مضخة حرارية بكفاءة 20 SEER2 مع R454B وتقنية ZERO، معتمد من AHRI و ETL، وضع نوم متقدم مع تعديل تدريجي للحرارة، تدفئة قوية حتى -15°C، إذابة ثلج ذكية، وتحكم WiFi ذكي.",
+      "description_en": "TRACE COOL® 60Hz 20 SEER2 heat pump inverter mini split air conditioner with R454B environmentally friendly refrigerant. AHRI and ETL certified, utilizing ZERO technology for lower costs and reduced environmental impact. Installs a single condenser and wall-mounted unit for precise room-by-room temperature control and energy cost reduction. Features an advanced sleep mode that slowly increases the temperature until the middle of the night, then gradually decreases it back to the initial set value, maintaining optimal comfort throughout the entire sleep cycle. Capable of strong heating in low ambient temperatures down to -15°C, achieved through a chassis heating belt combined with a highly efficient compressor for excellent cold-weather performance. Intelligent defrost system automatically initiates defrosting and, upon completion, automatically reverses back to heating operation — fully ensuring the heating effect while providing more durable and consistent performance. Smart WiFi control enables users to conveniently operate the air conditioner remotely from outside the home via smart devices. The outdoor unit chassis heating belt prevents frosting or freezing of the bottom plate during winter operation. Temperature display supports both Celsius and Fahrenheit degree switching for user convenience across different regions.",
+      "description_ar": "مكيف سبليت صغير انفرتر TRACE COOL® بتردد 60Hz وكفاءة 20 SEER2 مضخة حرارية مع وسيط تبريد R454B صديق للبيئة. معتمد من AHRI و ETL، يستخدم تقنية ZERO لتكاليف أقل وأثر بيئي أقل. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة غرفة بغرفة وتقليل تكاليف الطاقة. يتميز بوضع نوم متقدم يرفع الحرارة ببطء حتى منتصف الليل، ثم يخفضها تدريجياً إلى القيمة المحددة الأولية، مما يحافظ على الراحة المثالية طوال دورة النوم بالكامل. قادر على التدفئة القوية في درجات حرارة محيطة منخفضة تصل إلى -15°C، عبر حزام تسخين الهيكل مع ضاغط عالي الكفاءة لأداء ممتاز في الطقس البارد. نظام إذابة ثلج ذكي يبدأ الإذابة تلقائياً وعند الاكتمال يعود تلقائياً لوضع التدفئة — يضمن تأثير التدفئة بالكامل مع أداء أكثر متانة واتساقاً. تحكم WiFi ذكي يتيح للمستخدمين تشغيل المكيف عن بُعد من خارج المنزل عبر الأجهزة الذكية. حزام تسخين هيكل الوحدة الخارجية يمنع التجمد في الشتاء. شاشة الحرارة تدعم التبديل بين مئوية وفهرنهايت.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/tracecool-60hz-20seer2-r454b-heatpump"
+      ],
+      "features": [
+        { "key_en": "Efficiency & Refrigerant", "key_ar": "الكفاءة والوسيط", "value_en": "20 SEER2 with R454B eco-friendly refrigerant, ZERO technology", "value_ar": "20 SEER2 مع وسيط R454B صديق للبيئة، تقنية ZERO" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & ETL Certified", "value_ar": "معتمد من AHRI و ETL" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Gradual temperature increase then decrease back to set value for optimal overnight comfort", "value_ar": "رفع تدريجي للحرارة ثم خفض للقيمة المحددة للراحة المثالية طوال الليل" },
+        { "key_en": "Low-Temp Heating", "key_ar": "تدفئة درجات منخفضة", "value_en": "Strong heating down to -15°C via chassis heating belt and high-efficiency compressor", "value_ar": "تدفئة قوية حتى -15°C عبر حزام تسخين الهيكل وضاغط عالي الكفاءة" },
+        { "key_en": "Intelligent Defrost", "key_ar": "إذابة ثلج ذكية", "value_en": "Automatic defrost with auto-reverse to heating mode after completion", "value_ar": "إذابة تلقائية مع عودة تلقائية لوضع التدفئة بعد الاكتمال" },
+        { "key_en": "Smart WiFi Control", "key_ar": "تحكم WiFi ذكي", "value_en": "Remote control via smart devices from anywhere", "value_ar": "تحكم عن بُعد عبر الأجهزة الذكية من أي مكان" },
+        { "key_en": "ODU Chassis Belt", "key_ar": "حزام تسخين الهيكل", "value_en": "Prevents frosting/freezing of outdoor unit bottom plate in winter", "value_ar": "يمنع تجمد الصفيحة السفلية للوحدة الخارجية في الشتاء" },
+        { "key_en": "Temp Display", "key_ar": "شاشة الحرارة", "value_en": "Celsius and Fahrenheit switchable", "value_ar": "قابلة للتبديل بين مئوية وفهرنهايت" }
+      ],
+      "isActive": true,
+      "order": 38
+    },
+    {
+      "title_en": "TRACE COOL® Z-PRO 60Hz 21 SEER2 R454B Inverter Heat Pump Split AC",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL® Z-PRO بتردد 60Hz وكفاءة 21 SEER2 R454B مضخة حرارية",
+      "shortDesc_en": "Z-PRO series 21 SEER2 heat pump inverter with R454B, Gold Fin coils, emergency use function, refrigerant leak detection, full DC inverter (65Hz in 6s), wide voltage 150–270V, mute operation, and AHRI & UL certified.",
+      "shortDesc_ar": "مكيف انفرتر سلسلة Z-PRO بكفاءة 21 SEER2 مضخة حرارية مع R454B، ملفات Gold Fin، وظيفة استخدام طوارئ، كشف تسرب الوسيط، انفرتر DC كامل (65Hz خلال 6 ثوان)، نطاق جهد واسع 150–270V، تشغيل صامت، ومعتمد من AHRI و UL.",
+      "description_en": "TRACE COOL® Z-PRO series 60Hz inverter heat pump mini split air conditioner with 21 SEER2 energy efficiency rating, using R454B eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room temperature control and energy cost reduction. Features Gold Fin technology — golden hydrophilic fins on both indoor and outdoor unit coils that greatly increase heat exchange area, accelerate cooling and heating speed, and enhance anti-corrosion performance for extended durability. Emergency use function and fire-proof electric control box ensure safety in all operating conditions. Built-in refrigerant leakage detection displays error codes on the indoor unit panel for quick problem identification and convenient maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall unit performance while reducing operating noise. High-density filter delivers fresh, clean indoor air. Mute operation mode allows users to enjoy a tranquil environment. Smart WiFi control available via optional module for convenient mobile device operation. Full DC inverter compressor delivers higher efficiency and reaches 65Hz within just 6 seconds when starting, enabling rapid attainment of set cooling or heating temperatures. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions globally. The 21 SEER2 energy efficiency provides money-saving, energy-saving, low-carbon operation — especially suitable for markets with higher efficiency requirements. Dual certified with AHRI and UL certificates for full compliance with international import and safety standards.",
+      "description_ar": "مكيف سبليت صغير انفرتر TRACE COOL® سلسلة Z-PRO بتردد 60Hz وتصنيف كفاءة طاقة 21 SEER2، يستخدم وسيط R454B صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بتقنية Gold Fin — ملفات محبة للماء مطلية بالذهب على الوحدتين الداخلية والخارجية تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد والتدفئة وتعزز مقاومة التآكل لمتانة ممتدة. وظيفة الاستخدام الطارئ وصندوق التحكم الكهربائي المقاوم للحريق يضمنان السلامة. كشف تسرب وسيط التبريد المدمج يعرض رموز الخطأ على لوحة الوحدة الداخلية لتحديد المشاكل بسرعة. ريش مروحة عالية الكفاءة تحسن تبديد الحرارة والأداء مع تقليل الضوضاء. فلتر عالي الكثافة لهواء داخلي نظيف. وضع التشغيل الصامت يتيح بيئة هادئة. تحكم WiFi ذكي عبر وحدة اختيارية. ضاغط انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان. نطاق جهد واسع (150–270V) لمناطق 50Hz و 60Hz عالمياً. كفاءة 21 SEER2 توفر تشغيلاً موفراً ومنخفض الكربون. معتمد مزدوجاً من AHRI و UL.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zpro-60hz-21seer2-r454b-heatpump"
+      ],
+      "features": [
+        { "key_en": "Series", "key_ar": "السلسلة", "value_en": "Z-PRO Series", "value_ar": "سلسلة Z-PRO" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "21 SEER2 with R454B eco-friendly refrigerant", "value_ar": "21 SEER2 مع وسيط R454B صديق للبيئة" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling/heating, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد/تدفئة أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds for rapid temperature attainment", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان للوصول السريع للحرارة" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Emergency use function, fireproof electric control box", "value_ar": "وظيفة استخدام طارئ، صندوق تحكم كهربائي مقاوم للحريق" },
+        { "key_en": "Mute Operation", "key_ar": "التشغيل الصامت", "value_en": "Ultra-quiet mode for tranquil indoor environment", "value_ar": "وضع فائق الهدوء لبيئة داخلية هادئة" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & UL Dual Certified", "value_ar": "معتمد مزدوجاً من AHRI و UL" }
+      ],
+      "isActive": true,
+      "order": 39
+    },
+    {
+      "title_en": "TRACE COOL® Z-PRO 60Hz 24 SEER2 R454B Inverter Heat Pump Split AC (Multi-Split Compatible)",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL® Z-PRO بتردد 60Hz وكفاءة 24 SEER2 R454B مضخة حرارية (متوافق مع المتعدد)",
+      "shortDesc_en": "Z-PRO series 24 SEER2 heat pump inverter with R454B, multi-split compatible, Gold Fin coils, emergency use function, refrigerant leak detection, full DC inverter (65Hz in 6s), wide voltage 150–270V, mute operation, and AHRI & UL certified.",
+      "shortDesc_ar": "مكيف انفرتر سلسلة Z-PRO بكفاءة 24 SEER2 مضخة حرارية مع R454B، متوافق مع المتعدد، ملفات Gold Fin، وظيفة استخدام طوارئ، كشف تسرب الوسيط، انفرتر DC كامل (65Hz خلال 6 ثوان)، نطاق جهد واسع 150–270V، تشغيل صامت، ومعتمد من AHRI و UL.",
+      "description_en": "TRACE COOL® Z-PRO series 60Hz inverter heat pump mini split air conditioner with 24 SEER2 energy efficiency rating, using R454B eco-friendly refrigerant. Compatible with multi-split configurations in addition to standard single-zone setups. Installs a single condenser and wall-mounted unit for precise room temperature control and energy cost reduction. Features Gold Fin technology — golden hydrophilic fins on both indoor and outdoor unit coils that greatly increase heat exchange area, accelerate cooling and heating speed, and enhance anti-corrosion performance for extended durability. Emergency use function and fire-proof electric control box ensure safety across all operating conditions. Built-in refrigerant leakage detection displays error codes on the indoor unit panel for quick problem identification and convenient maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall unit performance while reducing operating noise. High-density filter delivers fresh, clean indoor air. Mute operation mode provides a tranquil environment for noise-sensitive spaces. Smart WiFi control available via optional module for convenient mobile device operation. Full DC inverter compressor delivers higher efficiency and reaches 65Hz within just 6 seconds when starting, enabling rapid attainment of set temperatures. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions globally. The 24 SEER2 efficiency rating delivers maximum money-saving, energy-saving, low-carbon operation — especially suitable for markets with stringent efficiency requirements. Dual certified with AHRI and UL certificates for full compliance with international import and safety standards.",
+      "description_ar": "مكيف سبليت صغير انفرتر TRACE COOL® سلسلة Z-PRO بتردد 60Hz وتصنيف كفاءة طاقة 24 SEER2، يستخدم وسيط R454B صديق للبيئة. متوافق مع تكوينات المتعدد بالإضافة للإعدادات القياسية أحادية المنطقة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بتقنية Gold Fin — ملفات محبة للماء مطلية بالذهب على الوحدتين تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد والتدفئة وتعزز مقاومة التآكل. وظيفة الاستخدام الطارئ وصندوق التحكم المقاوم للحريق يضمنان السلامة. كشف تسرب وسيط التبريد يعرض رموز الخطأ للتشخيص السريع. ريش مروحة عالية الكفاءة تحسن الأداء وتقلل الضوضاء. فلتر عالي الكثافة لهواء نظيف. وضع التشغيل الصامت لبيئة هادئة. تحكم WiFi ذكي عبر وحدة اختيارية. ضاغط انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان. نطاق جهد واسع (150–270V) عالمياً. كفاءة 24 SEER2 توفر أقصى توفير للمال والطاقة. معتمد مزدوجاً من AHRI و UL.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zpro-60hz-24seer2-r454b-heatpump-multisplit"
+      ],
+      "features": [
+        { "key_en": "Series", "key_ar": "السلسلة", "value_en": "Z-PRO Series (Multi-Split Compatible)", "value_ar": "سلسلة Z-PRO (متوافق مع المتعدد)" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "24 SEER2 with R454B eco-friendly refrigerant", "value_ar": "24 SEER2 مع وسيط R454B صديق للبيئة" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling/heating, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد/تدفئة أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds for rapid temperature attainment", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان للوصول السريع للحرارة" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Emergency use function, fireproof electric control box", "value_ar": "وظيفة استخدام طارئ، صندوق تحكم كهربائي مقاوم للحريق" },
+        { "key_en": "Mute Operation", "key_ar": "التشغيل الصامت", "value_en": "Ultra-quiet mode for tranquil indoor environment", "value_ar": "وضع فائق الهدوء لبيئة داخلية هادئة" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & UL Dual Certified", "value_ar": "معتمد مزدوجاً من AHRI و UL" }
+      ],
+      "isActive": true,
+      "order": 40
+    },
+    {
+      "title_en": "Z-MAX Series Multi-Zone Heat Pump Inverter Split AC",
+      "title_ar": "مكيف سبليت انفرتر مضخة حرارية متعدد المناطق سلسلة Z-MAX",
+      "shortDesc_en": "Multi-zone system connecting up to 4 indoor units to one outdoor unit, with independent room control, ultra-quiet 22dB, inner-grooved copper tubes (20–30% better conductivity), vector precision air supply, and no ductwork required.",
+      "shortDesc_ar": "نظام متعدد المناطق يربط حتى 4 وحدات داخلية بوحدة خارجية واحدة، مع تحكم مستقل بكل غرفة، هدوء فائق 22dB، أنابيب نحاسية محززة (توصيل أفضل بـ 20–30%)، توزيع هواء دقيق، وبدون حاجة لقنوات.",
+      "description_en": "Z-MAX Series multi-zone heat pump inverter split air conditioner that connects up to 4 indoor units to a single outdoor unit, providing a complete multi-zone air conditioning system with no ductwork required. Each indoor unit can be operated independently, delivering air comfort only to rooms where needed for maximum efficiency. Supports indoor units of different styles and capacities within the same system, enabling fully customized solutions unique to each residential setting. Utilizes TRACE COOL technology for superior performance, efficiency, and comfort with lower costs and environmental impact. Achieves super quiet operation at just 22dB (lowest setting), ideal for bedrooms and quiet spaces. Advanced inverter and heat pump technologies achieve greater efficiency and energy savings at lower operating costs. Flexible installation makes TRACE COOL split/multi-split systems easy to install in residences where space is limited. Features a larger air inlet and outlet with an optimized duct system that significantly increases efficiency and reduces energy consumption. Fireproof electric control box with optimized larger space for safety and functional requirements, with easy disassembly and maintenance. Inner-grooved copper tubes increase the inner wall surface area, improving thermal conductivity by 20–30% compared to smooth tubes. Safety design ensures complete separation between condensate water and electrical components. Sleep mode prevents under-cooling or over-heating during rest. Vector precision air supply offers various precise fixed angles for customized comfort in every zone.",
+      "description_ar": "مكيف سبليت انفرتر مضخة حرارية متعدد المناطق سلسلة Z-MAX يربط حتى 4 وحدات داخلية بوحدة خارجية واحدة، مما يوفر نظام تكييف متعدد المناطق كامل بدون حاجة لقنوات. كل وحدة داخلية يمكن تشغيلها بشكل مستقل لتوصيل الهواء المريح فقط للغرف المطلوبة لأقصى كفاءة. يدعم وحدات داخلية بأنماط وسعات مختلفة ضمن نفس النظام، مما يتيح حلولاً مخصصة بالكامل فريدة لكل إعداد سكني. يستخدم تقنية TRACE COOL لأداء فائق وكفاءة وراحة بتكاليف أقل وأثر بيئي أقل. يحقق تشغيلاً فائق الهدوء عند 22dB فقط (أدنى إعداد). تقنيات الانفرتر والمضخة الحرارية المتقدمة تحقق كفاءة أكبر وتوفير طاقة بتكاليف تشغيل أقل. التركيب المرن يسهل تركيب أنظمة TRACE COOL في المساكن ذات المساحات المحدودة. مدخل ومخرج هواء أكبر مع نظام مجاري محسن لكفاءة أعلى. صندوق تحكم كهربائي مقاوم للحريق بسهولة صيانة. أنابيب نحاسية محززة داخلياً بتوصيل حراري أفضل بـ 20–30%. تصميم آمن بفصل كامل بين ماء التكثيف والكهرباء. وضع النوم يمنع التبريد أو التدفئة المفرطة. توزيع هواء دقيق بزوايا ثابتة لراحة مخصصة في كل منطقة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zmax-multi-zone-heatpump-inverter"
+      ],
+      "features": [
+        { "key_en": "Multi-Zone", "key_ar": "متعدد المناطق", "value_en": "Connects up to 4 indoor units to 1 outdoor unit — no ductwork required", "value_ar": "يربط حتى 4 وحدات داخلية بوحدة خارجية واحدة — بدون حاجة لقنوات" },
+        { "key_en": "Individual Control", "key_ar": "تحكم مستقل", "value_en": "Each indoor unit operates independently — comfort only where needed", "value_ar": "كل وحدة داخلية تعمل بشكل مستقل — راحة فقط حيث تحتاج" },
+        { "key_en": "Customizable Units", "key_ar": "وحدات قابلة للتخصيص", "value_en": "Mix different indoor unit styles and capacities in one system", "value_ar": "مزج أنماط وسعات مختلفة للوحدات الداخلية في نظام واحد" },
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "Advanced inverter and heat pump technologies for maximum energy savings", "value_ar": "تقنيات انفرتر ومضخة حرارية متقدمة لأقصى توفير للطاقة" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "Flexible installation for residences with limited space", "value_ar": "تركيب مرن للمساكن ذات المساحات المحدودة" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 41
+    }
+  ]
+}

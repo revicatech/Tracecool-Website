@@ -1,0 +1,310 @@
+{
+  "category": {
+    "name_en": "Mini Split Air Conditioner",
+    "name_ar": "مكيف سبليت صغير"
+  },
+  "subcategories": [
+    {
+      "_refKey": "light_commercial",
+      "name_en": "Light Commercial Air Conditioner",
+      "name_ar": "مكيف تجاري خفيف"
+    },
+    {
+      "_refKey": "ductless_mini_split",
+      "name_en": "Ductless Mini Split",
+      "name_ar": "سبليت صغير بدون مجاري"
+    },
+    {
+      "_refKey": "window_ac",
+      "name_en": "Window AC",
+      "name_ar": "مكيف شباك"
+    },
+    {
+      "_refKey": "window_type",
+      "name_en": "Window Type",
+      "name_ar": "مكيف نوع شباك"
+    }
+  ],
+  "products": [
+    {
+      "title_en": "50Hz Inverter/On-Off R32/R410A Light Commercial AC with Universal ODU",
+      "title_ar": "مكيف تجاري خفيف 50Hz انفرتر/عادي R32/R410A مع وحدة خارجية عالمية",
+      "shortDesc_en": "TRACE COOL AHU series LCAC with a unique Universal Outdoor Unit designed for universal matching, high energy efficiency, and extended service life across multiple indoor unit types.",
+      "shortDesc_ar": "نظام TRACE COOL AHU LCAC مع وحدة خارجية عالمية فريدة مصممة للتوافق الشامل وكفاءة طاقة عالية وعمر خدمة ممتد عبر أنواع متعددة من الوحدات الداخلية.",
+      "description_en": "TRACE COOL AHU series LCAC air conditioning system offering superior performance, flexibility, and reliability for various regions and scenarios. Introduces a unique Universal Outdoor Unit (ODU) designed for universal matching, high energy efficiency, and reliability — significantly enhancing service life and reducing post-maintenance costs. Available in both inverter and on-off configurations with cooling only and heat pump modes, supporting both R32 and R410A refrigerants. Compatible with three distinct indoor unit types: the Ceiling Suspended Unit with dual installation options, customizable display panel positioning, and double-sided drainage; the Round Flow Cassette Type with wide airflow range, quiet operation, and WiFi control; and the Super Slim Duct Type with multiple air return methods, optional pumps, and WiFi operation for greater flexibility in project installation.",
+      "description_ar": "نظام تكييف TRACE COOL AHU LCAC يوفر أداءً فائقاً ومرونة وموثوقية لمختلف المناطق والسيناريوهات. يقدم وحدة خارجية عالمية (ODU) فريدة مصممة للتوافق الشامل وكفاءة الطاقة العالية والموثوقية — مما يعزز بشكل كبير عمر الخدمة ويقلل تكاليف الصيانة اللاحقة. متوفر بتكوينات انفرتر وعادي مع أوضاع تبريد فقط ومضخة حرارية، يدعم وسيطي التبريد R32 و R410A. متوافق مع ثلاثة أنواع من الوحدات الداخلية: وحدة السقف المعلقة بخيارين للتركيب وتموضع قابل للتخصيص للوحة العرض وتصريف مزدوج الجوانب؛ وحدة الكاسيت ذات التدفق الدائري بنطاق تدفق هواء واسع وتشغيل هادئ وتحكم WiFi؛ ونوع القناة فائقة النحافة بطرق متعددة لإرجاع الهواء ومضخات اختيارية وتشغيل WiFi لمرونة أكبر في التركيب.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/50hz-r32-r410a-universal-odu-lcac"
+      ],
+      "features": [
+        { "key_en": "Universal ODU", "key_ar": "وحدة خارجية عالمية", "value_en": "Universal matching design with high energy efficiency, extended service life, and reduced maintenance costs", "value_ar": "تصميم توافق شامل مع كفاءة طاقة عالية وعمر خدمة ممتد وتكاليف صيانة منخفضة" },
+        { "key_en": "Refrigerant Options", "key_ar": "خيارات وسيط التبريد", "value_en": "R32 and R410A", "value_ar": "R32 و R410A" },
+        { "key_en": "Ceiling Suspended Unit", "key_ar": "وحدة السقف المعلقة", "value_en": "Dual installation options, customizable display panel, double-sided drainage", "value_ar": "خياران للتركيب، لوحة عرض قابلة للتخصيص، تصريف مزدوج الجوانب" },
+        { "key_en": "Round Flow Cassette", "key_ar": "كاسيت تدفق دائري", "value_en": "Wide airflow range, quiet operation, WiFi control", "value_ar": "نطاق تدفق هواء واسع، تشغيل هادئ، تحكم WiFi" },
+        { "key_en": "Super Slim Duct Type", "key_ar": "قناة فائقة النحافة", "value_en": "Multiple air return methods, optional pumps, WiFi operation", "value_ar": "طرق متعددة لإرجاع الهواء، مضخات اختيارية، تشغيل WiFi" },
+        { "key_en": "Operation Modes", "key_ar": "أوضاع التشغيل", "value_en": "Inverter & On-Off, Cooling Only & Heat Pump", "value_ar": "انفرتر وعادي، تبريد فقط ومضخة حرارية" }
+      ],
+      "isActive": true,
+      "order": 13
+    },
+    {
+      "title_en": "50Hz On-Off Side Discharge Light Commercial AC",
+      "title_ar": "مكيف تجاري خفيف 50Hz عادي بتفريغ جانبي",
+      "shortDesc_en": "TRACE COOL AHU series LCAC with side discharge, twin rotary DC inverter compressor, 4-way convertible installation, and comprehensive multi-protection system.",
+      "shortDesc_ar": "نظام TRACE COOL AHU LCAC بتفريغ جانبي وضاغط انفرتر دوار مزدوج DC وتركيب رباعي الاتجاهات ونظام حماية متعدد شامل.",
+      "description_en": "TRACE COOL AHU series LCAC air conditioning system with side discharge design, delivering superior performance, flexibility, and reliability. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for optimal system performance. Features a versatile 4-way convertible design supporting vertical up airflow and horizontal right airflow for multi-position installation. Universal design makes stocking easier. Equipped with a comprehensive multi-protection system including high-pressure protection, low-pressure protection, and high exhaust temperature protection. Available with a variety of options in cooling capacity, indoor unit type, and energy efficiency level to meet diverse regional requirements.",
+      "description_ar": "نظام تكييف TRACE COOL AHU LCAC بتصميم تفريغ جانبي يوفر أداءً فائقاً ومرونة وموثوقية. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لأداء مثالي. يتميز بتصميم رباعي الاتجاهات قابل للتحويل يدعم تدفق الهواء العمودي العلوي والأفقي الأيمن للتركيب متعدد المواضع. تصميم عالمي يسهل التخزين. مجهز بنظام حماية متعدد شامل يشمل حماية الضغط العالي والضغط المنخفض ودرجة حرارة العادم المرتفعة. متوفر بخيارات متعددة في سعة التبريد ونوع الوحدة الداخلية ومستوى كفاءة الطاقة لتلبية المتطلبات الإقليمية المتنوعة.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/50hz-onoff-side-discharge-lcac"
+      ],
+      "features": [
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up airflow and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق هواء عمودي علوي وأفقي يمين" },
+        { "key_en": "Discharge Type", "key_ar": "نوع التفريغ", "value_en": "Side Discharge", "value_ar": "تفريغ جانبي" },
+        { "key_en": "Protection System", "key_ar": "نظام الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" },
+        { "key_en": "Design", "key_ar": "التصميم", "value_en": "Universal design for easier stocking and flexible deployment", "value_ar": "تصميم عالمي لسهولة التخزين والنشر المرن" }
+      ],
+      "isActive": true,
+      "order": 14
+    },
+    {
+      "title_en": "60Hz 17 SEER2 R32 Cooling Only & Heat Pump Inverter Split AC",
+      "title_ar": "مكيف سبليت انفرتر 60Hz بكفاءة 17 SEER2 R32 تبريد ومضخة حرارية",
+      "shortDesc_en": "Z-MAX US R32 series split AC with AHRI & ETL certification, advanced sleep mode with gradual temperature adjustment, low-temperature heating down to -15°C, and intelligent defrost technology.",
+      "shortDesc_ar": "مكيف سبليت سلسلة Z-MAX US R32 بشهادات AHRI و ETL، وضع نوم متقدم مع تعديل تدريجي للحرارة، تدفئة في درجات منخفضة حتى -15°C، وتقنية إذابة ثلج ذكية.",
+      "description_en": "Z-MAX US R32 series split air conditioning system offering superior performance, convenience, and comfort in stylish designs that conform to all interior spaces and lifestyles. Uses R32 environmentally friendly refrigerant with AHRI and ETL certifications, utilizing TRACE COOL technology for lower costs and environmental impact. Features an advanced sleep mode that gradually increases temperature through the middle of the night, then slowly decreases back to the initial set value, maintaining optimal comfort throughout sleep. Capable of strong heating in low ambient temperatures down to -15°C using a chassis heating belt and highly efficient compressor. Intelligent defrost system automatically reverses to heating operation after defrosting is complete, ensuring continuous and durable heating performance. Smart WiFi control allows users to operate the air conditioner remotely via smart devices. Outdoor unit chassis heating belt prevents frosting or freezing of the bottom plate in winter. Temperature display supports both Celsius and Fahrenheit switching.",
+      "description_ar": "نظام تكييف سبليت سلسلة Z-MAX US R32 يوفر أداءً فائقاً وراحة وملاءمة في تصاميم أنيقة تتوافق مع جميع المساحات الداخلية وأنماط الحياة. يستخدم وسيط تبريد R32 الصديق للبيئة مع شهادات AHRI و ETL، بتقنية TRACE COOL لتكاليف أقل وأثر بيئي أقل. يتميز بوضع نوم متقدم يرفع الحرارة تدريجياً خلال منتصف الليل ثم يخفضها ببطء إلى القيمة المحددة الأولية، مما يحافظ على الراحة المثالية طوال النوم. قادر على التدفئة القوية في درجات حرارة محيطة منخفضة تصل إلى -15°C باستخدام حزام تسخين الهيكل وضاغط عالي الكفاءة. نظام إذابة ثلج ذكي يعود تلقائياً لوضع التدفئة بعد اكتمال الإذابة، مما يضمن أداء تدفئة مستمر ومتين. تحكم WiFi ذكي يتيح للمستخدمين تشغيل المكيف عن بُعد عبر الأجهزة الذكية. حزام تسخين هيكل الوحدة الخارجية يمنع التجمد في الشتاء. شاشة الحرارة تدعم التبديل بين مئوية وفهرنهايت.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-17seer2-r32-inverter-split"
+      ],
+      "features": [
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & ETL Certified", "value_ar": "معتمد من AHRI و ETL" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Gradual temperature increase then decrease back to set value for optimal overnight comfort", "value_ar": "رفع تدريجي للحرارة ثم خفض للقيمة المحددة للراحة المثالية طوال الليل" },
+        { "key_en": "Low-Temp Heating", "key_ar": "تدفئة درجات منخفضة", "value_en": "Strong heating down to -15°C via chassis heating belt and high-efficiency compressor", "value_ar": "تدفئة قوية حتى -15°C عبر حزام تسخين الهيكل وضاغط عالي الكفاءة" },
+        { "key_en": "Intelligent Defrost", "key_ar": "إذابة ثلج ذكية", "value_en": "Automatic defrost with auto-reverse to heating mode after completion", "value_ar": "إذابة تلقائية مع عودة تلقائية لوضع التدفئة بعد الاكتمال" },
+        { "key_en": "Smart WiFi Control", "key_ar": "تحكم WiFi ذكي", "value_en": "Remote control via smart devices", "value_ar": "تحكم عن بُعد عبر الأجهزة الذكية" },
+        { "key_en": "ODU Chassis Belt", "key_ar": "حزام تسخين الهيكل", "value_en": "Prevents frosting/freezing of outdoor unit bottom plate in winter", "value_ar": "يمنع تجمد الصفيحة السفلية للوحدة الخارجية في الشتاء" },
+        { "key_en": "Temp Display", "key_ar": "شاشة الحرارة", "value_en": "Celsius and Fahrenheit switchable", "value_ar": "قابلة للتبديل بين مئوية وفهرنهايت" }
+      ],
+      "isActive": true,
+      "order": 15
+    },
+    {
+      "title_en": "60Hz 24 SEER2 R454B Hyper Heat Inverter Split AC – Gold Fin Series",
+      "title_ar": "مكيف سبليت انفرتر 60Hz بكفاءة 24 SEER2 R454B مضخة حرارية فائقة – سلسلة Gold Fin",
+      "shortDesc_en": "High-efficiency 24 SEER2 hyper heat pump split AC with R454B eco-friendly refrigerant, Gold Fin coils, refrigerant leak detection, full DC inverter reaching 65Hz in 6 seconds, and wide voltage operation (150–270V).",
+      "shortDesc_ar": "مكيف سبليت مضخة حرارية فائقة بكفاءة 24 SEER2 مع وسيط R454B صديق للبيئة وملفات Gold Fin وكشف تسرب الوسيط وانفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان ونطاق جهد واسع (150–270V).",
+      "description_en": "60Hz 24 SEER2 hyper heat pump inverter mini split air conditioner with R454B eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room-by-room temperature control and reduced energy costs. Features a fireproof electric control box optimized with larger space for safety and easy disassembly. Gold Fin hydrophilic coils on both indoor and outdoor units greatly increase heat exchange area, accelerate cooling and heating speed, and enhance anti-corrosion performance. Built-in refrigerant leakage detection displays error codes on the indoor panel for quick diagnosis and maintenance. High-efficiency fan blades improve heat dissipation and reduce operating noise. Smart WiFi control available via optional module for mobile device operation. Full DC inverter compressor reaches 65Hz within just 6 seconds for rapid temperature response. Wide-range voltage operation (150–270V) covers all single-phase scenarios for both 50Hz and 60Hz regions. AHRI certified with higher energy efficiency for markets requiring certification compliance.",
+      "description_ar": "مكيف سبليت صغير انفرتر مضخة حرارية فائقة بتردد 60Hz وكفاءة 24 SEER2 مع وسيط تبريد R454B صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة غرفة بغرفة وتقليل تكاليف الطاقة. يتميز بصندوق تحكم كهربائي مقاوم للحريق بمساحة أكبر للسلامة وسهولة الفك. ملفات Gold Fin محبة للماء على الوحدتين الداخلية والخارجية تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد والتدفئة وتعزز مقاومة التآكل. كشف تسرب وسيط التبريد المدمج يعرض رموز الخطأ على لوحة الوحدة الداخلية للتشخيص والصيانة السريعة. ريش مروحة عالية الكفاءة تحسن تبديد الحرارة وتقلل ضوضاء التشغيل. تحكم WiFi ذكي متاح عبر وحدة اختيارية لتشغيل الجهاز من الأجهزة المحمولة. ضاغط انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان فقط لاستجابة حرارية سريعة. نطاق جهد واسع (150–270V) يغطي جميع سيناريوهات الطور الواحد لمناطق 50Hz و 60Hz. معتمد من AHRI بكفاءة طاقة عالية للأسواق التي تتطلب شهادات الامتثال.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-24seer2-r454b-hyper-heat-goldfin"
+      ],
+      "features": [
+        { "key_en": "Efficiency & Refrigerant", "key_ar": "الكفاءة والوسيط", "value_en": "24 SEER2 with R454B eco-friendly refrigerant", "value_ar": "24 SEER2 مع وسيط R454B صديق للبيئة" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor and outdoor units — increased heat exchange, faster cooling/heating, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد/تدفئة أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان" },
+        { "key_en": "Fan Blades", "key_ar": "ريش المروحة", "value_en": "High-efficiency blades for improved heat dissipation and reduced noise", "value_ar": "ريش عالية الكفاءة لتبديد حرارة أفضل وضوضاء أقل" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range operation for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Fireproof electric control box, easy disassembly and maintenance", "value_ar": "صندوق تحكم كهربائي مقاوم للحريق، سهل الفك والصيانة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified", "value_ar": "معتمد من AHRI" }
+      ],
+      "isActive": true,
+      "order": 16
+    },
+    {
+      "title_en": "60Hz 24 SEER2 R454B Hyper Heat Inverter Split AC – Smart Clean Series",
+      "title_ar": "مكيف سبليت انفرتر 60Hz بكفاءة 24 SEER2 R454B مضخة حرارية فائقة – سلسلة التنظيف الذكي",
+      "shortDesc_en": "24 SEER2 hyper heat pump split AC with R454B, extreme weather operation, self-cleaning sterilization at 133°F, deep easy-clean air channel, and Alexa/Google voice control.",
+      "shortDesc_ar": "مكيف سبليت مضخة حرارية فائقة بكفاءة 24 SEER2 مع R454B، تشغيل في طقس متطرف، تعقيم تنظيف ذاتي عند 133°F، قناة هواء سهلة التنظيف العميق، وتحكم صوتي عبر Alexa وGoogle.",
+      "description_en": "60Hz 24 SEER2 hyper heat pump inverter mini split with R454B environmentally friendly refrigerant, AHRI and ETL certified. Delivers superior performance, efficiency, and comfort in stylish designs utilizing TRACE COOL technology for lower costs and environmental impact. Designed for extreme weather operation with heating and cooling across a wide ambient temperature range. Features a top-opened dust filter integrated with high-density filtration, with optional multiple healthy filter combinations for effective room air filtering. Includes high-temperature self-cleaning and sterilization process: frosting, defrosting, high-temperature drying, followed by 133°F sterilization for thorough indoor unit cleaning. Deep easy-clean design allows the bottom plate, louver, and vanes to be disassembled and reassembled within 20 seconds for easy duct system cleaning, including wiping the cross fan when powered off. USB-WiFi control with Alexa and Google Dot integration enables voice command operation and remote control via cloud data analysis and smart devices.",
+      "description_ar": "مكيف سبليت صغير انفرتر مضخة حرارية فائقة بتردد 60Hz وكفاءة 24 SEER2 مع وسيط تبريد R454B صديق للبيئة، معتمد من AHRI و ETL. يوفر أداءً فائقاً وكفاءة وراحة في تصاميم أنيقة بتقنية TRACE COOL لتكاليف أقل وأثر بيئي أقل. مصمم للعمل في طقس متطرف مع تدفئة وتبريد عبر نطاق واسع من درجات الحرارة المحيطة. يتميز بفلتر غبار مفتوح من الأعلى مدمج مع فلترة عالية الكثافة، مع خيارات متعددة لمجموعات فلاتر صحية للتصفية الفعالة لهواء الغرفة. يشمل عملية تنظيف ذاتي وتعقيم بالحرارة العالية: تجميد ثم إذابة ثم تجفيف بالحرارة العالية ثم تعقيم عند 133°F لتنظيف شامل للوحدة الداخلية. تصميم التنظيف العميق السهل يتيح فك وتركيب الصفيحة السفلية والستائر والشفرات خلال 20 ثانية لتنظيف سهل لنظام المجاري، بما في ذلك مسح المروحة المتقاطعة عند إيقاف التشغيل. تحكم USB-WiFi مع تكامل Alexa و Google Dot يتيح التشغيل بالأوامر الصوتية والتحكم عن بُعد عبر تحليل البيانات السحابية والأجهزة الذكية.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-24seer2-r454b-hyper-heat-smart-clean"
+      ],
+      "features": [
+        { "key_en": "Efficiency & Refrigerant", "key_ar": "الكفاءة والوسيط", "value_en": "24 SEER2 with R454B eco-friendly refrigerant, AHRI & ETL certified", "value_ar": "24 SEER2 مع وسيط R454B صديق للبيئة، معتمد من AHRI و ETL" },
+        { "key_en": "Extreme Weather", "key_ar": "طقس متطرف", "value_en": "Heating and cooling across wide ambient temperature range", "value_ar": "تدفئة وتبريد عبر نطاق واسع من درجات الحرارة المحيطة" },
+        { "key_en": "Top-Opened Dust Filter", "key_ar": "فلتر غبار مفتوح من الأعلى", "value_en": "High-density integrated filter with optional multiple healthy filter combinations", "value_ar": "فلتر مدمج عالي الكثافة مع خيارات مجموعات فلاتر صحية متعددة" },
+        { "key_en": "Self-Cleaning & Sterilization", "key_ar": "تنظيف ذاتي وتعقيم", "value_en": "Frosting → Defrosting → High-Temp Drying → 133°F Sterilization", "value_ar": "تجميد ← إذابة ← تجفيف بحرارة عالية ← تعقيم عند 133°F" },
+        { "key_en": "Deep Easy Clean", "key_ar": "تنظيف عميق سهل", "value_en": "Bottom plate, louver & vanes disassemble/reassemble within 20 seconds for duct cleaning", "value_ar": "الصفيحة السفلية والستائر والشفرات تُفك وتُركب خلال 20 ثانية لتنظيف المجاري" },
+        { "key_en": "Voice & Smart Control", "key_ar": "تحكم صوتي وذكي", "value_en": "USB-WiFi with Alexa and Google Dot voice commands, cloud-based remote control", "value_ar": "USB-WiFi مع أوامر صوتية Alexa و Google Dot، تحكم عن بُعد سحابي" }
+      ],
+      "isActive": true,
+      "order": 17
+    },
+    {
+      "title_en": "60Hz Cooling Only Inverter Split AC",
+      "title_ar": "مكيف سبليت انفرتر 60Hz للتبريد فقط",
+      "shortDesc_en": "Ultra-quiet 22dB cooling-only inverter mini split with fireproof control box, inner-grooved copper tubes (20–30% better conductivity), vector precision air supply, and safety-separated condensate drainage.",
+      "shortDesc_ar": "مكيف سبليت صغير انفرتر للتبريد فقط فائق الهدوء 22dB مع صندوق تحكم مقاوم للحريق وأنابيب نحاسية محززة (توصيل أفضل بـ 20–30%) وتوزيع هواء دقيق وتصريف مكثفات منفصل للسلامة.",
+      "description_en": "60Hz cooling-only inverter mini split air conditioner for single-room temperature control with reduced energy costs. Achieves super quiet operation at just 22dB (lowest setting). Features a larger air inlet and outlet with optimized duct system for significantly increased efficiency and energy savings. Fireproof electric control box with larger optimized space for safety and functional requirements, with easy disassembly and maintenance. Inner-grooved copper tubes increase the inner wall surface area, improving thermal conductivity by 20–30% compared to smooth tubes. Safety design ensures complete separation between condensate water and electrical components. Sleep mode prevents under-cooling or over-heating during rest. Vector precision air supply offers various precise fixed angles for customized comfort.",
+      "description_ar": "مكيف سبليت صغير انفرتر بتردد 60Hz للتبريد فقط للتحكم بدرجة حرارة الغرفة الواحدة مع تقليل تكاليف الطاقة. يحقق تشغيلاً فائق الهدوء عند 22dB فقط (أدنى إعداد). يتميز بمدخل ومخرج هواء أكبر مع نظام مجاري محسن لزيادة الكفاءة وتوفير الطاقة بشكل كبير. صندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة أكبر للسلامة والمتطلبات الوظيفية، مع سهولة الفك والصيانة. أنابيب نحاسية محززة داخلياً تزيد مساحة الجدار الداخلي وتحسن التوصيل الحراري بنسبة 20–30% مقارنة بالأنابيب الملساء. تصميم آمن يضمن الفصل الكامل بين ماء التكثيف والمكونات الكهربائية. وضع النوم يمنع التبريد أو التدفئة المفرطة أثناء الراحة. توزيع هواء دقيق بزوايا ثابتة متنوعة لراحة مخصصة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-cooling-only-inverter-split"
+      ],
+      "features": [
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "Larger air inlet/outlet with optimized duct system for increased efficiency and energy savings", "value_ar": "مدخل/مخرج هواء أكبر مع نظام مجاري محسن لكفاءة وتوفير طاقة أكبر" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 18
+    },
+    {
+      "title_en": "60Hz Cooling Only On-Off R32 Window AC",
+      "title_ar": "مكيف شباك 60Hz تبريد فقط عادي R32",
+      "shortDesc_en": "Compact window air conditioner with R32 eco-friendly refrigerant, electronic LED controls, 4-in-1 design (cooling/drying/auto/fan), dual voltage (115V/220V), sleep & ECO modes, and optional WiFi.",
+      "shortDesc_ar": "مكيف شباك مدمج مع وسيط R32 صديق للبيئة، تحكم إلكتروني LED، تصميم 4 في 1 (تبريد/تجفيف/تلقائي/مروحة)، جهد مزدوج (115V/220V)، أوضاع نوم واقتصاد، و WiFi اختياري.",
+      "description_en": "Window air conditioner with simple structure, low production cost, affordable pricing, and reliable operation — the earliest and most proven cabinet air conditioning form factor. Easy screw-free installation simplifies setup. Low-noise design offers a quiet and efficient user experience. Features electronic controls with LED display for intuitive monitoring, remote controller with batteries for convenient operation from anywhere, and an easily accessible washable filter with filter check reminder for maintained air quality. Offers 3 fan speeds and 4-way air direction for flexible comfort. 4-in-1 design combines cooling, drying, auto, and fan modes in one unit. Auto-restart preserves settings after power interruption with a 24-hour programmable timer. Sleep and ECO modes maintain comfortable temperature during rest while saving energy. Supports dual voltage (115V/60Hz and 220V/60Hz) for different regional power standards. Uses R32 environmentally friendly refrigerant. Available with ISTA 1A or 6A international standard packaging for safe transportation. Window installation kit included. Optional WiFi connectivity for smart device remote control. Packaging available in 4-color litho or kraft brown box options.",
+      "description_ar": "مكيف شباك بهيكل بسيط وتكلفة إنتاج منخفضة وسعر مناسب وتشغيل موثوق — أقدم وأكثر أشكال التكييف الخزائنية إثباتاً. تركيب سهل بدون مسامير يبسط الإعداد. تصميم منخفض الضوضاء يوفر تجربة هادئة وفعالة. يتميز بتحكم إلكتروني مع شاشة LED للمراقبة البديهية، ريموت مع بطاريات للتشغيل المريح من أي مكان، وفلتر قابل للغسل سهل الوصول مع تذكير فحص الفلتر للحفاظ على جودة الهواء. يوفر 3 سرعات مروحة و4 اتجاهات هواء لراحة مرنة. تصميم 4 في 1 يجمع أوضاع التبريد والتجفيف والتلقائي والمروحة في وحدة واحدة. إعادة تشغيل تلقائية تحفظ الإعدادات بعد انقطاع الكهرباء مع مؤقت قابل للبرمجة لمدة 24 ساعة. أوضاع النوم والاقتصاد تحافظ على حرارة مريحة أثناء الراحة مع توفير الطاقة. يدعم جهد مزدوج (115V/60Hz و 220V/60Hz) لمعايير الطاقة الإقليمية المختلفة. يستخدم وسيط تبريد R32 صديق للبيئة. متوفر بتغليف معياري دولي ISTA 1A أو 6A للنقل الآمن. طقم تركيب شباك مرفق. اتصال WiFi اختياري للتحكم عن بُعد من الأجهزة الذكية. تغليف متوفر بخيارات صندوق ليثو 4 ألوان أو بني كرافت.",
+      "subcategory_ref": "window_ac",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-r32-cooling-only-window-ac"
+      ],
+      "features": [
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "Screw-free easy installation with window kit included", "value_ar": "تركيب سهل بدون مسامير مع طقم شباك مرفق" },
+        { "key_en": "Controls", "key_ar": "التحكم", "value_en": "Electronic LED display with remote controller and batteries", "value_ar": "شاشة LED إلكترونية مع ريموت وبطاريات" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "4-in-1: Cooling, Drying, Auto, Fan — plus Sleep & ECO modes", "value_ar": "4 في 1: تبريد، تجفيف، تلقائي، مروحة — بالإضافة لأوضاع النوم والاقتصاد" },
+        { "key_en": "Fan & Airflow", "key_ar": "المروحة والتدفق", "value_en": "3 speeds with 4-way air direction", "value_ar": "3 سرعات مع 4 اتجاهات هواء" },
+        { "key_en": "Voltage", "key_ar": "الجهد", "value_en": "Dual voltage: 115V/60Hz and 220V/60Hz", "value_ar": "جهد مزدوج: 115V/60Hz و 220V/60Hz" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Filter", "key_ar": "الفلتر", "value_en": "Washable filter with filter check reminder", "value_ar": "فلتر قابل للغسل مع تذكير فحص الفلتر" },
+        { "key_en": "Auto-Restart & Timer", "key_ar": "إعادة تشغيل ومؤقت", "value_en": "Auto-restart with 24-hour programmable timer", "value_ar": "إعادة تشغيل تلقائية مع مؤقت قابل للبرمجة 24 ساعة" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi connectivity (optional)", "value_ar": "اتصال WiFi (اختياري)" },
+        { "key_en": "Packaging", "key_ar": "التغليف", "value_en": "ISTA 1A/6A international standard; 4-color litho or kraft brown box", "value_ar": "معيار دولي ISTA 1A/6A؛ صندوق ليثو 4 ألوان أو بني كرافت" }
+      ],
+      "isActive": true,
+      "order": 19
+    },
+    {
+      "title_en": "60Hz Cooling Only On-Off Split AC",
+      "title_ar": "مكيف سبليت عادي 60Hz للتبريد فقط",
+      "shortDesc_en": "On-off cooling-only mini split with Gold Fin coils, refrigerant leak detection, full DC inverter compressor (65Hz in 6s), wide voltage 150–270V, and AHRI certified.",
+      "shortDesc_ar": "مكيف سبليت عادي للتبريد فقط مع ملفات Gold Fin وكشف تسرب الوسيط وضاغط انفرتر DC كامل (65Hz خلال 6 ثوان) ونطاق جهد واسع 150–270V ومعتمد من AHRI.",
+      "description_en": "60Hz cooling-only on-off mini split air conditioner for single-room installation with precise temperature control and reduced energy costs. Features a fireproof electric control box optimized for safety with easy disassembly and maintenance. Gold Fin hydrophilic coils on both indoor and outdoor units significantly increase heat exchange area, accelerate cooling speed, and enhance anti-corrosion performance. Built-in refrigerant leakage detection with error code display on indoor unit panel for quick problem identification and maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall unit performance while reducing operating noise. Smart WiFi control available via optional module for convenient mobile device operation. Full DC inverter compressor delivers higher efficiency and reaches 65Hz within just 6 seconds for rapid temperature attainment. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions. Higher energy efficiency ratings deliver money-saving, energy-saving, low-carbon operation. AHRI certified for compliance with international import requirements.",
+      "description_ar": "مكيف سبليت صغير عادي بتردد 60Hz للتبريد فقط لتركيب الغرفة الواحدة مع تحكم دقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بصندوق تحكم كهربائي مقاوم للحريق محسن للسلامة مع سهولة الفك والصيانة. ملفات Gold Fin محبة للماء على الوحدتين الداخلية والخارجية تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد وتعزز مقاومة التآكل. كشف تسرب وسيط التبريد المدمج مع عرض رمز الخطأ على لوحة الوحدة الداخلية لتحديد المشاكل بسرعة وجدولة الصيانة. ريش مروحة عالية الكفاءة تحسن كفاءة تبديد الحرارة والأداء العام مع تقليل ضوضاء التشغيل. تحكم WiFi ذكي متاح عبر وحدة اختيارية للتشغيل المريح من الأجهزة المحمولة. ضاغط انفرتر DC كامل يوفر كفاءة أعلى ويصل لـ 65Hz خلال 6 ثوان فقط للوصول السريع للحرارة المطلوبة. نطاق جهد واسع (150–270V) يغطي جميع سيناريوهات الطور الواحد لمناطق 50Hz و 60Hz. تصنيفات كفاءة طاقة أعلى توفر تشغيلاً موفراً للمال والطاقة ومنخفض الكربون. معتمد من AHRI للامتثال لمتطلبات الاستيراد الدولية.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-cooling-only-onoff-split"
+      ],
+      "features": [
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان" },
+        { "key_en": "Fan Blades", "key_ar": "ريش المروحة", "value_en": "High-efficiency blades for improved heat dissipation and reduced noise", "value_ar": "ريش عالية الكفاءة لتبديد حرارة أفضل وضوضاء أقل" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Fireproof electric control box, easy disassembly", "value_ar": "صندوق تحكم كهربائي مقاوم للحريق، سهل الفك" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified for international compliance", "value_ar": "معتمد من AHRI للامتثال الدولي" }
+      ],
+      "isActive": true,
+      "order": 20
+    },
+    {
+      "title_en": "60Hz Cooling Only Window AC",
+      "title_ar": "مكيف شباك 60Hz للتبريد فقط",
+      "shortDesc_en": "Compact window air conditioner with electronic LED controls, 4-in-1 design, 3 fan speeds, dual voltage (115V/220V), sleep & ECO modes, auto-restart, and optional WiFi.",
+      "shortDesc_ar": "مكيف شباك مدمج مع تحكم إلكتروني LED، تصميم 4 في 1، 3 سرعات مروحة، جهد مزدوج (115V/220V)، أوضاع نوم واقتصاد، إعادة تشغيل تلقائية، و WiFi اختياري.",
+      "description_en": "Window air conditioner — the earliest and most proven cabinet AC form factor — with simple structure, low production cost, affordable pricing, convenience, and reliable operation. Easy screw-free installation simplifies setup. Low-noise design for a comfortable and efficient user experience. Features electronic controls with LED display for intuitive monitoring and a remote controller with batteries for convenient anywhere-in-room operation. Easily accessible washable filter with filter check reminder ensures clean air and simple maintenance. Offers 3 fan speeds and 4-way air direction for flexible airflow. 4-in-1 design combines cooling, drying, auto, and fan modes in a single unit. Auto-restart preserves previous settings after power interruption with a 24-hour programmable timer for scheduled operation. Sleep and ECO modes maintain comfortable temperature during rest while conserving energy. Includes a filter check reminder for timely maintenance. Window installation kit included for straightforward setup. Supports dual voltage (115V/60Hz and 220V/60Hz) for different regional power standards. Multiple packaging options available in 4-color litho or kraft brown box. Uses R32 environmentally friendly refrigerant. Available with ISTA 1A or 6A international standard packaging for transportation safety. Optional WiFi connectivity for smart device remote control.",
+      "description_ar": "مكيف شباك — أقدم وأكثر أشكال التكييف الخزائنية إثباتاً — بهيكل بسيط وتكلفة إنتاج منخفضة وسعر مناسب وسهولة وتشغيل موثوق. تركيب سهل بدون مسامير يبسط الإعداد. تصميم منخفض الضوضاء لتجربة مريحة وفعالة. يتميز بتحكم إلكتروني مع شاشة LED للمراقبة البديهية وريموت مع بطاريات للتشغيل المريح من أي مكان في الغرفة. فلتر قابل للغسل سهل الوصول مع تذكير فحص الفلتر يضمن هواءً نظيفاً وصيانة بسيطة. يوفر 3 سرعات مروحة و4 اتجاهات هواء لتدفق مرن. تصميم 4 في 1 يجمع أوضاع التبريد والتجفيف والتلقائي والمروحة في وحدة واحدة. إعادة تشغيل تلقائية تحفظ الإعدادات السابقة بعد انقطاع الكهرباء مع مؤقت قابل للبرمجة 24 ساعة للتشغيل المجدول. أوضاع النوم والاقتصاد تحافظ على حرارة مريحة أثناء الراحة مع الحفاظ على الطاقة. تذكير فحص الفلتر للصيانة في الوقت المناسب. طقم تركيب شباك مرفق. يدعم جهد مزدوج (115V/60Hz و 220V/60Hz). خيارات تغليف متعددة. يستخدم وسيط R32 صديق للبيئة. تغليف معياري دولي ISTA 1A أو 6A. اتصال WiFi اختياري.",
+      "subcategory_ref": "window_type",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-cooling-only-window-type"
+      ],
+      "features": [
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "Screw-free easy installation with window kit included", "value_ar": "تركيب سهل بدون مسامير مع طقم شباك مرفق" },
+        { "key_en": "Controls", "key_ar": "التحكم", "value_en": "Electronic LED display with remote controller and batteries", "value_ar": "شاشة LED إلكترونية مع ريموت وبطاريات" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "4-in-1: Cooling, Drying, Auto, Fan — plus Sleep & ECO modes", "value_ar": "4 في 1: تبريد، تجفيف، تلقائي، مروحة — بالإضافة لأوضاع النوم والاقتصاد" },
+        { "key_en": "Fan & Airflow", "key_ar": "المروحة والتدفق", "value_en": "3 speeds with 4-way air direction", "value_ar": "3 سرعات مع 4 اتجاهات هواء" },
+        { "key_en": "Voltage", "key_ar": "الجهد", "value_en": "Dual voltage: 115V/60Hz and 220V/60Hz", "value_ar": "جهد مزدوج: 115V/60Hz و 220V/60Hz" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Filter", "key_ar": "الفلتر", "value_en": "Washable filter with filter check reminder", "value_ar": "فلتر قابل للغسل مع تذكير فحص الفلتر" },
+        { "key_en": "Auto-Restart & Timer", "key_ar": "إعادة تشغيل ومؤقت", "value_en": "Auto-restart with 24-hour programmable timer", "value_ar": "إعادة تشغيل تلقائية مع مؤقت قابل للبرمجة 24 ساعة" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi connectivity (optional)", "value_ar": "اتصال WiFi (اختياري)" },
+        { "key_en": "Packaging", "key_ar": "التغليف", "value_en": "ISTA 1A/6A international standard; 4-color litho or kraft brown box", "value_ar": "معيار دولي ISTA 1A/6A؛ صندوق ليثو 4 ألوان أو بني كرافت" }
+      ],
+      "isActive": true,
+      "order": 21
+    },
+    {
+      "title_en": "60Hz Inverter Side Discharge Light Commercial AC",
+      "title_ar": "مكيف تجاري خفيف 60Hz انفرتر بتفريغ جانبي",
+      "shortDesc_en": "TRACE COOL AHU series LCAC with 60Hz inverter side discharge, twin rotary DC compressor, 4-way convertible installation, and multi-protection system.",
+      "shortDesc_ar": "نظام TRACE COOL AHU LCAC بتردد 60Hz انفرتر بتفريغ جانبي وضاغط دوار مزدوج DC وتركيب رباعي الاتجاهات ونظام حماية متعدد.",
+      "description_en": "TRACE COOL AHU series LCAC air conditioning system with 60Hz inverter technology and side discharge design, delivering superior performance, flexibility, and reliability. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for optimal system operation. Features a versatile 4-way convertible design supporting vertical up airflow and horizontal right airflow for multi-position installation flexibility. Universal design simplifies stocking. Equipped with a comprehensive multi-protection system including high-pressure protection, low-pressure protection, and high exhaust temperature protection. Offers a variety of options in cooling capacity, indoor unit type, and energy efficiency level to meet diverse regional and scenario requirements.",
+      "description_ar": "نظام تكييف TRACE COOL AHU LCAC بتقنية انفرتر 60Hz وتصميم تفريغ جانبي يوفر أداءً فائقاً ومرونة وموثوقية. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لتشغيل مثالي. يتميز بتصميم رباعي الاتجاهات قابل للتحويل يدعم تدفق الهواء العمودي العلوي والأفقي الأيمن لمرونة التركيب متعدد المواضع. تصميم عالمي يبسط التخزين. مجهز بنظام حماية متعدد شامل يشمل حماية الضغط العالي والضغط المنخفض ودرجة حرارة العادم المرتفعة. يوفر خيارات متعددة في سعة التبريد ونوع الوحدة الداخلية ومستوى كفاءة الطاقة لتلبية المتطلبات الإقليمية المتنوعة.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-inverter-side-discharge-lcac"
+      ],
+      "features": [
+        { "key_en": "Frequency", "key_ar": "التردد", "value_en": "60Hz Inverter", "value_ar": "60Hz انفرتر" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up airflow and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق هواء عمودي علوي وأفقي يمين" },
+        { "key_en": "Discharge Type", "key_ar": "نوع التفريغ", "value_en": "Side Discharge", "value_ar": "تفريغ جانبي" },
+        { "key_en": "Protection System", "key_ar": "نظام الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 22
+    },
+    {
+      "title_en": "60Hz On-Off & Inverter Cooling Only Split AC",
+      "title_ar": "مكيف سبليت 60Hz عادي وانفرتر للتبريد فقط",
+      "shortDesc_en": "Ultra-quiet 22dB cooling-only split AC available in on-off and inverter configurations, with inner-grooved copper tubes (20–30% better conductivity), fireproof control box, vector precision air supply, and sleep mode.",
+      "shortDesc_ar": "مكيف سبليت فائق الهدوء 22dB للتبريد فقط متوفر بتكوينات عادي وانفرتر، مع أنابيب نحاسية محززة (توصيل أفضل بـ 20–30%)، صندوق تحكم مقاوم للحريق، توزيع هواء دقيق، ووضع نوم.",
+      "description_en": "60Hz cooling-only split air conditioner available in both on-off and inverter configurations, designed for single-room installation to provide precise temperature control and reduce energy costs. Achieves super quiet operation at just 22dB (lowest setting). Features a larger air inlet and outlet with an optimized duct system that significantly increases efficiency and reduces energy consumption. Fireproof electric control box with optimized larger space for safety and functional requirements, featuring easy disassembly and maintenance. Inner-grooved copper tubes increase the inner copper wall surface area, improving thermal conductivity by 20–30% compared to smooth tubes. Safety design ensures complete separation between condensate water and electrical components with no connection between them. Sleep mode prevents under-cooling or over-heating during rest for comfortable overnight use. Vector precision air supply offers various precise fixed angles of air delivery for customized comfort choices.",
+      "description_ar": "مكيف سبليت بتردد 60Hz للتبريد فقط متوفر بتكوينات عادي وانفرتر، مصمم لتركيب الغرفة الواحدة لتوفير تحكم دقيق بالحرارة وتقليل تكاليف الطاقة. يحقق تشغيلاً فائق الهدوء عند 22dB فقط (أدنى إعداد). يتميز بمدخل ومخرج هواء أكبر مع نظام مجاري محسن يزيد الكفاءة بشكل كبير ويقلل استهلاك الطاقة. صندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة أكبر للسلامة والمتطلبات الوظيفية، مع سهولة الفك والصيانة. أنابيب نحاسية محززة داخلياً تزيد مساحة الجدار النحاسي الداخلي وتحسن التوصيل الحراري بنسبة 20–30% مقارنة بالأنابيب الملساء. تصميم آمن يضمن الفصل الكامل بين ماء التكثيف والمكونات الكهربائية. وضع النوم يمنع التبريد أو التدفئة المفرطة أثناء الراحة. توزيع هواء دقيق بزوايا ثابتة متنوعة لخيارات راحة مخصصة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-onoff-inverter-cooling-only-split"
+      ],
+      "features": [
+        { "key_en": "Configurations", "key_ar": "التكوينات", "value_en": "Available in both On-Off and Inverter", "value_ar": "متوفر بتكوينات عادي وانفرتر" },
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "Larger air inlet/outlet with optimized duct system for increased efficiency and energy savings", "value_ar": "مدخل/مخرج هواء أكبر مع نظام مجاري محسن لكفاءة وتوفير طاقة أكبر" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 23
+    },
+    {
+      "title_en": "60Hz R410A Inverter Cooling Only & Heat Pump Split AC",
+      "title_ar": "مكيف سبليت انفرتر 60Hz R410A تبريد ومضخة حرارية",
+      "shortDesc_en": "TRACE COOL technology inverter split AC with R410A, ultra-quiet 22dB operation, inner-grooved copper tubes (20–30% better conductivity), fireproof control box, vector precision air supply, and safety-separated condensate drainage.",
+      "shortDesc_ar": "مكيف سبليت انفرتر بتقنية TRACE COOL مع R410A، تشغيل فائق الهدوء 22dB، أنابيب نحاسية محززة (توصيل أفضل بـ 20–30%)، صندوق تحكم مقاوم للحريق، توزيع هواء دقيق، وتصريف مكثفات منفصل للسلامة.",
+      "description_en": "60Hz R410A inverter split air conditioner offering both cooling and heat pump modes. Installs a single condenser and wall-mounted unit for precise room-by-room temperature control and reduced energy costs. Utilizes TRACE COOL technology with R410A environmentally friendly refrigerant for lower costs and environmental impact. Achieves super quiet operation at just 22dB (lowest setting). Features a larger air inlet and outlet with an optimized duct system that significantly increases efficiency and reduces energy consumption. Fireproof electric control box with optimized larger space for safety and functional requirements, featuring easy disassembly and maintenance. Inner-grooved copper tubes increase the inner copper wall surface area, improving thermal conductivity by 20–30% compared to smooth tubes. Safety design ensures complete separation between condensate water and electrical components. Sleep mode prevents under-cooling or over-heating during rest. Vector precision air supply offers various precise fixed angles of air delivery for customized comfort.",
+      "description_ar": "مكيف سبليت انفرتر بتردد 60Hz مع وسيط R410A يوفر أوضاع التبريد والمضخة الحرارية. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة غرفة بغرفة وتقليل تكاليف الطاقة. يستخدم تقنية TRACE COOL مع وسيط تبريد R410A صديق للبيئة لتكاليف أقل وأثر بيئي أقل. يحقق تشغيلاً فائق الهدوء عند 22dB فقط (أدنى إعداد). يتميز بمدخل ومخرج هواء أكبر مع نظام مجاري محسن يزيد الكفاءة بشكل كبير ويقلل استهلاك الطاقة. صندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة أكبر للسلامة والمتطلبات الوظيفية، مع سهولة الفك والصيانة. أنابيب نحاسية محززة داخلياً تزيد مساحة الجدار النحاسي الداخلي وتحسن التوصيل الحراري بنسبة 20–30% مقارنة بالأنابيب الملساء. تصميم آمن يضمن الفصل الكامل بين ماء التكثيف والمكونات الكهربائية. وضع النوم يمنع التبريد أو التدفئة المفرطة أثناء الراحة. توزيع هواء دقيق بزوايا ثابتة متنوعة لراحة مخصصة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/60hz-r410a-inverter-cooling-heatpump-split"
+      ],
+      "features": [
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R410A Eco-Friendly with TRACE COOL technology", "value_ar": "R410A صديق للبيئة بتقنية TRACE COOL" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "Cooling Only & Heat Pump", "value_ar": "تبريد فقط ومضخة حرارية" },
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "Larger air inlet/outlet with optimized duct system for increased efficiency and energy savings", "value_ar": "مدخل/مخرج هواء أكبر مع نظام مجاري محسن لكفاءة وتوفير طاقة أكبر" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 24
+    }
+  ]
+}

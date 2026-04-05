@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback, useRef } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { products } from '../data/pageData'
+import { useLanguage } from '../context/LanguageContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -123,25 +123,41 @@ function Gallery({ images, title }) {
 
 export default function ProductDetailPage() {
   const { id } = useParams()
-  const product = products.find(p => p.id === id)
+  const navigate = useNavigate()
+  const { lang, isRTL } = useLanguage()
+  const [product, setProduct] = useState(null)
+  const [allProducts, setAllProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
+
+  useEffect(() => {
+    setLoading(true)
+    Promise.all([
+      fetch(`/api/products/${id}`).then(r => r.ok ? r.json() : null),
+      fetch('/api/products').then(r => r.json()),
+    ]).then(([prod, all]) => {
+      if (!prod) { navigate('/products', { replace: true }); return; }
+      setProduct(prod)
+      setAllProducts(all)
+    }).catch(() => navigate('/products', { replace: true }))
+      .finally(() => setLoading(false))
+  }, [id])
 
   useEffect(() => {
     if (!product) return
     window.scrollTo(0, 0)
 
     const ctx = gsap.context(() => {
-      // Hero entrance — staggered timeline
       const tl = gsap.timeline({ delay: 0.05, defaults: { ease: 'power3.out' } })
       tl.fromTo('.pdp-back', { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.45 })
         .fromTo('.pdp-badge', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.08 }, '-=0.2')
         .fromTo('.pdp-title', { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.25')
         .fromTo('.pdp-divider', { scaleX: 0, transformOrigin: 'left' }, { scaleX: 1, duration: 0.5 }, '-=0.35')
         .fromTo('.pdp-desc', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.55 }, '-=0.3')
-        .fromTo('.pdp-kf-card', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.06 }, '-=0.25')
         .fromTo('.pdp-cta-row', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, '-=0.2')
         .fromTo('.pdp-gallery', { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.85')
 
-      // Features — draw in from left
       gsap.fromTo('.pdp-feat-item',
         { opacity: 0, x: -24 },
         {
@@ -149,7 +165,6 @@ export default function ProductDetailPage() {
           scrollTrigger: { trigger: '#pdp-features', start: 'top 78%' },
         }
       )
-      // Features heading
       gsap.fromTo('.pdp-feat-heading > *',
         { opacity: 0, y: 20 },
         {
@@ -158,16 +173,6 @@ export default function ProductDetailPage() {
         }
       )
 
-      // Specs — scale up
-      gsap.fromTo('.pdp-spec-block',
-        { opacity: 0, y: 22, scale: 0.97 },
-        {
-          opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.07, ease: 'power3.out',
-          scrollTrigger: { trigger: '#pdp-techspecs', start: 'top 80%' },
-        }
-      )
-
-      // Related — slide up
       gsap.fromTo('.pdp-rel-card',
         { opacity: 0, y: 28 },
         {
@@ -178,17 +183,32 @@ export default function ProductDetailPage() {
     })
 
     return () => ctx.revert()
-  }, [id, product])
+  }, [product])
 
-  if (!product) return <Navigate to="/products" replace />
+  if (loading) return (
+    <div className="min-h-screen bg-[#071525] flex items-center justify-center">
+      <div className="w-7 h-7 border-2 border-[#1A6FDB] border-t-transparent rounded-full animate-spin" />
+    </div>
+  )
 
-  const relatedProducts = products.filter(p => p.id !== id && p.category === product.category).slice(0, 3)
+  if (!product) return null
+
+  const categoryId = product.category?._id
+  const relatedProducts = allProducts
+    .filter(p => p._id !== id && p.category?._id === categoryId)
+    .slice(0, 3)
   const displayRelated = relatedProducts.length > 0
     ? relatedProducts
-    : products.filter(p => p.id !== id).slice(0, 3)
+    : allProducts.filter(p => p._id !== id).slice(0, 3)
+
+  const title = t(product.title_en, product.title_ar)
+  const description = t(product.description_en, product.description_ar)
+  const shortDesc = t(product.shortDesc_en, product.shortDesc_ar)
+  const categoryName = t(product.category?.name_en, product.category?.name_ar)
+  const subcategoryName = t(product.subcategory?.name_en, product.subcategory?.name_ar)
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <div style={{ background: '#fff', minHeight: '100vh' }} dir={isRTL ? 'rtl' : 'ltr'}>
 
       {/* ══════════════════════════════════════════════════════
           HERO — dark split: info left | gallery right
@@ -233,8 +253,8 @@ export default function ProductDetailPage() {
             onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(77,158,255,0.55)'}
           >
-            <ArrowIcon className="w-3 h-3 rotate-180 transition-transform duration-200 group-hover:-translate-x-0.5" />
-            All Products
+            <ArrowIcon className={`w-3 h-3 rotate-180 transition-transform duration-200 group-hover:-translate-x-0.5 ${isRTL ? 'rotate-0' : ''}`} />
+            {t('All Products', 'جميع المنتجات')}
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-start">
@@ -244,27 +264,33 @@ export default function ProductDetailPage() {
 
               {/* Category badges */}
               <div className="flex flex-wrap items-center gap-2 mb-7">
-                <span
-                  className="pdp-badge text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wide"
-                  style={{
-                    background: 'rgba(26,111,219,0.15)',
-                    color: '#4D9EFF',
-                    border: '1px solid rgba(26,111,219,0.35)',
-                  }}
-                >
-                  {product.category}
-                </span>
-                <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '11px' }}>›</span>
-                <span
-                  className="pdp-badge text-[11px] font-medium px-3.5 py-1.5 rounded-full"
-                  style={{
-                    background: 'rgba(255,255,255,0.05)',
-                    color: 'rgba(255,255,255,0.45)',
-                    border: '1px solid rgba(255,255,255,0.1)',
-                  }}
-                >
-                  {product.subcategory}
-                </span>
+                {categoryName && (
+                  <span
+                    className="pdp-badge text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wide"
+                    style={{
+                      background: 'rgba(26,111,219,0.15)',
+                      color: '#4D9EFF',
+                      border: '1px solid rgba(26,111,219,0.35)',
+                    }}
+                  >
+                    {categoryName}
+                  </span>
+                )}
+                {subcategoryName && (
+                  <>
+                    <span style={{ color: 'rgba(255,255,255,0.18)', fontSize: '11px' }}>›</span>
+                    <span
+                      className="pdp-badge text-[11px] font-medium px-3.5 py-1.5 rounded-full"
+                      style={{
+                        background: 'rgba(255,255,255,0.05)',
+                        color: 'rgba(255,255,255,0.45)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }}
+                    >
+                      {subcategoryName}
+                    </span>
+                  </>
+                )}
               </div>
 
               {/* Product title */}
@@ -276,7 +302,7 @@ export default function ProductDetailPage() {
                   letterSpacing: '-0.025em',
                 }}
               >
-                {product.title}
+                {title}
               </h1>
 
               {/* Animated blue divider */}
@@ -295,50 +321,13 @@ export default function ProductDetailPage() {
                 className="pdp-desc text-sm leading-loose mb-10"
                 style={{ color: 'rgba(255,255,255,0.45)', maxWidth: '500px' }}
               >
-                {product.desc}
+                {shortDesc || description}
               </p>
-
-              {/* Key Features grid (keyFeatures pills) */}
-              {product.keyFeatures && (
-                <div
-                  className="grid gap-2 mb-10"
-                  style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))' }}
-                >
-                  {product.keyFeatures.map((kf, i) => (
-                    <div
-                      key={i}
-                      className="pdp-kf-card rounded-xl p-3.5 transition-all duration-200"
-                      style={{
-                        background: 'rgba(255,255,255,0.04)',
-                        border: '1px solid rgba(255,255,255,0.07)',
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.background = 'rgba(26,111,219,0.1)'
-                        e.currentTarget.style.borderColor = 'rgba(26,111,219,0.3)'
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
-                      }}
-                    >
-                      <div
-                        className="text-[9px] font-semibold uppercase tracking-widest mb-1.5"
-                        style={{ color: 'rgba(77,158,255,0.65)' }}
-                      >
-                        {kf.label}
-                      </div>
-                      <div className="text-xs font-semibold leading-snug" style={{ color: 'rgba(255,255,255,0.85)' }}>
-                        {kf.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
 
               {/* CTA row */}
               <div className="pdp-cta-row flex flex-wrap items-center gap-4">
                 <Link to="/contact" className="cta-pill text-white text-sm font-medium">
-                  <span>Request a Quote</span>
+                  <span>{t('Request a Quote', 'طلب عرض سعر')}</span>
                   <span className="icon"><ArrowIcon /></span>
                 </Link>
                 <Link
@@ -348,26 +337,28 @@ export default function ProductDetailPage() {
                   onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
                   onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}
                 >
-                  Browse catalogue
+                  {t('Browse catalogue', 'تصفح الكتالوج')}
                   <ArrowIcon className="w-3.5 h-3.5" />
                 </Link>
               </div>
             </div>
 
             {/* ── RIGHT: Gallery ──────────────────────────── */}
-            <div className="pdp-gallery relative">
-              {/* Glow halo behind gallery */}
-              <div
-                className="absolute -bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
-                style={{
-                  width: '75%', height: '48px',
-                  background: 'rgba(26,111,219,0.28)',
-                  filter: 'blur(36px)',
-                  borderRadius: '50%',
-                }}
-              />
-              <Gallery images={product.images} title={product.title} />
-            </div>
+            {product.images?.length > 0 && (
+              <div className="pdp-gallery relative">
+                {/* Glow halo behind gallery */}
+                <div
+                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
+                  style={{
+                    width: '75%', height: '48px',
+                    background: 'rgba(26,111,219,0.28)',
+                    filter: 'blur(36px)',
+                    borderRadius: '50%',
+                  }}
+                />
+                <Gallery images={product.images} title={title} />
+              </div>
+            )}
 
           </div>
         </div>
@@ -376,155 +367,60 @@ export default function ProductDetailPage() {
       {/* ══════════════════════════════════════════════════════
           FEATURES — light, two-column
       ══════════════════════════════════════════════════════ */}
-      <section id="pdp-features" className="py-24" style={{ background: '#fff' }}>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {product.features?.length > 0 && (
+        <section id="pdp-features" className="py-24" style={{ background: '#fff' }}>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-            {/* Left: heading block */}
-            <div className="pdp-feat-heading">
-              <div className="section-label mb-5">Key Features</div>
-              <div className="blue-line" />
-              <h2
-                className="font-medium leading-tight mb-6"
-                style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.9rem)', color: '#071525', letterSpacing: '-0.02em' }}
-              >
-                Engineered for
-                <br />
-                <span className="text-gradient italic font-light">peak performance.</span>
-              </h2>
-              <p className="text-sm leading-relaxed" style={{ color: '#5A7896', maxWidth: '380px' }}>
-                Every component is selected to German engineering standards — precision-rated, field-proven, and certified to DIN VDE, ASHRAE, and ISO EN specifications.
-              </p>
-            </div>
-
-            {/* Right: feature list */}
-            <div>
-              {product.features.map((f, i) => (
-                <div
-                  key={i}
-                  className="pdp-feat-item flex items-start gap-5 py-5 group"
-                  style={{
-                    borderBottom: i < product.features.length - 1 ? '1px solid #E4EBF5' : 'none',
-                  }}
-                >
-                  {/* Check circle */}
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
-                    style={{
-                      background: 'rgba(26,111,219,0.08)',
-                      border: '1px solid rgba(26,111,219,0.18)',
-                      color: '#1A6FDB',
-                    }}
-                  >
-                    <CheckIcon />
-                  </div>
-                  {/* Text */}
-                  <div className="pt-1">
-                    <p className="text-sm font-medium leading-relaxed" style={{ color: '#071525' }}>{f}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════
-          TECHNICAL SPECIFICATIONS — dark strip
-      ══════════════════════════════════════════════════════ */}
-      {product.keyFeatures && (
-        <section
-          id="pdp-techspecs"
-          className="py-20 relative overflow-hidden"
-          style={{ background: 'linear-gradient(160deg, #040D1A 0%, #071525 100%)' }}
-        >
-          {/* Grid */}
-          <div
-            className="absolute inset-0 opacity-[0.025] pointer-events-none"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-              backgroundSize: '64px 64px',
-            }}
-          />
-          {/* Blue glow left */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              top: '10%', left: '-5%', width: '40%', height: '80%',
-              background: 'radial-gradient(ellipse, rgba(26,111,219,0.18) 0%, transparent 70%)',
-            }}
-          />
-
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div className="flex flex-col lg:flex-row lg:items-end gap-6 mb-14">
-              <div className="flex-1">
-                <div className="section-label light mb-4">Technical Specifications</div>
-                <div
-                  style={{
-                    height: '2px', width: '52px',
-                    background: 'linear-gradient(90deg, #4D9EFF, #1A6FDB)',
-                    borderRadius: '2px',
-                    marginBottom: '1.5rem',
-                  }}
-                />
+              {/* Left: heading block */}
+              <div className="pdp-feat-heading">
+                <div className="section-label mb-5">{t('Key Features', 'الميزات الرئيسية')}</div>
+                <div className="blue-line" />
                 <h2
-                  className="font-medium leading-tight"
-                  style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', color: 'white', letterSpacing: '-0.02em' }}
+                  className="font-medium leading-tight mb-6"
+                  style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.9rem)', color: '#071525', letterSpacing: '-0.02em' }}
                 >
-                  At a glance.
+                  {t('Engineered for', 'مصمم من أجل')}
+                  <br />
+                  <span className="text-gradient italic font-light">{t('peak performance.', 'أعلى مستويات الأداء.')}</span>
                 </h2>
+                <p className="text-sm leading-relaxed" style={{ color: '#5A7896', maxWidth: '380px' }}>
+                  {t(
+                    'Every component is selected to German engineering standards — precision-rated, field-proven, and certified to DIN VDE, ASHRAE, and ISO EN specifications.',
+                    'كل مكون يتم اختياره وفق المعايير الهندسية الألمانية — بدقة عالية، ومُختبر ميدانياً، ومعتمد وفق مواصفات DIN VDE و ASHRAE و ISO EN.'
+                  )}
+                </p>
               </div>
-              <Link
-                to="/contact"
-                className="cta-pill text-white text-sm font-medium self-start lg:self-end"
-              >
-                <span>Get a Data Sheet</span>
-                <span className="icon"><ArrowIcon /></span>
-              </Link>
-            </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {product.keyFeatures.map((kf, i) => (
-                <div
-                  key={i}
-                  className="pdp-spec-block rounded-2xl p-6 transition-all duration-300 group"
-                  style={{
-                    background: 'rgba(255,255,255,0.04)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = 'rgba(26,111,219,0.1)'
-                    e.currentTarget.style.borderColor = 'rgba(26,111,219,0.35)'
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.04)'
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
-                  }}
-                >
-                  {/* Accent top line */}
+              {/* Right: feature list */}
+              <div>
+                {product.features.map((f, i) => (
                   <div
-                    className="mb-4 transition-all duration-300 group-hover:w-full"
+                    key={i}
+                    className="pdp-feat-item flex items-start gap-5 py-5 group"
                     style={{
-                      height: '2px', width: '24px',
-                      background: 'linear-gradient(90deg, #1A6FDB, #4D9EFF)',
-                      borderRadius: '2px',
+                      borderBottom: i < product.features.length - 1 ? '1px solid #E4EBF5' : 'none',
                     }}
-                  />
-                  <div
-                    className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                    style={{ color: 'rgba(77,158,255,0.6)' }}
                   >
-                    {kf.label}
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                      style={{
+                        background: 'rgba(26,111,219,0.08)',
+                        border: '1px solid rgba(26,111,219,0.18)',
+                        color: '#1A6FDB',
+                      }}
+                    >
+                      <CheckIcon />
+                    </div>
+                    <div className="pt-1">
+                      <p className="text-sm font-medium leading-relaxed" style={{ color: '#071525' }}>
+                        {t(f.feature_en, f.feature_ar)}
+                      </p>
+                    </div>
                   </div>
-                  <div
-                    className="text-sm font-semibold leading-snug"
-                    style={{ color: 'rgba(255,255,255,0.88)' }}
-                  >
-                    {kf.value}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
             </div>
           </div>
         </section>
@@ -540,14 +436,14 @@ export default function ProductDetailPage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
               <div>
                 <div className="section-label mb-4">
-                  {relatedProducts.length > 0 ? 'Related Products' : 'You May Also Like'}
+                  {relatedProducts.length > 0 ? t('Related Products', 'منتجات ذات صلة') : t('You May Also Like', 'قد يعجبك أيضاً')}
                 </div>
                 <div className="blue-line" />
                 <h2
                   className="font-medium leading-tight"
                   style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', color: '#071525', letterSpacing: '-0.02em' }}
                 >
-                  Continue exploring.
+                  {t('Continue exploring.', 'تابع الاستكشاف.')}
                 </h2>
               </div>
               <Link
@@ -557,7 +453,7 @@ export default function ProductDetailPage() {
                 onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
                 onMouseLeave={e => e.currentTarget.style.color = '#1A6FDB'}
               >
-                View all products
+                {t('View all products', 'عرض جميع المنتجات')}
                 <ArrowIcon className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -565,8 +461,8 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {displayRelated.map(p => (
                 <Link
-                  key={p.id}
-                  to={`/products/${p.id}`}
+                  key={p._id}
+                  to={`/products/${p._id}`}
                   className="pdp-rel-card group rounded-2xl overflow-hidden block transition-all duration-300"
                   style={{
                     background: 'white',
@@ -585,50 +481,53 @@ export default function ProductDetailPage() {
                   }}
                 >
                   {/* Image */}
-                  <div className="relative overflow-hidden" style={{ height: '210px' }}>
-                    <img
-                      src={p.images[0]}
-                      alt={p.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div
-                      className="absolute inset-0 pointer-events-none"
-                      style={{ background: 'linear-gradient(to top, rgba(4,13,26,0.55) 0%, transparent 55%)' }}
-                    />
-                    <span
-                      className="absolute bottom-3 left-3 text-[11px] font-medium px-2.5 py-1 rounded-full"
-                      style={{ background: 'rgba(26,111,219,0.85)', color: 'white' }}
-                    >
-                      {p.subcategory}
-                    </span>
-                  </div>
+                  {p.images?.[0] && (
+                    <div className="relative overflow-hidden" style={{ height: '210px' }}>
+                      <img
+                        src={p.images[0]}
+                        alt={t(p.title_en, p.title_ar)}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div
+                        className="absolute inset-0 pointer-events-none"
+                        style={{ background: 'linear-gradient(to top, rgba(4,13,26,0.55) 0%, transparent 55%)' }}
+                      />
+                      {p.subcategory?.name_en && (
+                        <span
+                          className="absolute bottom-3 left-3 text-[11px] font-medium px-2.5 py-1 rounded-full"
+                          style={{ background: 'rgba(26,111,219,0.85)', color: 'white' }}
+                        >
+                          {t(p.subcategory.name_en, p.subcategory.name_ar)}
+                        </span>
+                      )}
+                    </div>
+                  )}
 
                   {/* Content */}
                   <div className="p-6">
-                    <div
-                      className="text-[10px] font-semibold uppercase tracking-widest mb-2"
-                      style={{ color: '#5A7896' }}
-                    >
-                      {p.category}
-                    </div>
+                    {p.category?.name_en && (
+                      <div
+                        className="text-[10px] font-semibold uppercase tracking-widest mb-2"
+                        style={{ color: '#5A7896' }}
+                      >
+                        {t(p.category.name_en, p.category.name_ar)}
+                      </div>
+                    )}
                     <h3 className="text-base font-semibold mb-2.5 leading-snug" style={{ color: '#071525' }}>
-                      {p.title}
+                      {t(p.title_en, p.title_ar)}
                     </h3>
                     <p className="text-xs leading-relaxed mb-5" style={{ color: '#5A7896' }}>
-                      {p.shortDesc}
+                      {t(p.shortDesc_en, p.shortDesc_ar) || t(p.description_en, p.description_ar)}
                     </p>
                     <div
-                      className="flex items-center justify-between pt-4"
+                      className="flex items-center justify-end pt-4"
                       style={{ borderTop: '1px solid #E4EBF5' }}
                     >
-                      <span className="text-[11px] font-medium" style={{ color: '#1A6FDB' }}>
-                        {p.keyFeatures?.[0]?.label}: <strong>{p.keyFeatures?.[0]?.value}</strong>
-                      </span>
                       <span
                         className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all group-hover:gap-2"
                         style={{ color: '#1A6FDB' }}
                       >
-                        View
+                        {t('View', 'عرض')}
                         <ArrowIcon className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
                       </span>
                     </div>
@@ -649,18 +548,21 @@ export default function ProductDetailPage() {
         style={{ background: 'linear-gradient(180deg, #F2F6FC 0%, #fff 100%)' }}
       >
         <div className="max-w-xl mx-auto px-6">
-          <div className="section-label justify-center mb-5">Expert Support</div>
+          <div className="section-label justify-center mb-5">{t('Expert Support', 'دعم متخصص')}</div>
           <h2
             className="font-medium mb-3"
             style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', color: '#071525', letterSpacing: '-0.015em' }}
           >
-            Need custom specifications?
+            {t('Need custom specifications?', 'تحتاج مواصفات مخصصة؟')}
           </h2>
           <p className="text-sm leading-relaxed mb-8" style={{ color: '#5A7896' }}>
-            Our engineers can adapt, specify, and source any HVAC equipment to match your exact project requirements.
+            {t(
+              'Our engineers can adapt, specify, and source any HVAC equipment to match your exact project requirements.',
+              'يمكن لمهندسينا تكييف وتحديد وتوفير أي معدات HVAC لتناسب متطلبات مشروعك بدقة.'
+            )}
           </p>
           <Link to="/contact" className="cta-pill-dark text-primary text-sm font-medium">
-            <span>Talk to an Engineer</span>
+            <span>{t('Talk to an Engineer', 'تحدث مع مهندس')}</span>
             <span className="icon"><ArrowIcon /></span>
           </Link>
         </div>

@@ -1,0 +1,316 @@
+{
+  "category": {
+    "name_en": "Mini Split Air Conditioner",
+    "name_ar": "مكيف سبليت صغير"
+  },
+  "subcategories": [
+    {
+      "_refKey": "light_commercial",
+      "name_en": "Light Commercial Air Conditioner",
+      "name_ar": "مكيف تجاري خفيف"
+    },
+    {
+      "_refKey": "ductless_mini_split",
+      "name_en": "Ductless Mini Split",
+      "name_ar": "سبليت صغير بدون مجاري"
+    },
+    {
+      "_refKey": "window_ac",
+      "name_en": "Window AC",
+      "name_ar": "مكيف شباك"
+    }
+  ],
+  "products": [
+    {
+      "title_en": "EU Z-COOL Series Heat Pump Inverter A++ R32 Split AC – Model A",
+      "title_ar": "مكيف سبليت سلسلة EU Z-COOL مضخة حرارية انفرتر A++ R32 – الطراز A",
+      "shortDesc_en": "European market A++ rated heat pump inverter split AC with R32 refrigerant, ultra-quiet 22dB operation, inner-grooved copper tubes for 20–30% better conductivity, fireproof control box, and vector precision air supply.",
+      "shortDesc_ar": "مكيف سبليت انفرتر مضخة حرارية بتصنيف A++ للسوق الأوروبي مع وسيط R32، تشغيل فائق الهدوء 22dB، أنابيب نحاسية محززة بتوصيل أفضل بـ 20–30%، صندوق تحكم مقاوم للحريق، وتوزيع هواء دقيق.",
+      "description_en": "EU Z-COOL Series heat pump inverter split air conditioner rated A++ for the European market, using R32 eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room-by-room temperature control and reduced energy costs. Achieves super quiet operation at just 22dB (lowest setting), making it ideal for bedrooms and quiet spaces. Features a larger air inlet and outlet with an optimized duct system that significantly increases efficiency and reduces energy consumption. Fireproof electric control box with optimized larger space for safety and functional requirements, featuring easy disassembly and maintenance access. Inner-grooved copper tubes increase the inner wall surface area, delivering 20–30% improved thermal conductivity compared to smooth tubes for faster and more efficient heat exchange. Safety design ensures complete separation between condensate water and electrical components, eliminating any risk of water-electricity contact. Sleep mode automatically adjusts temperature to prevent under-cooling or over-heating during rest. Vector precision air supply offers various precise fixed angles of air delivery, providing users with customized comfort choices for different seating and sleeping positions.",
+      "description_ar": "مكيف سبليت انفرتر مضخة حرارية سلسلة EU Z-COOL بتصنيف A++ للسوق الأوروبي، يستخدم وسيط تبريد R32 صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة غرفة بغرفة وتقليل تكاليف الطاقة. يحقق تشغيلاً فائق الهدوء عند 22dB فقط (أدنى إعداد)، مما يجعله مثالياً لغرف النوم والمساحات الهادئة. يتميز بمدخل ومخرج هواء أكبر مع نظام مجاري محسن يزيد الكفاءة بشكل كبير ويقلل استهلاك الطاقة. صندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة أكبر للسلامة والمتطلبات الوظيفية، مع سهولة الفك والوصول للصيانة. أنابيب نحاسية محززة داخلياً تزيد مساحة الجدار الداخلي وتوفر توصيلاً حرارياً أفضل بنسبة 20–30% مقارنة بالأنابيب الملساء لتبادل حراري أسرع وأكثر كفاءة. تصميم آمن يضمن الفصل الكامل بين ماء التكثيف والمكونات الكهربائية. وضع النوم يعدل الحرارة تلقائياً لمنع التبريد أو التدفئة المفرطة أثناء الراحة. توزيع هواء دقيق بزوايا ثابتة متنوعة يوفر للمستخدمين خيارات راحة مخصصة لأوضاع الجلوس والنوم المختلفة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/eu-zcool-a-heatpump-inverter-r32-a"
+      ],
+      "features": [
+        { "key_en": "Energy Rating", "key_ar": "تصنيف الطاقة", "value_en": "A++ (European Market)", "value_ar": "A++ (السوق الأوروبي)" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box with easy maintenance", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق بسهولة صيانة" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 25
+    },
+    {
+      "title_en": "EU Z-COOL Series Heat Pump Inverter A++ R32 Split AC – Model B",
+      "title_ar": "مكيف سبليت سلسلة EU Z-COOL مضخة حرارية انفرتر A++ R32 – الطراز B",
+      "shortDesc_en": "European market A++ rated heat pump inverter split AC (alternate model) with R32 refrigerant, ultra-quiet 22dB, inner-grooved copper tubes, fireproof control box, and vector precision air supply.",
+      "shortDesc_ar": "مكيف سبليت انفرتر مضخة حرارية بتصنيف A++ للسوق الأوروبي (طراز بديل) مع وسيط R32، هدوء فائق 22dB، أنابيب نحاسية محززة، صندوق تحكم مقاوم للحريق، وتوزيع هواء دقيق.",
+      "description_en": "EU Z-COOL Series heat pump inverter split air conditioner — alternate model variant — rated A++ for the European market using R32 eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room temperature control and energy cost reduction. Super quiet operation at 22dB (lowest). Optimized duct system with larger air inlet and outlet for significantly increased efficiency and lower energy consumption. Fireproof electric control box with larger optimized space for safety and functional requirements, with easy disassembly and maintenance. Inner-grooved copper tubes improve thermal conductivity by 20–30% over smooth tubes by increasing the inner copper wall surface area. Safety design provides complete separation between condensate water and electrical components. Sleep mode prevents under-cooling or over-heating. Vector precision air supply delivers air at various precise fixed angles for customized comfort.",
+      "description_ar": "مكيف سبليت انفرتر مضخة حرارية سلسلة EU Z-COOL — طراز بديل — بتصنيف A++ للسوق الأوروبي يستخدم وسيط تبريد R32 صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بحرارة الغرفة وتقليل تكاليف الطاقة. تشغيل فائق الهدوء عند 22dB (الأدنى). نظام مجاري محسن بمدخل ومخرج هواء أكبر لكفاءة أعلى واستهلاك طاقة أقل. صندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة للسلامة والمتطلبات الوظيفية مع سهولة الفك والصيانة. أنابيب نحاسية محززة داخلياً تحسن التوصيل الحراري بنسبة 20–30% عن الأنابيب الملساء. تصميم آمن بفصل كامل بين ماء التكثيف والمكونات الكهربائية. وضع النوم يمنع التبريد أو التدفئة المفرطة. توزيع هواء دقيق بزوايا ثابتة متنوعة لراحة مخصصة.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/eu-zcool-a-heatpump-inverter-r32-b"
+      ],
+      "features": [
+        { "key_en": "Energy Rating", "key_ar": "تصنيف الطاقة", "value_en": "A++ (European Market)", "value_ar": "A++ (السوق الأوروبي)" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Noise Level", "key_ar": "مستوى الضوضاء", "value_en": "Super quiet at 22dB (lowest)", "value_ar": "فائق الهدوء عند 22dB (الأدنى)" },
+        { "key_en": "Copper Tubes", "key_ar": "الأنابيب النحاسية", "value_en": "Inner-grooved tubes with 20–30% better thermal conductivity than smooth tubes", "value_ar": "أنابيب محززة داخلياً بتوصيل حراري أفضل بـ 20–30% من الأنابيب الملساء" },
+        { "key_en": "Safety Design", "key_ar": "تصميم السلامة", "value_en": "Complete separation between condensate water and electricity; fireproof control box", "value_ar": "فصل كامل بين ماء التكثيف والكهرباء؛ صندوق تحكم مقاوم للحريق" },
+        { "key_en": "Sleep Mode", "key_ar": "وضع النوم", "value_en": "Prevents under-cooling or over-heating during rest", "value_ar": "يمنع التبريد أو التدفئة المفرطة أثناء الراحة" },
+        { "key_en": "Air Supply", "key_ar": "توزيع الهواء", "value_en": "Vector precision with multiple fixed angles for customized comfort", "value_ar": "دقة اتجاهية بزوايا ثابتة متعددة لراحة مخصصة" }
+      ],
+      "isActive": true,
+      "order": 26
+    },
+    {
+      "title_en": "North America On-Off & Inverter Packaged Terminal Air Conditioner (PTAC)",
+      "title_ar": "مكيف طرفي مغلف للسوق الأمريكي – عادي وانفرتر (PTAC)",
+      "shortDesc_en": "Packaged terminal AC for North America with screw-free installation, 4-in-1 design (cooling/drying/auto/fan), dual voltage (115V/220V), R32 refrigerant, sleep & ECO modes, and optional WiFi.",
+      "shortDesc_ar": "مكيف طرفي مغلف للسوق الأمريكي بتركيب بدون مسامير، تصميم 4 في 1 (تبريد/تجفيف/تلقائي/مروحة)، جهد مزدوج (115V/220V)، وسيط R32، أوضاع نوم واقتصاد، و WiFi اختياري.",
+      "description_en": "North America packaged terminal air conditioner (PTAC) available in both on-off and inverter configurations. Compact window-installable design with simple structure, low production cost, affordable pricing, and reliable operation — the earliest and most proven cabinet AC form factor. Easy screw-free installation simplifies setup without tools. Low-noise design provides a quiet and efficient user experience. Economical integrated structure with low fault rate. Features electronic controls with LED display for intuitive operation monitoring, and a remote controller with batteries for convenient anywhere-in-room control. Easily accessible washable filter with filter check feature ensures clean air and simple maintenance. Offers 3 fan speeds and 4-way air direction for flexible airflow customization. 4-in-1 design combines cooling, drying, auto, and fan modes in a single unit to handle various environmental conditions. Auto-restart preserves previous settings after power interruption, with a 24-hour programmable timer for scheduled operation. Sleep and ECO modes maintain comfortable temperature during rest while conserving energy. Filter check reminder ensures timely cleaning for sustained air quality. Window installation kit included for straightforward setup. Supports dual voltage (115V/60Hz and 220V/60Hz) for different regional power standards. Uses R32 environmentally friendly refrigerant to reduce environmental impact. Available with ISTA 1A or 6A international standard packaging for safe transportation. Multiple packaging options in 4-color litho or kraft brown box. Optional WiFi connectivity for smart device remote control.",
+      "description_ar": "مكيف طرفي مغلف (PTAC) لأمريكا الشمالية متوفر بتكوينات عادي وانفرتر. تصميم مدمج قابل للتركيب على الشباك بهيكل بسيط وتكلفة إنتاج منخفضة وسعر مناسب وتشغيل موثوق — أقدم وأكثر أشكال التكييف الخزائنية إثباتاً. تركيب سهل بدون مسامير يبسط الإعداد بدون أدوات. تصميم منخفض الضوضاء يوفر تجربة هادئة وفعالة. هيكل متكامل اقتصادي بمعدل أعطال منخفض. يتميز بتحكم إلكتروني مع شاشة LED للمراقبة البديهية وريموت مع بطاريات للتحكم المريح من أي مكان. فلتر قابل للغسل سهل الوصول مع ميزة فحص الفلتر يضمن هواءً نظيفاً وصيانة بسيطة. يوفر 3 سرعات مروحة و4 اتجاهات هواء لتخصيص مرن للتدفق. تصميم 4 في 1 يجمع أوضاع التبريد والتجفيف والتلقائي والمروحة. إعادة تشغيل تلقائية تحفظ الإعدادات بعد انقطاع الكهرباء مع مؤقت 24 ساعة. أوضاع النوم والاقتصاد تحافظ على حرارة مريحة مع توفير الطاقة. تذكير فحص الفلتر. طقم تركيب شباك مرفق. جهد مزدوج (115V/60Hz و 220V/60Hz). وسيط R32 صديق للبيئة. تغليف معياري دولي ISTA 1A أو 6A. اتصال WiFi اختياري.",
+      "subcategory_ref": "window_ac",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/north-america-ptac-onoff-inverter"
+      ],
+      "features": [
+        { "key_en": "Type", "key_ar": "النوع", "value_en": "Packaged Terminal Air Conditioner (PTAC) – On-Off & Inverter", "value_ar": "مكيف طرفي مغلف (PTAC) – عادي وانفرتر" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "Screw-free easy installation with window kit included", "value_ar": "تركيب سهل بدون مسامير مع طقم شباك مرفق" },
+        { "key_en": "Controls", "key_ar": "التحكم", "value_en": "Electronic LED display with remote controller and batteries", "value_ar": "شاشة LED إلكترونية مع ريموت وبطاريات" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "4-in-1: Cooling, Drying, Auto, Fan — plus Sleep & ECO modes", "value_ar": "4 في 1: تبريد، تجفيف، تلقائي، مروحة — بالإضافة لأوضاع النوم والاقتصاد" },
+        { "key_en": "Fan & Airflow", "key_ar": "المروحة والتدفق", "value_en": "3 speeds with 4-way air direction", "value_ar": "3 سرعات مع 4 اتجاهات هواء" },
+        { "key_en": "Voltage", "key_ar": "الجهد", "value_en": "Dual voltage: 115V/60Hz and 220V/60Hz", "value_ar": "جهد مزدوج: 115V/60Hz و 220V/60Hz" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Filter", "key_ar": "الفلتر", "value_en": "Washable filter with filter check reminder", "value_ar": "فلتر قابل للغسل مع تذكير فحص الفلتر" },
+        { "key_en": "Auto-Restart & Timer", "key_ar": "إعادة تشغيل ومؤقت", "value_en": "Auto-restart with 24-hour programmable timer", "value_ar": "إعادة تشغيل تلقائية مع مؤقت قابل للبرمجة 24 ساعة" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi connectivity (optional)", "value_ar": "اتصال WiFi (اختياري)" },
+        { "key_en": "Packaging", "key_ar": "التغليف", "value_en": "ISTA 1A/6A international standard; 4-color litho or kraft brown box", "value_ar": "معيار دولي ISTA 1A/6A؛ صندوق ليثو 4 ألوان أو بني كرافت" }
+      ],
+      "isActive": true,
+      "order": 27
+    },
+    {
+      "title_en": "R410A 18 SEER Light Commercial Outdoor Unit & Hyper Heat Air Handler",
+      "title_ar": "وحدة خارجية تجارية خفيفة R410A بكفاءة 18 SEER ومعالج هواء مضخة حرارية فائقة",
+      "shortDesc_en": "18 SEER hyper heat light commercial system with R410A, twin rotary DC inverter compressor, AHRI/ETL certified, 1.0\" W.C. static pressure, 24V communication protocol, and 4-way convertible installation.",
+      "shortDesc_ar": "نظام تجاري خفيف مضخة حرارية فائقة بكفاءة 18 SEER مع R410A، ضاغط انفرتر دوار مزدوج DC، معتمد من AHRI/ETL، ضغط ساكن 1.0\" W.C.، بروتوكول 24V، وتركيب رباعي الاتجاهات.",
+      "description_en": "R410A 18 SEER light commercial outdoor unit paired with a hyper heat air handler, designed for demanding commercial heating and cooling applications. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for optimal performance across varying loads. AHRI Certified and ETL listed for compliance with North American standards. Delivers rapid heating and cooling with low noise operation. Achieves maximum 1.0 inch W.C. static pressure to deliver comfort air to every location within the served space, with 24V communication protocol for integration with building management systems and third-party thermostats. Cost effective — saves up to $100 per year compared to EER 10.0 units based on $0.12/kWh electricity cost and 1,200 hours of annual cooling. Universal 4-way convertible design supports vertical up airflow and horizontal right airflow for multi-position installation flexibility. Comprehensive multi-protection system includes high-pressure, low-pressure, and high exhaust temperature safeguards. Universal design makes stocking easier with multiple options for cooling capacity, indoor unit type, and energy efficiency level.",
+      "description_ar": "وحدة خارجية تجارية خفيفة R410A بكفاءة 18 SEER مقترنة بمعالج هواء مضخة حرارية فائقة، مصممة لتطبيقات التدفئة والتبريد التجارية المتطلبة. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لأداء مثالي عبر أحمال متغيرة. معتمد من AHRI ومدرج في ETL للامتثال للمعايير الأمريكية الشمالية. يوفر تدفئة وتبريد سريعين مع تشغيل هادئ. يحقق ضغط ساكن أقصى 1.0 بوصة W.C. لتوصيل هواء مريح لكل موقع ضمن المساحة المخدومة، مع بروتوكول اتصال 24V للتكامل مع أنظمة إدارة المباني وثرموستات الطرف الثالث. موفر للتكلفة — يوفر حتى 100 دولار سنوياً مقارنة بوحدات EER 10.0 بتكلفة كهرباء 0.12 دولار/kWh و1,200 ساعة تبريد سنوياً. تصميم رباعي الاتجاهات قابل للتحويل يدعم التدفق العمودي والأفقي. نظام حماية متعدد شامل يشمل الضغط العالي والمنخفض ودرجة حرارة العادم.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/r410a-18seer-hyperheat-air-handler"
+      ],
+      "features": [
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified & ETL Listed", "value_ar": "معتمد من AHRI ومدرج في ETL" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "18 SEER with R410A refrigerant", "value_ar": "18 SEER مع وسيط R410A" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Static Pressure", "key_ar": "الضغط الساكن", "value_en": "Maximum 1.0 inch W.C. for full-space air delivery", "value_ar": "أقصى 1.0 بوصة W.C. لتوصيل الهواء للمساحة الكاملة" },
+        { "key_en": "Communication", "key_ar": "الاتصال", "value_en": "24V communication protocol for BMS and 3rd-party thermostat integration", "value_ar": "بروتوكول اتصال 24V للتكامل مع أنظمة إدارة المباني وثرموستات الطرف الثالث" },
+        { "key_en": "Energy Savings", "key_ar": "توفير الطاقة", "value_en": "Up to $100/year vs EER 10.0 units", "value_ar": "حتى 100 دولار/سنة مقارنة بوحدات EER 10.0" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق عمودي علوي وأفقي يمين" },
+        { "key_en": "Protection", "key_ar": "الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 28
+    },
+    {
+      "title_en": "R410A 18 SEER Side Discharge Outdoor Unit & Hyper Heat Air Handler",
+      "title_ar": "وحدة خارجية بتفريغ جانبي R410A بكفاءة 18 SEER ومعالج هواء مضخة حرارية فائقة",
+      "shortDesc_en": "18 SEER hyper heat light commercial system with R410A and side discharge design, twin rotary DC inverter compressor, AHRI/ETL certified, 4-way convertible installation, and multi-protection.",
+      "shortDesc_ar": "نظام تجاري خفيف مضخة حرارية فائقة بكفاءة 18 SEER مع R410A وتصميم تفريغ جانبي، ضاغط انفرتر دوار مزدوج DC، معتمد من AHRI/ETL، تركيب رباعي الاتجاهات وحماية متعددة.",
+      "description_en": "R410A 18 SEER light commercial outdoor unit with side discharge design paired with a hyper heat air handler for demanding heating and cooling applications. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for best system performance. AHRI Certified and ETL listed. Features rapid heating and cooling with low noise operation. Cost effective — saves up to $100 per year compared to EER 10.0 units based on $0.12/kWh and 1,200 hours annual cooling. Universal 4-way convertible design supports vertical up airflow and horizontal right airflow for flexible multi-position installation. Comprehensive multi-protection system with high-pressure, low-pressure, and high exhaust temperature safeguards. Universal design for easier stocking with multiple options for cooling capacity, indoor unit type, and energy efficiency level to meet various regional needs.",
+      "description_ar": "وحدة خارجية تجارية خفيفة R410A بكفاءة 18 SEER بتصميم تفريغ جانبي مقترنة بمعالج هواء مضخة حرارية فائقة لتطبيقات التدفئة والتبريد المتطلبة. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لأفضل أداء. معتمد من AHRI ومدرج في ETL. يوفر تدفئة وتبريد سريعين مع تشغيل هادئ. موفر للتكلفة — يوفر حتى 100 دولار سنوياً مقارنة بوحدات EER 10.0. تصميم رباعي الاتجاهات قابل للتحويل يدعم التدفق العمودي العلوي والأفقي الأيمن لمرونة التركيب. نظام حماية متعدد شامل مع حماية الضغط العالي والمنخفض ودرجة حرارة العادم. تصميم عالمي لسهولة التخزين مع خيارات متعددة لسعة التبريد ونوع الوحدة الداخلية ومستوى الكفاءة.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/r410a-18seer-side-discharge-hyperheat"
+      ],
+      "features": [
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified & ETL Listed", "value_ar": "معتمد من AHRI ومدرج في ETL" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "18 SEER with R410A refrigerant", "value_ar": "18 SEER مع وسيط R410A" },
+        { "key_en": "Discharge Type", "key_ar": "نوع التفريغ", "value_en": "Side Discharge Design", "value_ar": "تصميم تفريغ جانبي" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Energy Savings", "key_ar": "توفير الطاقة", "value_en": "Up to $100/year vs EER 10.0 units", "value_ar": "حتى 100 دولار/سنة مقارنة بوحدات EER 10.0" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق عمودي علوي وأفقي يمين" },
+        { "key_en": "Protection", "key_ar": "الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 29
+    },
+    {
+      "title_en": "T1 50Hz Heat Pump On-Off High Efficiency Split AC",
+      "title_ar": "مكيف سبليت عادي T1 بتردد 50Hz مضخة حرارية عالي الكفاءة",
+      "shortDesc_en": "T1 climate-rated 50Hz on-off heat pump split AC with high energy efficiency, fireproof control box, and available in 9K/12K/18K/24K/36K BTU/h capacities.",
+      "shortDesc_ar": "مكيف سبليت عادي مضخة حرارية بتصنيف مناخي T1 بتردد 50Hz عالي الكفاءة مع صندوق تحكم مقاوم للحريق ومتوفر بسعات 9K/12K/18K/24K/36K BTU/h.",
+      "description_en": "T1 climate-rated 50Hz heat pump on-off split air conditioner with high energy efficiency, designed for single-room installation with a single condenser and wall-mounted unit for precise temperature control and reduced energy costs. Features a fireproof electric control box optimized with larger space for safety and functional requirements, with easy disassembly and maintenance access. Available in a range of rated capacities — 9K, 12K, 18K, 24K, and 36K BTU/h — to match different room sizes and cooling/heating demands. The T1 climate rating ensures reliable performance in standard tropical and temperate climate conditions.",
+      "description_ar": "مكيف سبليت عادي مضخة حرارية بتصنيف مناخي T1 بتردد 50Hz عالي الكفاءة، مصمم لتركيب الغرفة الواحدة مع وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بصندوق تحكم كهربائي مقاوم للحريق بمساحة محسنة أكبر للسلامة والمتطلبات الوظيفية، مع سهولة الفك والوصول للصيانة. متوفر بمجموعة من السعات المقننة — 9K و12K و18K و24K و36K BTU/h — لمطابقة أحجام الغرف المختلفة ومتطلبات التبريد والتدفئة. التصنيف المناخي T1 يضمن أداءً موثوقاً في ظروف المناخ الاستوائي والمعتدل القياسية.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/t1-50hz-heatpump-onoff-high-efficiency"
+      ],
+      "features": [
+        { "key_en": "Climate Rating", "key_ar": "التصنيف المناخي", "value_en": "T1 — standard tropical and temperate conditions", "value_ar": "T1 — ظروف استوائية ومعتدلة قياسية" },
+        { "key_en": "Frequency", "key_ar": "التردد", "value_en": "50Hz On-Off", "value_ar": "50Hz عادي" },
+        { "key_en": "Mode", "key_ar": "الوضع", "value_en": "Heat Pump (Cooling & Heating)", "value_ar": "مضخة حرارية (تبريد وتدفئة)" },
+        { "key_en": "Capacities", "key_ar": "السعات", "value_en": "9K, 12K, 18K, 24K, 36K BTU/h", "value_ar": "9K، 12K، 18K، 24K، 36K BTU/h" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Fireproof electric control box with easy disassembly and maintenance", "value_ar": "صندوق تحكم كهربائي مقاوم للحريق بسهولة الفك والصيانة" }
+      ],
+      "isActive": true,
+      "order": 30
+    },
+    {
+      "title_en": "T3 On-Off Cooling Only & Heat Pump Light Commercial AC – Top Discharge",
+      "title_ar": "مكيف تجاري خفيف T3 عادي تبريد ومضخة حرارية – تفريغ علوي",
+      "shortDesc_en": "T3 climate-rated on-off LCAC with twin rotary DC inverter compressor, AHRI/ETL certified, rapid heating/cooling, 4-way convertible installation, and multi-protection system.",
+      "shortDesc_ar": "مكيف تجاري خفيف بتصنيف مناخي T3 عادي مع ضاغط انفرتر دوار مزدوج DC، معتمد من AHRI/ETL، تدفئة/تبريد سريعين، تركيب رباعي الاتجاهات، ونظام حماية متعدد.",
+      "description_en": "T3 climate-rated on-off light commercial air conditioner supporting both cooling only and heat pump modes, designed for high ambient temperature regions. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for optimal performance. AHRI Certified and ETL listed for international compliance. Delivers rapid heating and cooling with low noise operation. Cost effective — saves up to $100 per year compared to EER 10.0 units based on $0.12/kWh and 1,200 hours annual cooling. Multi-position 4-way convertible installation supports vertical up airflow and horizontal right airflow. Comprehensive multi-protection system with high-pressure, low-pressure, and high exhaust temperature safeguards. Universal design for easier stocking with a variety of options in cooling capacity, indoor unit type, and energy efficiency level. The T3 climate rating ensures reliable operation in extreme hot-dry and hot-humid environments.",
+      "description_ar": "مكيف تجاري خفيف بتصنيف مناخي T3 عادي يدعم أوضاع التبريد فقط والمضخة الحرارية، مصمم لمناطق درجات الحرارة المحيطة العالية. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لأداء مثالي. معتمد من AHRI ومدرج في ETL للامتثال الدولي. يوفر تدفئة وتبريد سريعين مع تشغيل هادئ. موفر للتكلفة — يوفر حتى 100 دولار سنوياً مقارنة بوحدات EER 10.0. تركيب رباعي الاتجاهات قابل للتحويل يدعم التدفق العمودي والأفقي. نظام حماية متعدد شامل مع الضغط العالي والمنخفض ودرجة حرارة العادم. تصميم عالمي لسهولة التخزين. التصنيف المناخي T3 يضمن تشغيلاً موثوقاً في البيئات الحارة الجافة والحارة الرطبة.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/t3-onoff-cooling-heatpump-lcac-top"
+      ],
+      "features": [
+        { "key_en": "Climate Rating", "key_ar": "التصنيف المناخي", "value_en": "T3 — extreme hot-dry and hot-humid environments", "value_ar": "T3 — بيئات حارة جافة وحارة رطبة متطرفة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified & ETL Listed", "value_ar": "معتمد من AHRI ومدرج في ETL" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "Cooling Only & Heat Pump", "value_ar": "تبريد فقط ومضخة حرارية" },
+        { "key_en": "Energy Savings", "key_ar": "توفير الطاقة", "value_en": "Up to $100/year vs EER 10.0 units", "value_ar": "حتى 100 دولار/سنة مقارنة بوحدات EER 10.0" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق عمودي علوي وأفقي يمين" },
+        { "key_en": "Protection", "key_ar": "الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 31
+    },
+    {
+      "title_en": "T3 On-Off Cooling Only & Heat Pump Light Commercial AC – Side Discharge",
+      "title_ar": "مكيف تجاري خفيف T3 عادي تبريد ومضخة حرارية – تفريغ جانبي",
+      "shortDesc_en": "T3 climate-rated on-off LCAC with side discharge variant, twin rotary DC inverter compressor, AHRI/ETL certified, 4-way convertible installation, and comprehensive multi-protection.",
+      "shortDesc_ar": "مكيف تجاري خفيف بتصنيف مناخي T3 عادي بنسخة تفريغ جانبي، ضاغط انفرتر دوار مزدوج DC، معتمد من AHRI/ETL، تركيب رباعي الاتجاهات، وحماية متعددة شاملة.",
+      "description_en": "T3 climate-rated on-off light commercial air conditioner with side discharge design, supporting both cooling only and heat pump modes for high ambient temperature regions. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency. AHRI Certified and ETL listed. Delivers rapid heating and cooling with low noise. Cost effective — saves up to $100 per year compared to EER 10.0 units. Multi-position 4-way convertible installation for vertical up and horizontal right airflow. Comprehensive multi-protection including high-pressure, low-pressure, and high exhaust temperature safeguards. Universal design for easier stocking with variety in cooling capacity, indoor unit types, and efficiency levels. The T3 rating ensures reliable operation in extreme hot climates, making it ideal for Middle Eastern and tropical markets.",
+      "description_ar": "مكيف تجاري خفيف بتصنيف مناخي T3 عادي بتصميم تفريغ جانبي، يدعم أوضاع التبريد فقط والمضخة الحرارية لمناطق درجات الحرارة المحيطة العالية. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل. معتمد من AHRI ومدرج في ETL. يوفر تدفئة وتبريد سريعين مع تشغيل هادئ. موفر للتكلفة — يوفر حتى 100 دولار سنوياً مقارنة بوحدات EER 10.0. تركيب رباعي الاتجاهات للتدفق العمودي والأفقي. حماية متعددة شاملة تشمل الضغط العالي والمنخفض ودرجة حرارة العادم. تصميم عالمي لسهولة التخزين. التصنيف T3 يضمن تشغيلاً موثوقاً في المناخات الحارة المتطرفة، مما يجعله مثالياً لأسواق الشرق الأوسط والمناطق الاستوائية.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/t3-onoff-cooling-heatpump-lcac-side"
+      ],
+      "features": [
+        { "key_en": "Climate Rating", "key_ar": "التصنيف المناخي", "value_en": "T3 — extreme hot-dry and hot-humid environments (Middle East & tropical markets)", "value_ar": "T3 — بيئات حارة جافة وحارة رطبة متطرفة (أسواق الشرق الأوسط والمناطق الاستوائية)" },
+        { "key_en": "Discharge Type", "key_ar": "نوع التفريغ", "value_en": "Side Discharge Design", "value_ar": "تصميم تفريغ جانبي" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified & ETL Listed", "value_ar": "معتمد من AHRI ومدرج في ETL" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Modes", "key_ar": "الأوضاع", "value_en": "Cooling Only & Heat Pump", "value_ar": "تبريد فقط ومضخة حرارية" },
+        { "key_en": "Energy Savings", "key_ar": "توفير الطاقة", "value_en": "Up to $100/year vs EER 10.0 units", "value_ar": "حتى 100 دولار/سنة مقارنة بوحدات EER 10.0" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق عمودي علوي وأفقي يمين" },
+        { "key_en": "Protection", "key_ar": "الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 32
+    },
+    {
+      "title_en": "TRACE COOL 50Hz/60Hz R410A T3 Floor Standing AC",
+      "title_ar": "مكيف أرضي TRACE COOL بتردد 50Hz/60Hz R410A بتصنيف T3",
+      "shortDesc_en": "T3 climate-rated floor standing LCAC supporting 50Hz and 60Hz, R410A refrigerant, twin rotary DC inverter compressor, AHRI/ETL certified, 4-way convertible design, and multi-protection system.",
+      "shortDesc_ar": "مكيف أرضي تجاري خفيف بتصنيف مناخي T3 يدعم 50Hz و60Hz، وسيط R410A، ضاغط انفرتر دوار مزدوج DC، معتمد من AHRI/ETL، تصميم رباعي الاتجاهات، ونظام حماية متعدد.",
+      "description_en": "TRACE COOL 50Hz/60Hz R410A T3 floor standing air conditioner for light commercial applications in high ambient temperature regions. Powered by a high-efficiency twin rotary DC inverter compressor with adjustable frequency for optimal performance across varying loads. AHRI Certified and ETL listed for international compliance. Delivers rapid heating and cooling with low noise operation. Cost effective — saves up to $100 per year compared to EER 10.0 units based on $0.12/kWh and 1,200 hours annual cooling. Multi-position 4-way convertible installation supports vertical up airflow and horizontal right airflow for flexible deployment. Comprehensive multi-protection system with high-pressure, low-pressure, and high exhaust temperature safeguards. Universal design for easier stocking with multiple options for cooling capacity, indoor unit type, and energy efficiency level. The T3 climate rating and dual-frequency support (50Hz and 60Hz) make this floor standing unit suitable for global deployment across diverse power standards and hot climate regions.",
+      "description_ar": "مكيف أرضي TRACE COOL بتردد 50Hz/60Hz مع وسيط R410A بتصنيف مناخي T3 للتطبيقات التجارية الخفيفة في مناطق درجات الحرارة المحيطة العالية. يعمل بضاغط انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل لأداء مثالي عبر أحمال متغيرة. معتمد من AHRI ومدرج في ETL للامتثال الدولي. يوفر تدفئة وتبريد سريعين مع تشغيل هادئ. موفر للتكلفة — يوفر حتى 100 دولار سنوياً مقارنة بوحدات EER 10.0. تركيب رباعي الاتجاهات قابل للتحويل يدعم التدفق العمودي والأفقي. نظام حماية متعدد شامل مع الضغط العالي والمنخفض ودرجة حرارة العادم. تصميم عالمي لسهولة التخزين. التصنيف المناخي T3 ودعم الترددين (50Hz و60Hz) يجعلان هذه الوحدة الأرضية مناسبة للنشر العالمي عبر معايير طاقة متنوعة ومناطق مناخ حار.",
+      "subcategory_ref": "light_commercial",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/tracecool-50hz-60hz-r410a-t3-floor-standing"
+      ],
+      "features": [
+        { "key_en": "Form Factor", "key_ar": "الشكل", "value_en": "Floor Standing Unit", "value_ar": "وحدة أرضية" },
+        { "key_en": "Climate Rating", "key_ar": "التصنيف المناخي", "value_en": "T3 — high ambient temperature regions", "value_ar": "T3 — مناطق درجات حرارة محيطة عالية" },
+        { "key_en": "Frequency", "key_ar": "التردد", "value_en": "Dual: 50Hz and 60Hz", "value_ar": "مزدوج: 50Hz و 60Hz" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI Certified & ETL Listed", "value_ar": "معتمد من AHRI ومدرج في ETL" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R410A", "value_ar": "R410A" },
+        { "key_en": "Compressor", "key_ar": "الضاغط", "value_en": "High-efficiency twin rotary DC inverter with adjustable frequency", "value_ar": "انفرتر دوار مزدوج DC عالي الكفاءة بتردد قابل للتعديل" },
+        { "key_en": "Energy Savings", "key_ar": "توفير الطاقة", "value_en": "Up to $100/year vs EER 10.0 units", "value_ar": "حتى 100 دولار/سنة مقارنة بوحدات EER 10.0" },
+        { "key_en": "Installation", "key_ar": "التركيب", "value_en": "4-way convertible: vertical up and horizontal right airflow", "value_ar": "رباعي الاتجاهات: تدفق عمودي علوي وأفقي يمين" },
+        { "key_en": "Protection", "key_ar": "الحماية", "value_en": "High-pressure, low-pressure, and high exhaust temperature protection", "value_ar": "حماية ضغط عالي وضغط منخفض ودرجة حرارة عادم مرتفعة" }
+      ],
+      "isActive": true,
+      "order": 33
+    },
+    {
+      "title_en": "TRACE COOL Z-PRO 50Hz/60Hz 20 SEER+ R410A Inverter Split AC",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL Z-PRO بتردد 50Hz/60Hz وكفاءة 20 SEER+ R410A",
+      "shortDesc_en": "Z-PRO series 20 SEER+ inverter split AC with R410A, Gold Fin coils, emergency use function, refrigerant leak detection, full DC inverter (65Hz in 6s), wide voltage 150–270V, and AHRI & UL certified.",
+      "shortDesc_ar": "مكيف سبليت انفرتر سلسلة Z-PRO بكفاءة 20 SEER+ مع R410A، ملفات Gold Fin، وظيفة استخدام طوارئ، كشف تسرب الوسيط، انفرتر DC كامل (65Hz خلال 6 ثوان)، نطاق جهد واسع 150–270V، ومعتمد من AHRI و UL.",
+      "description_en": "TRACE COOL Z-PRO series 50Hz/60Hz inverter mini split air conditioner with 20 SEER+ energy efficiency rating, offering both cooling only and heat pump modes using R410A eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room temperature control and reduced energy costs. Features Gold Fin technology — golden hydrophilic fins on both indoor and outdoor unit coils that greatly increase heat exchange area, accelerate cooling and heating speed, and enhance anti-corrosion performance for extended durability. Emergency use function and fire-proof electric control box ensure operational safety. Built-in refrigerant leakage detection displays error codes on the indoor unit panel for quick problem identification and convenient maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall unit performance while reducing operating noise for a tranquil environment. High-density filter delivers fresh, clean indoor air. Smart WiFi control available via optional module for convenient mobile device operation. Full DC inverter compressor delivers higher efficiency and reaches 65Hz within just 6 seconds when starting, enabling the unit to reach set temperatures in significantly shorter time. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions globally. 20 SEER+ energy efficiency provides money-saving, energy-saving, low-carbon operation — especially suitable for markets with higher efficiency requirements. Dual certified with AHRI and UL certificates, making this series ideal for regions requiring these certifications for air conditioning product imports.",
+      "description_ar": "مكيف سبليت صغير انفرتر سلسلة TRACE COOL Z-PRO بتردد 50Hz/60Hz وتصنيف كفاءة طاقة 20 SEER+، يوفر أوضاع التبريد فقط والمضخة الحرارية باستخدام وسيط R410A صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بتقنية Gold Fin — ملفات محبة للماء مطلية بالذهب على وحدتي التكثيف الداخلية والخارجية تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد والتدفئة وتعزز مقاومة التآكل لمتانة ممتدة. وظيفة الاستخدام الطارئ وصندوق التحكم الكهربائي المقاوم للحريق يضمنان السلامة التشغيلية. كشف تسرب وسيط التبريد المدمج يعرض رموز الخطأ على لوحة الوحدة الداخلية لتحديد المشاكل بسرعة وجدولة الصيانة. ريش مروحة عالية الكفاءة تحسن كفاءة تبديد الحرارة والأداء العام مع تقليل ضوضاء التشغيل لبيئة هادئة. فلتر عالي الكثافة يوفر هواءً داخلياً نظيفاً ومنعشاً. تحكم WiFi ذكي متاح عبر وحدة اختيارية للتشغيل من الأجهزة المحمولة. ضاغط انفرتر DC كامل يوفر كفاءة أعلى ويصل لـ 65Hz خلال 6 ثوان فقط عند البدء. نطاق جهد واسع (150–270V) يغطي جميع سيناريوهات الطور الواحد عالمياً. كفاءة 20 SEER+ توفر تشغيلاً موفراً ومنخفض الكربون. معتمد مزدوجاً من AHRI و UL.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zpro-50hz-60hz-20seer-r410a-inverter"
+      ],
+      "features": [
+        { "key_en": "Series", "key_ar": "السلسلة", "value_en": "Z-PRO Series", "value_ar": "سلسلة Z-PRO" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "20 SEER+ with R410A refrigerant", "value_ar": "20 SEER+ مع وسيط R410A" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling/heating, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد/تدفئة أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds for rapid temperature attainment", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان للوصول السريع للحرارة" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Emergency use function, fireproof electric control box", "value_ar": "وظيفة استخدام طارئ، صندوق تحكم كهربائي مقاوم للحريق" },
+        { "key_en": "Air Quality", "key_ar": "جودة الهواء", "value_en": "High-density filter for fresh clean air; high-efficiency fan blades for reduced noise", "value_ar": "فلتر عالي الكثافة لهواء نظيف؛ ريش مروحة عالية الكفاءة لضوضاء أقل" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & UL Dual Certified", "value_ar": "معتمد مزدوجاً من AHRI و UL" }
+      ],
+      "isActive": true,
+      "order": 34
+    },
+    {
+      "title_en": "TRACE COOL Z-PRO 50Hz/60Hz R32 Inverter Cooling Only Split AC",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL Z-PRO بتردد 50Hz/60Hz R32 للتبريد فقط",
+      "shortDesc_en": "Z-PRO series cooling-only inverter split AC with R32 eco-friendly refrigerant, Gold Fin coils, emergency use function, refrigerant leak detection, full DC inverter (65Hz in 6s), wide voltage 150–270V, and AHRI & UL certified.",
+      "shortDesc_ar": "مكيف سبليت انفرتر سلسلة Z-PRO للتبريد فقط مع وسيط R32 صديق للبيئة، ملفات Gold Fin، وظيفة استخدام طوارئ، كشف تسرب الوسيط، انفرتر DC كامل (65Hz خلال 6 ثوان)، نطاق جهد واسع 150–270V، ومعتمد من AHRI و UL.",
+      "description_en": "TRACE COOL Z-PRO series 50Hz/60Hz inverter cooling-only mini split air conditioner using R32 eco-friendly refrigerant. Installs a single condenser and wall-mounted unit for precise room temperature control and energy cost reduction. Features Gold Fin technology — golden hydrophilic fins on both indoor and outdoor unit coils that greatly increase heat exchange area, accelerate cooling speed, and enhance anti-corrosion performance for extended durability. Emergency use function and fire-proof electric control box ensure safety during operation. Built-in refrigerant leakage detection displays error codes on the indoor unit panel for convenient problem identification and maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall performance while reducing noise for a tranquil environment. High-density filter delivers fresh, clean air. Smart WiFi control via optional module enables convenient mobile device operation. Full DC inverter compressor reaches 65Hz within just 6 seconds when starting, allowing rapid temperature attainment. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions. Higher energy efficiency delivers money-saving, low-carbon operation suited for markets with strict efficiency requirements. Dual certified with AHRI and UL for compliance with international import standards.",
+      "description_ar": "مكيف سبليت صغير انفرتر سلسلة TRACE COOL Z-PRO بتردد 50Hz/60Hz للتبريد فقط باستخدام وسيط R32 صديق للبيئة. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة وتقليل تكاليف الطاقة. يتميز بتقنية Gold Fin — ملفات محبة للماء مطلية بالذهب على الوحدتين تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد وتعزز مقاومة التآكل لمتانة ممتدة. وظيفة الاستخدام الطارئ وصندوق التحكم المقاوم للحريق يضمنان السلامة. كشف تسرب وسيط التبريد المدمج يعرض رموز الخطأ على لوحة الوحدة الداخلية. ريش مروحة عالية الكفاءة تحسن تبديد الحرارة والأداء مع تقليل الضوضاء. فلتر عالي الكثافة لهواء نظيف. تحكم WiFi ذكي عبر وحدة اختيارية. ضاغط انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان. نطاق جهد واسع (150–270V) لمناطق 50Hz و 60Hz. كفاءة طاقة عالية لتشغيل موفر ومنخفض الكربون. معتمد مزدوجاً من AHRI و UL.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zpro-50hz-60hz-r32-inverter-cooling-only"
+      ],
+      "features": [
+        { "key_en": "Series", "key_ar": "السلسلة", "value_en": "Z-PRO Series", "value_ar": "سلسلة Z-PRO" },
+        { "key_en": "Mode", "key_ar": "الوضع", "value_en": "Cooling Only", "value_ar": "تبريد فقط" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R32 Eco-Friendly", "value_ar": "R32 صديق للبيئة" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Emergency use function, fireproof electric control box", "value_ar": "وظيفة استخدام طارئ، صندوق تحكم كهربائي مقاوم للحريق" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & UL Dual Certified", "value_ar": "معتمد مزدوجاً من AHRI و UL" }
+      ],
+      "isActive": true,
+      "order": 35
+    },
+    {
+      "title_en": "TRACE COOL Z-PRO 60Hz 26 SEER2 R454B Inverter Heat Pump Split AC",
+      "title_ar": "مكيف سبليت انفرتر TRACE COOL Z-PRO بتردد 60Hz وكفاءة 26 SEER2 R454B مضخة حرارية",
+      "shortDesc_en": "Z-PRO series flagship 26 SEER2 heat pump inverter split AC with R454B next-gen eco-friendly refrigerant, Gold Fin coils, emergency use function, refrigerant leak detection, full DC inverter (65Hz in 6s), wide voltage 150–270V, and AHRI & UL certified.",
+      "shortDesc_ar": "مكيف سبليت انفرتر رائد سلسلة Z-PRO بكفاءة 26 SEER2 مضخة حرارية مع وسيط R454B الجيل التالي صديق البيئة، ملفات Gold Fin، وظيفة استخدام طوارئ، كشف تسرب الوسيط، انفرتر DC كامل (65Hz خلال 6 ثوان)، نطاق جهد واسع 150–270V، ومعتمد من AHRI و UL.",
+      "description_en": "TRACE COOL Z-PRO series flagship 60Hz inverter heat pump mini split air conditioner with an industry-leading 26 SEER2 energy efficiency rating, using R454B next-generation super eco-friendly refrigerant with ultra-low global warming potential. Installs a single condenser and wall-mounted unit for precise room-by-room temperature control and maximized energy cost reduction. Features Gold Fin technology — golden hydrophilic fins on both indoor and outdoor unit coils that greatly increase heat exchange area, accelerate cooling and heating speed, and enhance anti-corrosion performance for extended durability. Emergency use function and fire-proof electric control box ensure safety in all operating conditions. Built-in refrigerant leakage detection displays error codes on the indoor unit panel for quick problem identification and convenient maintenance scheduling. High-efficiency fan blades improve heat dissipation efficiency and overall unit performance while reducing operating noise for a tranquil indoor environment. High-density filter delivers fresh, clean air. Smart WiFi control available via optional module for convenient mobile device operation. Full DC inverter compressor delivers the highest efficiency and reaches 65Hz within just 6 seconds when starting, enabling the unit to achieve set cooling or heating temperatures in significantly shorter time. Wide-range voltage operation (150–270V) covers all single-phase power scenarios for both 50Hz and 60Hz regions globally. The 26 SEER2 energy efficiency is the highest in the Z-PRO lineup, delivering maximum money-saving, energy-saving, low-carbon operation — making it especially suitable for clients and markets with the most stringent energy efficiency requirements. Dual certified with AHRI and UL certificates for full compliance with international import and safety standards.",
+      "description_ar": "مكيف سبليت صغير انفرتر رائد سلسلة TRACE COOL Z-PRO بتردد 60Hz مع تصنيف كفاءة طاقة رائد في الصناعة 26 SEER2، يستخدم وسيط R454B من الجيل التالي فائق الصداقة للبيئة بإمكانية احترار عالمي منخفضة للغاية. يتم تركيب وحدة تكثيف واحدة ووحدة حائطية للتحكم الدقيق بالحرارة غرفة بغرفة وتحقيق أقصى تقليل لتكاليف الطاقة. يتميز بتقنية Gold Fin — ملفات محبة للماء مطلية بالذهب على وحدتي التكثيف الداخلية والخارجية تزيد بشكل كبير مساحة تبادل الحرارة وتسرع التبريد والتدفئة وتعزز مقاومة التآكل لمتانة ممتدة. وظيفة الاستخدام الطارئ وصندوق التحكم الكهربائي المقاوم للحريق يضمنان السلامة في جميع ظروف التشغيل. كشف تسرب وسيط التبريد المدمج يعرض رموز الخطأ على لوحة الوحدة الداخلية لتحديد المشاكل بسرعة وجدولة الصيانة. ريش مروحة عالية الكفاءة تحسن كفاءة تبديد الحرارة والأداء العام مع تقليل ضوضاء التشغيل لبيئة داخلية هادئة. فلتر عالي الكثافة لهواء نظيف ومنعش. تحكم WiFi ذكي عبر وحدة اختيارية للتشغيل من الأجهزة المحمولة. ضاغط انفرتر DC كامل يوفر أعلى كفاءة ويصل لـ 65Hz خلال 6 ثوان فقط عند البدء. نطاق جهد واسع (150–270V) يغطي جميع سيناريوهات الطور الواحد عالمياً. كفاءة 26 SEER2 هي الأعلى في مجموعة Z-PRO، توفر أقصى توفير للمال والطاقة وتشغيل منخفض الكربون — مناسبة بشكل خاص للعملاء والأسواق ذات المتطلبات الأكثر صرامة لكفاءة الطاقة. معتمد مزدوجاً من AHRI و UL للامتثال الكامل لمعايير الاستيراد والسلامة الدولية.",
+      "subcategory_ref": "ductless_mini_split",
+      "images": [
+        "https://res.cloudinary.com/tracecool/image/upload/v1/products/zpro-60hz-26seer2-r454b-inverter-heatpump"
+      ],
+      "features": [
+        { "key_en": "Series", "key_ar": "السلسلة", "value_en": "Z-PRO Series (Flagship)", "value_ar": "سلسلة Z-PRO (الرائدة)" },
+        { "key_en": "Efficiency", "key_ar": "الكفاءة", "value_en": "26 SEER2 — highest in Z-PRO lineup", "value_ar": "26 SEER2 — الأعلى في مجموعة Z-PRO" },
+        { "key_en": "Refrigerant", "key_ar": "وسيط التبريد", "value_en": "R454B next-gen super eco-friendly with ultra-low GWP", "value_ar": "R454B جيل تالي فائق الصداقة للبيئة بإمكانية احترار منخفضة جداً" },
+        { "key_en": "Gold Fin Coils", "key_ar": "ملفات Gold Fin", "value_en": "Hydrophilic fins on indoor/outdoor units — increased heat exchange, faster cooling/heating, enhanced corrosion resistance", "value_ar": "ملفات محبة للماء على الوحدتين — تبادل حراري أكبر، تبريد/تدفئة أسرع، مقاومة تآكل محسنة" },
+        { "key_en": "Refrigerant Leak Detection", "key_ar": "كشف تسرب الوسيط", "value_en": "Error code display on indoor panel for quick diagnosis", "value_ar": "عرض رمز خطأ على لوحة الوحدة الداخلية للتشخيص السريع" },
+        { "key_en": "Compressor Speed", "key_ar": "سرعة الضاغط", "value_en": "Full DC inverter reaches 65Hz within 6 seconds for rapid temperature attainment", "value_ar": "انفرتر DC كامل يصل لـ 65Hz خلال 6 ثوان للوصول السريع للحرارة" },
+        { "key_en": "Voltage Range", "key_ar": "نطاق الجهد", "value_en": "150–270V wide-range for 50Hz and 60Hz regions", "value_ar": "نطاق واسع 150–270V لمناطق 50Hz و 60Hz" },
+        { "key_en": "Safety", "key_ar": "السلامة", "value_en": "Emergency use function, fireproof electric control box", "value_ar": "وظيفة استخدام طارئ، صندوق تحكم كهربائي مقاوم للحريق" },
+        { "key_en": "Smart Control", "key_ar": "التحكم الذكي", "value_en": "WiFi module (optional) for mobile device control", "value_ar": "وحدة WiFi (اختيارية) للتحكم من الأجهزة المحمولة" },
+        { "key_en": "Certification", "key_ar": "الشهادات", "value_en": "AHRI & UL Dual Certified", "value_ar": "معتمد مزدوجاً من AHRI و UL" }
+      ],
+      "isActive": true,
+      "order": 36
+    }
+  ]
+}

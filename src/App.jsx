@@ -24,6 +24,8 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 
+import AdminApp from './admin/AdminApp'
+
 gsap.registerPlugin(ScrollTrigger)
 
 function HomePage() {
@@ -47,12 +49,10 @@ function ScrollToTop() {
   useEffect(() => {
     if (pathname !== '/') window.scrollTo(0, 0)
 
-    // Re-attach reveal observer on every route so all pages benefit
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active') }),
       { threshold: 0.08 }
     )
-    // Small delay so the new page's DOM is mounted before we query
     const id = setTimeout(() => {
       document.querySelectorAll('.reveal').forEach(el => {
         el.classList.remove('active')
@@ -68,9 +68,20 @@ function ScrollToTop() {
   return null
 }
 
-export default function App() {
+function AppContent() {
+  const { pathname } = useLocation()
+  const isAdmin = pathname.startsWith('/admin')
+
+  if (isAdmin) {
+    return (
+      <Routes>
+        <Route path="/admin/*" element={<AdminApp />} />
+      </Routes>
+    )
+  }
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Navbar />
       <Routes>
@@ -85,6 +96,14 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }
