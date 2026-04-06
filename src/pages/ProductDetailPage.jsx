@@ -321,7 +321,7 @@ export default function ProductDetailPage() {
                 className="pdp-desc text-sm leading-loose mb-10"
                 style={{ color: 'rgba(255,255,255,0.45)', maxWidth: '500px' }}
               >
-                {shortDesc || description}
+                {description}
               </p>
 
               {/* CTA row */}

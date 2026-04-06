@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:w-5/12">
             <div className="mb-6">
-              <a href="#home" className="text-2xl font-bold tracking-tight">TRACECOOL</a>
+              <a href="/" className="text-2xl font-bold tracking-tight">TRACECOOL</a>
             </div>
             <div className="w-10 h-px bg-accent mb-6"></div>
             <p className="text-white/50 text-sm leading-relaxed max-w-sm mb-8">{footer.desc}</p>
@@ -67,7 +67,7 @@ export default function Footer() {
                 <li><a href={`mailto:${footer.email}`} className="hover:text-white transition-colors">{footer.email}</a></li>
                 <li><a href={`tel:${footer.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">{footer.phone}</a></li>
                 <li className="pt-2">
-                  <a href="#contact" className="inline-flex items-center gap-2 text-accent-light hover:text-white transition-colors text-xs font-medium">
+                  <a href="/#contact" className="inline-flex items-center gap-2 text-accent-light hover:text-white transition-colors text-xs font-medium">
                     {footer.getQuote}
                     <svg className="w-3 h-3 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

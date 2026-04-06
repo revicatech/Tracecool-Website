@@ -8,8 +8,17 @@ const emptyForm = {
   position_en: '', position_ar: '',
   bio_en: '', bio_ar: '',
   email: '', phone: '',
+  country: '', region: '',
+  label: '', type: '',
+  isHQ: false,
+  address: '', since: '', team: '', projects: '',
+  desc: '',
+  lat: '', lng: '',
   isActive: true, order: 0,
 };
+
+const REGION_OPTIONS = ['Europe', 'Middle East', 'Asia-Pacific', 'Americas', 'Africa', 'Other'];
+const TYPE_OPTIONS = ['Headquarters', 'Regional Office', 'Project Office', 'Partner'];
 
 export default function AgentsPage() {
   const [items, setItems] = useState([]);
@@ -31,7 +40,10 @@ export default function AgentsPage() {
   };
   useEffect(load, []);
 
-  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+  const handleChange = e => {
+    const { name, value, type, checked } = e.target;
+    setForm(f => ({ ...f, [name]: type === 'checkbox' ? checked : value }));
+  };
 
   const openAdd = () => {
     setForm(emptyForm); setEditing(null);
@@ -44,6 +56,13 @@ export default function AgentsPage() {
       position_en: item.position_en || '', position_ar: item.position_ar || '',
       bio_en: item.bio_en || '', bio_ar: item.bio_ar || '',
       email: item.email || '', phone: item.phone || '',
+      country: item.country || '', region: item.region || '',
+      label: item.label || '', type: item.type || '',
+      isHQ: item.isHQ || false,
+      address: item.address || '', since: item.since || '',
+      team: item.team || '', projects: item.projects || '',
+      desc: item.desc || '',
+      lat: item.lat ?? '', lng: item.lng ?? '',
       isActive: item.isActive, order: item.order,
     });
     setImageFile(null); setImagePreview(item.image || '');
@@ -128,10 +147,21 @@ export default function AgentsPage() {
                 }
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-[#071525] truncate">{item.name_en}</p>
+                <div className="flex items-center gap-2">
+                  <p className="font-semibold text-[#071525] truncate">{item.name_en}</p>
+                  {item.isHQ && (
+                    <span className="text-[10px] font-bold bg-[#071525] text-white px-1.5 py-0.5 rounded">HQ</span>
+                  )}
+                </div>
                 <p className="text-xs text-[#5A7896]" dir="rtl">{item.name_ar}</p>
-                <p className="text-xs text-[#1A6FDB] mt-0.5">{item.position_en}</p>
-                {item.email && <p className="text-xs text-[#5A7896] mt-0.5 truncate">{item.email}</p>}
+                {item.country && (
+                  <p className="text-xs text-[#1A6FDB] mt-0.5">{item.country}{item.region ? ` · ${item.region}` : ''}</p>
+                )}
+                {item.type && <p className="text-xs text-[#5A7896] mt-0.5">{item.type}</p>}
+                {item.phone && <p className="text-xs text-[#5A7896] mt-0.5 truncate">{item.phone}</p>}
+                {(item.lat != null && item.lat !== '') && (
+                  <p className="text-xs text-[#8BA5C0] mt-0.5">{item.lat}, {item.lng}</p>
+                )}
                 <div className="flex items-center gap-2 mt-3">
                   <button onClick={() => openEdit(item)}
                     className="px-3 py-1.5 rounded-lg text-xs font-medium text-[#1A6FDB] border border-[#1A6FDB]/20 hover:bg-[#1A6FDB]/5 transition">
@@ -184,8 +214,107 @@ export default function AgentsPage() {
                 </div>
               </div>
 
+              {/* Location */}
+              <div className="border-t border-[#E4EBF5] pt-5">
+                <p className="text-xs font-bold text-[#5A7896] uppercase tracking-widest mb-4">Location & Map</p>
+
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Country</label>
+                    <input type="text" name="country" value={form.country} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="Germany" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Region</label>
+                    <select name="region" value={form.region} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
+                      <option value="">— Select region —</option>
+                      {REGION_OPTIONS.map(r => <option key={r} value={r}>{r}</option>)}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Address</label>
+                  <input type="text" name="address" value={form.address} onChange={handleChange}
+                    className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                    placeholder="Street, City, Postal Code, Country" />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Latitude</label>
+                    <input type="number" step="any" name="lat" value={form.lat} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="49.6317" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Longitude</label>
+                    <input type="number" step="any" name="lng" value={form.lng} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="8.3575" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Office Type</label>
+                    <select name="type" value={form.type} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
+                      <option value="">— Select type —</option>
+                      {TYPE_OPTIONS.map(t => <option key={t} value={t}>{t}</option>)}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Label (badge)</label>
+                    <input type="text" name="label" value={form.label} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="HQ / Regional / Project" />
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 mb-4">
+                  <input type="checkbox" id="isHQ" name="isHQ" checked={form.isHQ} onChange={handleChange}
+                    className="w-4 h-4 accent-[#1A6FDB]" />
+                  <label htmlFor="isHQ" className="text-sm font-medium text-[#071525]">Mark as Headquarters</label>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Description</label>
+                  <textarea name="desc" value={form.desc} onChange={handleChange} rows={3}
+                    className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] resize-none"
+                    placeholder="Short description of this office/agent location…" />
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="border-t border-[#E4EBF5] pt-5">
+                <p className="text-xs font-bold text-[#5A7896] uppercase tracking-widest mb-4">Office Stats</p>
+                <div className="grid grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Since (year)</label>
+                    <input type="text" name="since" value={form.since} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="2005" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Team Size</label>
+                    <input type="text" name="team" value={form.team} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="18" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Projects</label>
+                    <input type="text" name="projects" value={form.projects} onChange={handleChange}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                      placeholder="150+" />
+                  </div>
+                </div>
+              </div>
+
               {/* Photo */}
-              <div>
+              <div className="border-t border-[#E4EBF5] pt-5">
                 <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-2">Photo</label>
                 <div className="flex items-center gap-4">
                   {imagePreview && (

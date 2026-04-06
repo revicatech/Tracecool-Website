@@ -10,6 +10,19 @@ const agentSchema = new mongoose.Schema({
   image: { type: String, default: '' },
   email: { type: String, default: '' },
   phone: { type: String, default: '' },
+  // Map / network fields
+  country: { type: String, default: '' },
+  region: { type: String, default: '' },
+  label: { type: String, default: '' },      // e.g. "HQ", "Regional", "Project"
+  type: { type: String, default: '' },       // e.g. "Headquarters", "Regional Office"
+  isHQ: { type: Boolean, default: false },
+  address: { type: String, default: '' },
+  since: { type: String, default: '' },
+  team: { type: String, default: '' },
+  projects: { type: String, default: '' },
+  desc: { type: String, default: '' },
+  lat: { type: Number, default: null },
+  lng: { type: Number, default: null },
   isActive: { type: Boolean, default: true },
   order: { type: Number, default: 0 },
 }, { timestamps: true });

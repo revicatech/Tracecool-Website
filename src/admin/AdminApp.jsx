@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import AdminLayout from './components/AdminLayout';
@@ -16,6 +17,17 @@ function Protected({ children }) {
 }
 
 export default function AdminApp() {
+  useEffect(() => {
+    const prevDir = document.documentElement.dir
+    const prevLang = document.documentElement.lang
+    document.documentElement.dir = 'ltr'
+    document.documentElement.lang = 'en'
+    return () => {
+      document.documentElement.dir = prevDir
+      document.documentElement.lang = prevLang
+    }
+  }, [])
+
   return (
     <AuthProvider>
       <Routes>

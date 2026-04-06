@@ -202,6 +202,7 @@ export default function ProductsPage() {
   const [selectedSubcategories, setSelectedSubcategories] = useState([])
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false)
 
   const PAGE_SIZE = 12
 
@@ -323,10 +324,110 @@ export default function ProductsPage() {
       {/* Filter + Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          {/* Mobile filter toggle */}
+          <div className="lg:hidden flex items-center justify-between mb-5">
+            <button
+              onClick={() => setMobileFilterOpen(true)}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
+              style={{ background: '#F2F6FC', border: '1px solid #E4EBF5', color: '#071525' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4h18M7 8h10M11 12h2M9 16h6" />
+              </svg>
+              {t('Filters', 'الفلاتر')}
+              {selectedSubcategories.length > 0 && (
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full" style={{ background: '#1A6FDB', color: 'white' }}>
+                  {selectedSubcategories.length}
+                </span>
+              )}
+            </button>
+            <p className="text-xs" style={{ color: '#5A7896' }}>
+              {filtered.length} {t('products', 'منتجات')}
+            </p>
+          </div>
+
+          {/* Mobile filter drawer overlay */}
+          {mobileFilterOpen && (
+            <div className="lg:hidden fixed inset-0 z-50 flex">
+              <div
+                className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+                onClick={() => setMobileFilterOpen(false)}
+              />
+              <div
+                className={`relative ml-auto w-80 max-w-[90vw] h-full bg-white overflow-y-auto p-6 flex flex-col ${isRTL ? 'mr-auto ml-0' : ''}`}
+                style={{ boxShadow: '-8px 0 32px rgba(7,21,37,0.15)' }}
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-widest" style={{ color: '#5A7896' }}>
+                    {t('Filter Products', 'تصفية المنتجات')}
+                  </h3>
+                  <button
+                    onClick={() => setMobileFilterOpen(false)}
+                    className="w-8 h-8 flex items-center justify-center rounded-lg transition-colors"
+                    style={{ background: '#F2F6FC' }}
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                {selectedSubcategories.length > 0 && (
+                  <button
+                    onClick={() => { setSelectedSubcategories([]); setPage(1) }}
+                    className="text-xs font-medium mb-4 self-end transition-colors"
+                    style={{ color: '#1A6FDB' }}
+                  >
+                    {t('Clear all', 'مسح الكل')}
+                  </button>
+                )}
+
+                {/* Search */}
+                <div className="relative mb-5">
+                  <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#5A7896' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <input
+                    type="text"
+                    value={search}
+                    onChange={e => { setSearch(e.target.value); setPage(1) }}
+                    placeholder={t('Search products…', 'ابحث عن المنتجات…')}
+                    className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm"
+                    style={{ background: '#F2F6FC', border: '1px solid #E4EBF5', color: '#071525', outline: 'none' }}
+                    onFocus={e => e.target.style.borderColor = '#1A6FDB'}
+                    onBlur={e => e.target.style.borderColor = '#E4EBF5'}
+                  />
+                </div>
+
+                <div className="space-y-2 flex-1">
+                  {categories.map(cat => (
+                    <CategoryAccordion
+                      key={cat._id}
+                      cat={cat}
+                      subcategories={subcategories}
+                      selectedSubcategories={selectedSubcategories}
+                      onToggleSub={toggleSub}
+                      t={t}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setMobileFilterOpen(false)}
+                  className="mt-6 w-full py-3 rounded-xl text-sm font-semibold text-white transition-colors"
+                  style={{ background: '#1A6FDB' }}
+                >
+                  {t('Show Results', 'عرض النتائج')} ({filtered.length})
+                </button>
+              </div>
+            </div>
+          )}
+
           <div className="flex flex-col lg:flex-row gap-10">
 
-            {/* Sidebar Filter */}
-            <aside className="lg:w-72 flex-shrink-0">
+            {/* Sidebar Filter — desktop only */}
+            <aside className="hidden lg:block lg:w-72 flex-shrink-0">
               <div className="sticky top-28">
                 <div className="flex items-center justify-between mb-5">
                   <h3 className="text-sm font-semibold uppercase tracking-widest" style={{ color: '#5A7896' }}>

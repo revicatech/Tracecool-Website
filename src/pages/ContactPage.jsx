@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import L from 'leaflet'
 import { gsap } from 'gsap'
-import { agents } from '../data/pageData'
+import { useLanguage } from '../context/LanguageContext'
 
 function makeIcon(isHQ) {
   return L.divIcon({
@@ -89,7 +89,8 @@ function ContactItem({ icon, label, value, href }) {
 }
 
 // ── Office row ────────────────────────────────────────────────
-function OfficeRow({ agent }) {
+function OfficeRow({ agent, lang }) {
+  const displayName = (lang === 'ar' && agent.name_ar) ? agent.name_ar : agent.name_en
   return (
     <div
       className="flex items-center justify-between py-4 transition-colors group"
@@ -102,7 +103,7 @@ function OfficeRow({ agent }) {
         ></div>
         <div>
           <p className="text-sm font-medium text-white group-hover:text-[#4D9EFF] transition-colors">
-            {agent.name}, {agent.country}
+            {displayName}{agent.country ? `, ${agent.country}` : ''}
           </p>
           <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{agent.type}</p>
         </div>
@@ -122,8 +123,18 @@ function OfficeRow({ agent }) {
 
 // ── Main page ─────────────────────────────────────────────────
 export default function ContactPage() {
+  const { lang, isRTL } = useLanguage()
+  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
   const [submitted, setSubmitted] = useState(false)
   const [activeService, setActiveService] = useState('')
+  const [agents, setAgents] = useState([])
+
+  useEffect(() => {
+    fetch('/api/agents')
+      .then(r => r.json())
+      .then(data => setAgents(data.filter(a => a.isActive !== false)))
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -133,15 +144,9 @@ export default function ContactPage() {
     )
   }, [])
 
-  const serviceOptions = [
-    'HVAC System Design',
-    'Energy Efficiency Consulting',
-    'Installation & Commissioning',
-    'Maintenance Contract',
-    'Emergency Service',
-    'Building Automation / BMS',
-    'Other',
-  ]
+  const serviceOptions = lang === 'ar'
+    ? ['تصميم نظام التكييف', 'استشارات كفاءة الطاقة', 'التركيب والتشغيل', 'عقد صيانة', 'خدمة الطوارئ', 'أتمتة المباني / BMS', 'أخرى']
+    : ['HVAC System Design', 'Energy Efficiency Consulting', 'Installation & Commissioning', 'Maintenance Contract', 'Emergency Service', 'Building Automation / BMS', 'Other']
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -149,7 +154,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div style={{ background: '#071525', minHeight: '100vh' }}>
+    <div style={{ background: '#071525', minHeight: '100vh' }} dir={isRTL ? 'rtl' : 'ltr'}>
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section
@@ -169,14 +174,16 @@ export default function ContactPage() {
         ></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 contact-hero-content">
-          <div className="section-label light mb-5">Contact</div>
+          <div className="section-label light mb-5">{t('Contact', 'تواصل معنا')}</div>
           <h1 className="text-5xl lg:text-7xl font-medium text-white mb-6 leading-tight">
-            How to<br />
-            <span className="text-gradient italic font-light">Reach Us.</span>
+            {t('How to', 'كيف')}<br />
+            <span className="text-gradient italic font-light">{t('Reach Us.', 'تتواصل معنا.')}</span>
           </h1>
           <p className="text-white/50 max-w-xl text-sm leading-relaxed">
-            Ready to optimise your building's climate system? Whether it's a new installation, an energy audit,
-            or an urgent maintenance issue — our global team is ready to help.
+            {t(
+              "Ready to optimise your building's climate system? Whether it's a new installation, an energy audit, or an urgent maintenance issue — our global team is ready to help.",
+              'هل أنت مستعد لتحسين نظام المناخ في مبناك؟ سواء كان تركيباً جديداً أو تدقيقاً في الطاقة أو مشكلة صيانة عاجلة — فريقنا العالمي على أتم الاستعداد للمساعدة.'
+            )}
           </p>
         </div>
       </section>
@@ -188,12 +195,12 @@ export default function ContactPage() {
 
             {/* ── Contact info + HQ map (2 cols) ──────────────── */}
             <div className="lg:col-span-2 space-y-5">
-              <h2 className="text-xl font-semibold text-white mb-6">Headquarters</h2>
+              <h2 className="text-xl font-semibold text-white mb-6">{t('Headquarters', 'المقر الرئيسي')}</h2>
 
-              <ContactItem icon="location" label="Address" value="Lutherring 12, 67547 Worms, Germany" />
-              <ContactItem icon="email" label="Email" value="info@tracecool.de" href="mailto:info@tracecool.de" />
-              <ContactItem icon="phone" label="Phone" value="+49 (0) 6241 / 123 456" href="tel:+4962411234556" />
-              <ContactItem icon="clock" label="Office Hours" value="Mon – Fri, 08:00 – 18:00 CET · Emergency 24/7" />
+              <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Lutherring 12, 67547 Worms, Germany', 'لوثررينغ 12، 67547 فورمس، ألمانيا')} />
+              <ContactItem icon="email" label={t('Email', 'البريد الإلكتروني')} value="info@tracecool.de" href="mailto:info@tracecool.de" />
+              <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+49 (0) 6241 / 123 456" href="tel:+4962411234556" />
+              <ContactItem icon="clock" label={t('Office Hours', 'ساعات العمل')} value={t('Mon – Fri, 08:00 – 18:00 CET · Emergency 24/7', 'الاثنين – الجمعة، 08:00 – 18:00 بتوقيت وسط أوروبا · طوارئ 24/7')} />
 
               {/* HQ mini-map */}
               <div className="mt-4">
@@ -229,9 +236,9 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">Message Sent!</h3>
+                  <h3 className="text-2xl font-semibold text-white mb-3">{t('Message Sent!', 'تم إرسال الرسالة!')}</h3>
                   <p className="text-sm max-w-xs" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                    Thank you for reaching out. One of our engineers will respond within one business day.
+                    {t('Thank you for reaching out. One of our engineers will respond within one business day.', 'شكراً للتواصل معنا. سيرد أحد مهندسينا خلال يوم عمل واحد.')}
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -240,21 +247,21 @@ export default function ContactPage() {
                     onMouseEnter={e => e.currentTarget.style.color = 'white'}
                     onMouseLeave={e => e.currentTarget.style.color = '#4D9EFF'}
                   >
-                    Send another message
+                    {t('Send another message', 'إرسال رسالة أخرى')}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h2 className="text-xl font-semibold text-white mb-6">Send a Message</h2>
+                  <h2 className="text-xl font-semibold text-white mb-6">{t('Send a Message', 'أرسل رسالة')}</h2>
 
                   {/* Name + Email */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Full Name *</label>
+                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Full Name *', 'الاسم الكامل *')}</label>
                       <input
                         type="text"
                         required
-                        placeholder="John Smith"
+                        placeholder={t('John Smith', 'محمد أحمد')}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -267,7 +274,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Email Address *</label>
+                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Email Address *', 'البريد الإلكتروني *')}</label>
                       <input
                         type="email"
                         required
@@ -288,10 +295,10 @@ export default function ContactPage() {
                   {/* Company + Phone */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Company</label>
+                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Company', 'الشركة')}</label>
                       <input
                         type="text"
-                        placeholder="Company name"
+                        placeholder={t('Company name', 'اسم الشركة')}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -304,7 +311,7 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Phone (optional)</label>
+                      <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Phone (optional)', 'الهاتف (اختياري)')}</label>
                       <input
                         type="tel"
                         placeholder="+1 234 567 890"
@@ -323,7 +330,7 @@ export default function ContactPage() {
 
                   {/* Service interest — pill toggles */}
                   <div>
-                    <label className="block text-xs font-medium mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>Service Interest</label>
+                    <label className="block text-xs font-medium mb-3" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Service Interest', 'نوع الخدمة')}</label>
                     <div className="flex flex-wrap gap-2">
                       {serviceOptions.map(opt => (
                         <button
@@ -345,11 +352,11 @@ export default function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>Your Message *</label>
+                    <label className="block text-xs font-medium mb-2" style={{ color: 'rgba(255,255,255,0.4)' }}>{t('Your Message *', 'رسالتك *')}</label>
                     <textarea
                       required
                       rows={5}
-                      placeholder="Describe your project or inquiry…"
+                      placeholder={t('Describe your project or inquiry…', 'صف مشروعك أو استفسارك…')}
                       className="w-full px-4 py-3 rounded-xl text-sm resize-none transition-all duration-200"
                       style={{
                         background: 'rgba(255,255,255,0.05)',
@@ -373,14 +380,14 @@ export default function ContactPage() {
                         ></div>
                       </div>
                       <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                        I agree to the <a href="#" className="underline hover:text-white transition-colors">privacy policy</a>.
+                        {t('I agree to the ', 'أوافق على ')}<a href="#" className="underline hover:text-white transition-colors">{t('privacy policy', 'سياسة الخصوصية')}</a>.
                       </span>
                     </label>
                     <button
                       type="submit"
                       className="cta-pill text-white text-sm font-medium flex-shrink-0"
                     >
-                      <span>Send Message</span>
+                      <span>{t('Send Message', 'إرسال الرسالة')}</span>
                       <span className="icon">
                         <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -400,25 +407,28 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
-              <div className="section-label light mb-5">Global Network</div>
+              <div className="section-label light mb-5">{t('Global Network', 'الشبكة العالمية')}</div>
               <h2 className="text-3xl font-medium text-white mb-4 leading-tight">
-                All Offices &amp; Project Sites
+                {t('All Offices & Project Sites', 'جميع المكاتب ومواقع المشاريع')}
               </h2>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.45)' }}>
-                With offices and active project teams across Europe, the Middle East, Asia, and the Americas, there's always a TRACECOOL engineer close to your project.
+                {t(
+                  "With offices and active project teams across Europe, the Middle East, Asia, and the Americas, there's always a TRACECOOL engineer close to your project.",
+                  'مع مكاتب وفرق مشاريع نشطة في أوروبا والشرق الأوسط وآسيا والأمريكتين، يوجد دائماً مهندس من تريس كول قريب من مشروعك.'
+                )}
               </p>
               <Link to="/about" className="inline-flex items-center gap-2 mt-6 text-xs font-medium transition-colors" style={{ color: '#4D9EFF' }}
                 onMouseEnter={e => e.currentTarget.style.color = 'white'}
                 onMouseLeave={e => e.currentTarget.style.color = '#4D9EFF'}
               >
-                View full network on map
+                {t('View full network on map', 'عرض الشبكة الكاملة على الخريطة')}
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </Link>
             </div>
             <div className="divide-y" style={{ borderColor: 'transparent' }}>
-              {agents.map(a => <OfficeRow key={a.id} agent={a} />)}
+              {agents.map(a => <OfficeRow key={a._id} agent={a} lang={lang} />)}
             </div>
           </div>
         </div>
@@ -430,7 +440,7 @@ export default function ContactPage() {
         style={{ background: 'rgba(26,111,219,0.1)', borderTop: '1px solid rgba(26,111,219,0.2)' }}
       >
         <div className="max-w-2xl mx-auto px-6">
-          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#4D9EFF' }}>24 / 7 Emergency Line</p>
+          <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#4D9EFF' }}>{t('24 / 7 Emergency Line', 'خط الطوارئ 24 / 7')}</p>
           <a
             href="tel:+4962411234556"
             className="text-3xl lg:text-4xl font-bold text-white hover:text-[#4D9EFF] transition-colors"
@@ -438,7 +448,7 @@ export default function ContactPage() {
             +49 (0) 6241 / 123 456
           </a>
           <p className="text-xs mt-3" style={{ color: 'rgba(255,255,255,0.35)' }}>
-            For urgent HVAC breakdowns and emergency maintenance — round the clock.
+            {t('For urgent HVAC breakdowns and emergency maintenance — round the clock.', 'لأعطال التكييف العاجلة والصيانة الطارئة — على مدار الساعة.')}
           </p>
         </div>
       </section>

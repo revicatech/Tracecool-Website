@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { solutions } from '../data/pageData'
+import { useLanguage } from '../context/LanguageContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -16,6 +17,8 @@ function ArrowIcon({ className = 'w-3.5 h-3.5' }) {
 
 export default function SolutionDetailPage() {
   const { id } = useParams()
+  const { lang, isRTL } = useLanguage()
+  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
   const solution = solutions.find(s => s.id === id)
 
   useEffect(() => {
@@ -40,7 +43,7 @@ export default function SolutionDetailPage() {
   const prevSolution = solutions[(currentIndex - 1 + solutions.length) % solutions.length]
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <div style={{ background: '#fff', minHeight: '100vh' }} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero */}
       <section
         className="relative pt-36 pb-0 overflow-hidden"
@@ -63,16 +66,16 @@ export default function SolutionDetailPage() {
               <svg className="w-3.5 h-3.5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-              All Solutions
+              {t('All Solutions', 'جميع الحلول')}
             </Link>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="sol-detail-hero">
-            <span className="section-label light mb-4 block">Solution {solution.num}</span>
-            <h1 className="text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">{solution.title}</h1>
-            <p className="text-white/50 max-w-2xl text-sm leading-relaxed">{solution.shortDesc}</p>
+            <span className="section-label light mb-4 block">{t('Solution', 'الحل')} {solution.num}</span>
+            <h1 className="text-5xl lg:text-6xl font-medium text-white mb-6 leading-tight">{t(solution.title, solution.title_ar)}</h1>
+            <p className="text-white/50 max-w-2xl text-sm leading-relaxed">{t(solution.shortDesc, solution.shortDesc_ar)}</p>
           </div>
 
           {/* Hero image */}
@@ -158,17 +161,17 @@ export default function SolutionDetailPage() {
                   ))}
 
                   <Link to="/#contact" className="cta-pill-dark text-primary text-sm font-medium">
-                    <span>Request this Service</span>
+                    <span>{t('Request this Service', 'طلب هذه الخدمة')}</span>
                     <span className="icon"><ArrowIcon /></span>
                   </Link>
                 </div>
               ) : (
                 /* Default layout */
                 <>
-                  <h2 className="text-4xl font-medium mb-6" style={{ color: '#071525' }}>Overview</h2>
+                  <h2 className="text-4xl font-medium mb-6" style={{ color: '#071525' }}>{t('Overview', 'نظرة عامة')}</h2>
                   <p className="text-base leading-relaxed mb-10" style={{ color: '#5A7896' }}>{solution.desc}</p>
 
-                  <h3 className="text-2xl font-medium mb-5" style={{ color: '#071525' }}>What We Deliver</h3>
+                  <h3 className="text-2xl font-medium mb-5" style={{ color: '#071525' }}>{t('What We Deliver', 'ما نقدمه')}</h3>
                   <div className="space-y-3 mb-12">
                     {solution.features.map((f, i) => (
                       <div
@@ -196,7 +199,7 @@ export default function SolutionDetailPage() {
                   </div>
 
                   <Link to="/#contact" className="cta-pill-dark text-primary text-sm font-medium">
-                    <span>Request this Service</span>
+                    <span>{t('Request this Service', 'طلب هذه الخدمة')}</span>
                     <span className="icon"><ArrowIcon /></span>
                   </Link>
                 </>
@@ -207,7 +210,7 @@ export default function SolutionDetailPage() {
             <div className="space-y-6">
               {/* Other solutions */}
               <div className="p-6 rounded-2xl" style={{ background: '#F2F6FC', border: '1px solid #E4EBF5' }}>
-                <h4 className="text-sm font-semibold mb-4" style={{ color: '#071525' }}>Other Solutions</h4>
+                <h4 className="text-sm font-semibold mb-4" style={{ color: '#071525' }}>{t('Other Solutions', 'حلول أخرى')}</h4>
                 <div className="space-y-2">
                   {solutions.filter(s => s.id !== id).map(s => (
                     <Link
@@ -220,7 +223,7 @@ export default function SolutionDetailPage() {
                     >
                       <div className="flex items-center gap-2.5">
                         <span className="text-xs font-mono" style={{ color: '#1A6FDB' }}>{s.num}</span>
-                        <span className="text-xs font-medium" style={{ color: '#071525' }}>{s.title}</span>
+                        <span className="text-xs font-medium" style={{ color: '#071525' }}>{t(s.title, s.title_ar)}</span>
                       </div>
                       <ArrowIcon className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </Link>
@@ -248,8 +251,8 @@ export default function SolutionDetailPage() {
               </svg>
             </div>
             <div>
-              <p className="text-xs mb-0.5" style={{ color: '#5A7896' }}>Previous</p>
-              <p className="text-sm font-medium" style={{ color: '#071525' }}>{prevSolution.title}</p>
+              <p className="text-xs mb-0.5" style={{ color: '#5A7896' }}>{t('Previous', 'السابق')}</p>
+              <p className="text-sm font-medium" style={{ color: '#071525' }}>{t(prevSolution.title, prevSolution.title_ar)}</p>
             </div>
           </Link>
           <Link
@@ -257,8 +260,8 @@ export default function SolutionDetailPage() {
             className="flex items-center gap-3 justify-end group"
           >
             <div>
-              <p className="text-xs mb-0.5 text-right" style={{ color: '#5A7896' }}>Next</p>
-              <p className="text-sm font-medium" style={{ color: '#071525' }}>{nextSolution.title}</p>
+              <p className="text-xs mb-0.5 text-right" style={{ color: '#5A7896' }}>{t('Next', 'التالي')}</p>
+              <p className="text-sm font-medium" style={{ color: '#071525' }}>{t(nextSolution.title, nextSolution.title_ar)}</p>
             </div>
             <div
               className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110"

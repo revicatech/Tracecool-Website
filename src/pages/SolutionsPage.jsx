@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { solutions } from '../data/pageData'
+import { useLanguage } from '../context/LanguageContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,9 +15,10 @@ function ArrowIcon() {
   )
 }
 
-function SolutionRow({ solution, index }) {
+function SolutionRow({ solution, index, lang }) {
   const rowRef = useRef(null)
   const isRight = solution.imageSide === 'right'
+  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -57,16 +59,16 @@ function SolutionRow({ solution, index }) {
         className="text-4xl lg:text-5xl font-medium mb-5 leading-tight"
         style={{ color: '#071525' }}
       >
-        {solution.title}
+        {t(solution.title, solution.title_ar)}
       </h2>
       <p className="text-sm leading-relaxed mb-6 max-w-md" style={{ color: '#5A7896' }}>
-        {solution.desc}
+        {t(solution.desc, solution.desc_ar)}
       </p>
       <ul className="space-y-2.5 mb-8">
-        {solution.features.map(f => (
-          <li key={f} className="flex items-start gap-2.5 text-sm" style={{ color: '#071525' }}>
+        {solution.features.map((f, i) => (
+          <li key={i} className="flex items-start gap-2.5 text-sm" style={{ color: '#071525' }}>
             <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#1A6FDB' }}></span>
-            {f}
+            {typeof f === 'object' ? t(f.en, f.ar) : f}
           </li>
         ))}
       </ul>
@@ -74,7 +76,7 @@ function SolutionRow({ solution, index }) {
         to={`/solutions/${solution.id}`}
         className="cta-pill-dark text-primary text-sm font-medium w-fit"
       >
-        <span>Learn More</span>
+        <span>{t('Learn More', 'اعرف أكثر')}</span>
         <span className="icon"><ArrowIcon /></span>
       </Link>
     </div>
@@ -88,7 +90,7 @@ function SolutionRow({ solution, index }) {
       >
         <img
           src={solution.image}
-          alt={solution.title}
+          alt={t(solution.title, solution.title_ar)}
           className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
         />
       </div>
@@ -122,6 +124,8 @@ function SolutionRow({ solution, index }) {
 
 export default function SolutionsPage() {
   const heroRef = useRef(null)
+  const { lang, isRTL } = useLanguage()
+  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -135,7 +139,7 @@ export default function SolutionsPage() {
   }, [])
 
   return (
-    <div style={{ background: '#fff', minHeight: '100vh' }}>
+    <div style={{ background: '#fff', minHeight: '100vh' }} dir={isRTL ? 'rtl' : 'ltr'}>
       {/* Hero */}
       <section
         ref={heroRef}
@@ -149,14 +153,16 @@ export default function SolutionsPage() {
           }}
         ></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 sol-hero-content">
-          <div className="section-label light mb-5">Solutions</div>
+          <div className="section-label light mb-5">{t('Solutions', 'الحلول')}</div>
           <h1 className="text-5xl lg:text-7xl font-medium text-white mb-6 leading-tight">
-            Core Fields of<br />
-            <span className="text-gradient italic font-light">HVAC Expertise</span>
+            {t('Core Fields of', 'المجالات الرئيسية')}<br />
+            <span className="text-gradient italic font-light">{t('HVAC Expertise', 'لخبرة التكييف')}</span>
           </h1>
           <p className="text-white/50 max-w-xl text-sm leading-relaxed mb-10">
-            We deliver comprehensive HVAC engineering and consulting services across five core sectors,
-            combining technical precision with decades of international project experience.
+            {t(
+              'We deliver comprehensive HVAC engineering and consulting services across five core sectors, combining technical precision with decades of international project experience.',
+              'نقدم خدمات هندسة واستشارات شاملة في مجال التكييف عبر خمسة قطاعات رئيسية، نجمع فيها بين الدقة التقنية وعقود من الخبرة الدولية في المشاريع.'
+            )}
           </p>
           <div className="flex flex-wrap gap-3">
             {solutions.map(s => (
@@ -180,7 +186,7 @@ export default function SolutionsPage() {
                   e.currentTarget.style.color = 'rgba(255,255,255,0.7)'
                 }}
               >
-                {s.num} {s.title}
+                {s.num} {t(s.title, s.title_ar)}
               </Link>
             ))}
           </div>
@@ -190,7 +196,7 @@ export default function SolutionsPage() {
       {/* Zig-Zag Rows */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
         {solutions.map((solution, i) => (
-          <SolutionRow key={solution.id} solution={solution} index={i} />
+          <SolutionRow key={solution.id} solution={solution} index={i} lang={lang} />
         ))}
       </section>
 
@@ -200,15 +206,18 @@ export default function SolutionsPage() {
         style={{ background: 'linear-gradient(180deg, #fff 0%, #F2F6FC 100%)' }}
       >
         <div className="max-w-2xl mx-auto px-6">
-          <div className="section-label justify-center mb-5">Get Started</div>
+          <div className="section-label justify-center mb-5">{t('Get Started', 'ابدأ الآن')}</div>
           <h2 className="text-4xl font-medium mb-5" style={{ color: '#071525' }}>
-            Ready to start your project?
+            {t('Ready to start your project?', 'هل أنت مستعد لبدء مشروعك؟')}
           </h2>
           <p className="text-sm leading-relaxed mb-8" style={{ color: '#5A7896' }}>
-            Our engineers are ready to analyse your requirements and recommend the optimal solution.
+            {t(
+              'Our engineers are ready to analyse your requirements and recommend the optimal solution.',
+              'مهندسونا مستعدون لتحليل متطلباتك والتوصية بالحل الأمثل.'
+            )}
           </p>
-          <Link to="/#contact" className="cta-pill text-white text-sm font-medium">
-            <span>Request a Consultation</span>
+          <Link to="/contact" className="cta-pill text-white text-sm font-medium">
+            <span>{t('Request a Consultation', 'طلب استشارة')}</span>
             <span className="icon"><ArrowIcon /></span>
           </Link>
         </div>

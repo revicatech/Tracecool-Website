@@ -4,7 +4,9 @@ export const solutions = [
     id: 'vrf',
     num: '01',
     title: 'VRF Solutions',
+    title_ar: 'حلول VRF',
     shortDesc: 'Energy-efficient, time-saving VRF systems tailored to your needs with end-to-end technical support.',
+    shortDesc_ar: 'أنظمة VRF موفرة للطاقة وموفرة للوقت مصممة وفق احتياجاتك مع دعم تقني شامل.',
     desc: 'At TRACE COOL, we deliver energy-efficient, time-saving VRF systems tailored to your needs. From the moment we receive your building drawings, our experienced technical team provides end-to-end support. Enjoy a smoother project execution and long-term operational savings.',
     features: [
       'Customized pipeline design',
@@ -55,7 +57,9 @@ export const solutions = [
     id: 'water-system',
     num: '02',
     title: 'Water System Solutions',
+    title_ar: 'حلول أنظمة المياه',
     shortDesc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects.',
+    shortDesc_ar: 'حلول شاملة لأنظمة المياه مصممة للمشاريع التجارية والصناعية متوسطة وكبيرة الحجم.',
     desc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects — whether for private developments or competitive tender bids. Simplify your project. Maximize your savings. Quality, consistency, and peace of mind.',
     features: [
       'All-in-One Sourcing: High-efficiency chillers, terminal units, and installation kits in one order.',
@@ -104,7 +108,9 @@ export const solutions = [
     id: 'ventilation',
     num: '03',
     title: 'Ventilation Solutions',
+    title_ar: 'حلول التهوية',
     shortDesc: 'Effortless ventilation projects with proven expertise and a full product range — A-to-Z in a single order.',
+    shortDesc_ar: 'مشاريع تهوية سلسة بخبرة مُثبتة ومجموعة منتجات كاملة — من الألف إلى الياء في طلب واحد.',
     desc: 'At TRACE COOL, we make ventilation projects effortless with proven expertise and a full product range. A-to-Z solutions in a single order.',
     features: [
       'All-in-One Supply: Fans, diffusers, dampers, and ducts from one trusted partner.',
@@ -134,7 +140,9 @@ export const solutions = [
     id: 'control',
     num: '04',
     title: 'Control Solutions',
+    title_ar: 'حلول التحكم',
     shortDesc: 'Cutting-edge control solutions delivering precision climate management and seamless BMS integration.',
+    shortDesc_ar: 'حلول تحكم متطورة تقدم إدارة دقيقة للمناخ وتكاملاً سلساً مع أنظمة BMS.',
     desc: "In today's era of green buildings, our cutting-edge solutions deliver precision climate management and seamless integration. Experience the future of HVAC Control with smarter, connected systems.",
     features: [
       'Seamless Connectivity: Integrate AC units, BMS systems, and administrators.',
@@ -165,8 +173,10 @@ export const services = [
   {
     id: 'commercial-hvac',
     title: 'Commercial HVAC Systems',
+    title_ar: 'أنظمة التكييف التجارية',
     badge: 'Commercial',
     shortDesc: 'Full design, supply, and installation of centralised HVAC for offices, hotels, hospitals, and large-format retail.',
+    shortDesc_ar: 'التصميم الكامل والتوريد والتركيب لأنظمة التكييف المركزية للمكاتب والفنادق والمستشفيات والتجزئة.',
     desc: 'TRACECOOL delivers turnkey HVAC solutions for commercial buildings of any scale. From concept design through to commissioning, our engineers optimise airflow, energy efficiency, and occupant comfort using the latest chiller plants, VRF systems, and smart controls.',
     location: 'Worms, Germany',
     time: 'Ongoing',
@@ -188,8 +198,10 @@ export const services = [
   {
     id: 'industrial-cooling',
     title: 'Industrial Cooling & Process',
+    title_ar: 'التبريد الصناعي والعمليات',
     badge: 'Industrial',
     shortDesc: 'Chiller plants, cooling towers, and precision process cooling for data centres, manufacturing, and pharmaceutical facilities.',
+    shortDesc_ar: 'محطات التبريد وأبراج التبريد والتبريد الدقيق للعمليات لمراكز البيانات والتصنيع والمنشآت الدوائية.',
     desc: 'Industrial environments demand absolute reliability. We design and deliver precision cooling systems — from large-scale chiller plants to clean-room air handling — engineered to maintain exact temperature and humidity tolerances 24/7.',
     location: 'Dubai, UAE',
     time: 'Year-round',
