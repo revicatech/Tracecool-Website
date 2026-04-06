@@ -346,8 +346,8 @@ export default function AboutPage() {
           </h1>
           <p className="text-white/50 max-w-2xl text-sm leading-relaxed mb-12">
             {t(
-              'TRACECOOL is a privately owned, independent HVAC consulting and engineering company headquartered in Worms, Germany. For over two decades, we have delivered intelligent climate engineering solutions to clients across Europe, the Middle East, and Asia.',
-              'تريس كول شركة استشارات وهندسة متخصصة في أنظمة التكييف، مملوكة بالكامل ومستقلة، مقرها في فورمس بألمانيا. على مدى أكثر من عقدين قدمنا حلولاً ذكية لهندسة المناخ لعملاء في أوروبا والشرق الأوسط وآسيا.'
+              'TRACECOOL is a privately owned, independent HVAC consulting and engineering company headquartered in Beirut, Lebanon. For over two decades, we have delivered intelligent climate engineering solutions to clients across the Middle East, Africa, and Asia.',
+              'تريس كول شركة استشارات وهندسة متخصصة في أنظمة التكييف، مملوكة بالكامل ومستقلة، مقرها في بيروت في لبنان. على مدى أكثر من عقدين قدمنا حلولاً ذكية لهندسة المناخ لعملاء في الشرق الأوسط وافريقيا وآسيا.'
             )}
           </p>
 
@@ -392,15 +392,15 @@ export default function AboutPage() {
               </h2>
               <p className="text-sm leading-loose mb-5" style={{ color: '#5A7896' }}>
                 {t(
-                  'Founded in 1999 by a team of German mechanical engineers, TRACECOOL began as a specialist consultancy for commercial HVAC systems in the Rhine-Neckar region. Our reputation for technical precision and energy-efficient design quickly attracted projects across Germany and neighbouring markets.',
-                  'تأسست تريس كول عام 1999 على يد فريق من المهندسين الميكانيكيين الألمان، وبدأت كمستشارية متخصصة في أنظمة التكييف التجارية في منطقة راين-نيكار. اكتسبنا سمعة في الدقة التقنية والتصميم الموفر للطاقة مما جذب مشاريع عبر ألمانيا والأسواق المجاورة بسرعة.'
+                  'Founded in 1999 , TRACECOOL began as a specialist consultancy for commercial HVAC systems in Lebanon. Our reputation for technical precision and energy-efficient design quickly attracted projects across Lebanon and neighbouring markets.',
+                  'تأسست تريس كول عام 1999، وبدأت كمستشارية متخصصة في أنظمة التكييف التجارية في لبنان. اكتسبنا سمعة في الدقة التقنية والتصميم الموفر للطاقة مما جذب مشاريع عبر لبنان والأسواق المجاورة بسرعة.'
                 )}
               </p>
               <p className="text-sm leading-loose mb-8" style={{ color: '#5A7896' }}>
                 {t(
-                  'Today, with 8 offices spanning 4 continents, we combine the precision of German engineering with deep local market knowledge — delivering everything from single-building system designs to multi-site district energy infrastructure.',
-                  'اليوم، مع 8 مكاتب تمتد عبر 4 قارات، نجمع بين دقة الهندسة الألمانية والمعرفة العميقة بالأسواق المحلية — نقدم كل شيء من تصاميم أنظمة المباني الفردية إلى البنية التحتية للطاقة متعددة المواقع.'
-                )}
+                  'Today, with 8 offices spanning 3 continents, we combine the precision of Lebanon engineering with deep local market knowledge — delivering everything from single-building system designs to multi-site district energy infrastructure.',
+                  'اليوم، مع 8 مكاتب تمتد عبر 3 قارات، نجمع بين دقة الهندسة اللبنانية والمعرفة العميقة بالأسواق المحلية — نقدم كل شيء من تصاميم أنظمة المباني الفردية إلى البنية التحتية للطاقة متعددة المواقع.'
+                  )}
               </p>
               <div className="flex gap-6">
                 {[

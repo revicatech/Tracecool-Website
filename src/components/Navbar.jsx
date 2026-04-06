@@ -198,7 +198,6 @@ export default function Navbar() {
           <div className="space-y-1.5 mt-5">
             <p className="text-white/35 text-xs">{nav.contactEmail}</p>
             <p className="text-white/35 text-xs">{nav.contactPhone}</p>
-            <p className="text-white/25 text-[10px] mt-3">{nav.contactCities}</p>
           </div>
         </div>
       </aside>
