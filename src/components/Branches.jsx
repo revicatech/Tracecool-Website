@@ -97,7 +97,7 @@ export default function Branches() {
         </div>
 
         {/* Type filter tabs */}
-        <div className="flex flex-wrap gap-2 mb-6">
+        {/* <div className="flex flex-wrap gap-2 mb-6">
           {['All', ...types].map(tp => (
             <button
               key={tp}
@@ -112,7 +112,7 @@ export default function Branches() {
               {tp}
             </button>
           ))}
-        </div>
+        </div> */}
 
         <div
           ref={mapRef}
