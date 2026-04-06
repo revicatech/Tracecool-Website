@@ -7,9 +7,9 @@ import { useLanguage } from '../context/LanguageContext'
 gsap.registerPlugin(ScrollTrigger)
 
 const serviceImages = [
-  'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+  'https://i.pinimg.com/1200x/a8/1d/86/a81d86d29618eb2a7224148554e63590.jpg',
+  'https://i.pinimg.com/736x/68/c0/d2/68c0d254ea203ad42d5bdc519f8c02f5.jpg',
+  'https://i.pinimg.com/736x/e2/41/98/e24198b4a5b916ba857015012797a6bf.jpg',
 ]
 
 function LocationIcon() {
@@ -65,7 +65,7 @@ export default function Services() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
-          {services.items.map(({ title, desc, location, time }, i) => (
+          {services.items.map(({ title, desc, time }, i) => (
             <div key={title} className="service-card gs_reveal_services">
               <div className="beveled-corner overflow-hidden mb-7 bg-gray-100 h-64 shadow-xl">
                 <img src={serviceImages[i]} alt={title} className="w-full h-full object-cover" />
@@ -73,7 +73,7 @@ export default function Services() {
               <h3 className="text-xl font-bold mb-3">{title}</h3>
               <p className="text-secondary text-sm mb-5 leading-relaxed">{desc}</p>
               <div className="flex items-center gap-5 text-xs text-secondary font-medium mb-7">
-                <span className="flex items-center gap-1.5"><LocationIcon />{location}</span>
+                {/* <span className="flex items-center gap-1.5"><LocationIcon />{location}</span> */}
                 <span className="flex items-center gap-1.5"><ClockIcon />{time}</span>
               </div>
               <a href="#contact" className="text-accent font-semibold flex items-center gap-2 hover:underline text-sm">

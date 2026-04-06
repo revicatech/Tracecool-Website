@@ -8,7 +8,7 @@ import CategoriesPage from './pages/CategoriesPage';
 import SubcategoriesPage from './pages/SubcategoriesPage';
 import ProductsPage from './pages/ProductsPage';
 import ServicesPage from './pages/ServicesPage';
-import AgentsPage from './pages/AgentsPage';
+// import AgentsPage from './pages/AgentsPage';
 import ContactInfoPage from './pages/ContactInfoPage';
 import AdminsPage from './pages/AdminsPage';
 
@@ -37,7 +37,7 @@ export default function AdminApp() {
         <Route path="subcategories" element={<Protected><SubcategoriesPage /></Protected>} />
         <Route path="products" element={<Protected><ProductsPage /></Protected>} />
         <Route path="services" element={<Protected><ServicesPage /></Protected>} />
-        <Route path="agents" element={<Protected><AgentsPage /></Protected>} />
+        {/* <Route path="agents" element={<Protected><AgentsPage /></Protected>} /> */}
         <Route path="contact-info" element={<Protected><ContactInfoPage /></Protected>} />
         <Route path="admins" element={<Protected><AdminsPage /></Protected>} />
         <Route path="*" element={<Navigate to="/admin" replace />} />

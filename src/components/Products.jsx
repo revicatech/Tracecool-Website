@@ -1,24 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
-import { products as productData } from '../data/pageData'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const productMeta = [
-  { cls: 'card-1-1', img: 'https://i.pinimg.com/1200x/bf/c2/9a/bfc29a86d88c265a879d55ebecba6e27.jpg', z: 30 },
-  { cls: 'card-1-2', img: 'https://images.unsplash.com/photo-1590959651373-a3db0f38a961?auto=format&fit=crop&w=800&q=80', z: 20 },
-  { cls: 'card-1-3', img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80', z: 10 },
-  { cls: 'card-2-3', img: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80', z: 30 },
-  { cls: 'card-2-2', img: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80', z: 20 },
-  { cls: 'card-2-1', img: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80', z: 10 },
+  { cls: 'card-1-1', img: 'https://i.pinimg.com/1200x/42/4f/37/424f377d8faefd209c891c4b0fa00ac8.jpg', z: 30 },
+  { cls: 'card-1-2', img: 'https://i.pinimg.com/1200x/6f/48/2e/6f482e2464626abdf12a6a5b569f372f.jpg', z: 20 },
+  { cls: 'card-1-3', img: 'https://i.pinimg.com/736x/cd/35/84/cd3584692be0c8de7e00371761265851.jpg', z: 10 },
+  { cls: 'card-2-3', img: 'https://i.pinimg.com/1200x/9d/ce/fc/9dcefc29eb5b3148c1adf9aa576afed1.jpg', z: 30 },
+  { cls: 'card-2-2', img: 'https://i.pinimg.com/736x/a2/aa/31/a2aa316e8ccf77d886237cc01a38ca57.jpg', z: 20 },
+  { cls: 'card-2-1', img: 'https://i.pinimg.com/1200x/40/88/c3/4088c3d0b109677749a03ce0c5e295e1.jpg', z: 10 },
 ]
 
-function BentoCard({ cls, img, title, desc, z, productId }) {
+function BentoCard({ cls, img, title, desc, z }) {
   return (
-    <Link to={productId ? `/products/${productId}` : '/products'} className={`bento-card ${cls}`} style={{ zIndex: z }}>
+    <Link to="/products" className={`bento-card ${cls}`} style={{ zIndex: z }}>
       <img src={img} alt={title} />
       <div className="card-content">
         <h3>{title}</h3>
@@ -29,9 +28,34 @@ function BentoCard({ cls, img, title, desc, z, productId }) {
 }
 
 export default function Products() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const products = t('products')
-  const cards = products.items.map((item, i) => ({ ...productMeta[i], ...item, productId: productData[i]?.id }))
+  const [categories, setCategories] = useState([])
+
+  useEffect(() => {
+    fetch('/api/categories')
+      .then(r => r.json())
+      .then(data => {
+        const active = data.filter(c => c.isActive)
+        setCategories(active)
+      })
+      .catch(() => {})
+  }, [])
+
+  // Build cards: use backend categories when available, fallback to translation data
+  const cards = (categories.length > 0 ? categories : products.items).slice(0, 6).map((item, i) => {
+    const meta = productMeta[i]
+    if (categories.length > 0) {
+      return {
+        ...meta,
+        title: lang === 'ar' ? item.name_ar : item.name_en,
+        desc: '',
+        slug: item.slug,
+      }
+    }
+    return { ...meta, ...item, slug: null }
+  })
+
   const row1 = cards.slice(0, 3)
   const row2 = cards.slice(3, 6)
 

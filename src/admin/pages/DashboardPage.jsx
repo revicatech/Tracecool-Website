@@ -23,14 +23,12 @@ export default function DashboardPage() {
       api.get('/subcategories'),
       api.get('/products'),
       api.get('/services'),
-      api.get('/agents'),
-    ]).then(([cats, subs, prods, svcs, agents]) => {
+    ]).then(([cats, subs, prods, svcs]) => {
       setStats({
         categories: cats.data.length,
         subcategories: subs.data.length,
         products: prods.data.length,
         services: svcs.data.length,
-        agents: agents.data.length,
       });
     }).finally(() => setLoading(false));
   }, []);
@@ -47,12 +45,11 @@ export default function DashboardPage() {
           <div className="w-6 h-6 border-2 border-[#1A6FDB] border-t-transparent rounded-full animate-spin" />
         </div>
       ) : (
-        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <StatCard label="Categories" count={stats.categories} color="bg-[#1A6FDB]" />
           <StatCard label="Subcategories" count={stats.subcategories} color="bg-[#071525]" />
           <StatCard label="Products" count={stats.products} color="bg-emerald-500" />
           <StatCard label="Services" count={stats.services} color="bg-violet-500" />
-          <StatCard label="Agents" count={stats.agents} color="bg-orange-500" />
         </div>
       )}
 
@@ -63,7 +60,6 @@ export default function DashboardPage() {
           {[
             { label: 'Manage Products', to: '/admin/products' },
             { label: 'Manage Services', to: '/admin/services' },
-            { label: 'Manage Agents', to: '/admin/agents' },
             { label: 'Categories', to: '/admin/categories' },
             { label: 'Contact Info', to: '/admin/contact-info' },
           ].map(link => (

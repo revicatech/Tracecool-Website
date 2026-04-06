@@ -107,32 +107,36 @@ const coreBusiness = [
   },
 ]
 
+// ── Hardcoded locations ───────────────────────────────────────
+const LOCATIONS = [
+  { id: '1', name_en: 'West Bekaa', country: 'Lebanon', region: 'Middle East', lat: 33.62, lng: 35.73 },
+  { id: '2', name_en: 'North Bekaa', country: 'Lebanon', region: 'Middle East', lat: 34.27, lng: 36.18 },
+  { id: '3', name_en: 'Sidon', country: 'Lebanon', region: 'Middle East', lat: 33.56, lng: 35.37 },
+  { id: '4', name_en: 'Tripoli', country: 'Lebanon', region: 'Middle East', lat: 34.43, lng: 35.85 },
+  { id: '5', name_en: 'United Arab Emirates', country: 'UAE', region: 'Middle East', lat: 24.47, lng: 54.37 },
+  { id: '6', name_en: 'Oman', country: 'Oman', region: 'Middle East', lat: 23.58, lng: 58.41 },
+  { id: '7', name_en: 'Iraq', country: 'Iraq', region: 'Middle East', lat: 33.34, lng: 44.40 },
+  { id: '8', name_en: 'Syria', country: 'Syria', region: 'Middle East', lat: 33.51, lng: 36.29 },
+  { id: '9', name_en: 'Angola', country: 'Angola', region: 'Africa', lat: -8.84, lng: 13.23 },
+  { id: '10', name_en: 'Kinshasa', country: 'DR Congo', region: 'Africa', lat: -4.32, lng: 15.32 },
+  { id: '11', name_en: 'Ivory Coast', country: 'Ivory Coast', region: 'Africa', lat: 5.35, lng: -4.00 },
+]
+
 // ── Interactive World Map ─────────────────────────────────────
 function AgentsMap() {
   const mapRef = useRef(null)
   const mapInstanceRef = useRef(null)
   const markersRef = useRef([])
-  const [agents, setAgents] = useState([])
-  const [activeAgent, setActiveAgent] = useState(null)
-  const { lang } = useLanguage()
-  const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
+  const [activeAgent, setActiveAgent] = useState(LOCATIONS[0])
   const [filterRegion, setFilterRegion] = useState('All')
 
-  useEffect(() => {
-    fetch('/api/agents')
-      .then(r => r.json())
-      .then(data => {
-        const active = data.filter(a => a.isActive !== false)
-        setAgents(active)
-        if (active.length) setActiveAgent(active[0])
-      })
-  }, [])
+  const agents = LOCATIONS
 
   const agentRegions = [...new Set(agents.map(a => a.region).filter(Boolean))]
   const filtered = filterRegion === 'All' ? agents : agents.filter(a => a.region === filterRegion)
 
   useEffect(() => {
-    if (!agents.length || !mapRef.current) return
+    if (!mapRef.current) return
 
     if (mapInstanceRef.current) {
       mapInstanceRef.current.remove()
@@ -155,11 +159,10 @@ function AgentsMap() {
     }).addTo(map)
 
     markersRef.current = agents
-      .filter(a => a.lat != null && a.lng != null)
       .map(a =>
-        L.marker([a.lat, a.lng], { icon: makeIcon(a.isHQ) })
+        L.marker([a.lat, a.lng], { icon: makeIcon(false) })
           .addTo(map)
-          .bindPopup(makePopup(a), { closeButton: false })
+          .bindPopup(makePopup({ ...a, type: a.region, team: '' }), { closeButton: false })
           .on('click', () => setActiveAgent(a))
       )
 
@@ -169,13 +172,13 @@ function AgentsMap() {
       map.remove()
       mapInstanceRef.current = null
     }
-  }, [agents])
+  }, [])
 
   const flyTo = (agent) => {
     setActiveAgent(agent)
     const map = mapInstanceRef.current
     if (!map) return
-    const idx = agents.filter(a => a.lat != null && a.lng != null).findIndex(a => a._id === agent._id)
+    const idx = agents.findIndex(a => a.id === agent.id)
     map.flyTo([agent.lat, agent.lng], 5, { duration: 1.4 })
     markersRef.current[idx]?.openPopup()
   }
@@ -207,25 +210,25 @@ function AgentsMap() {
         style={{ height: 460, border: '1px solid rgba(255,255,255,0.07)' }}
       />
 
-      {/* Agent cards below map */}
+      {/* Location cards below map */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
         {filtered.map(a => (
           <button
-            key={a._id}
+            key={a.id}
             onClick={() => flyTo(a)}
             className="text-left rounded-xl p-4 transition-all duration-250"
             style={{
-              background: activeAgent?._id === a._id ? 'rgba(26,111,219,0.15)' : 'rgba(255,255,255,0.03)',
-              border: activeAgent?._id === a._id ? '1px solid rgba(26,111,219,0.45)' : '1px solid rgba(255,255,255,0.07)',
+              background: activeAgent?.id === a.id ? 'rgba(26,111,219,0.15)' : 'rgba(255,255,255,0.03)',
+              border: activeAgent?.id === a.id ? '1px solid rgba(26,111,219,0.45)' : '1px solid rgba(255,255,255,0.07)',
             }}
             onMouseEnter={e => {
-              if (activeAgent?._id !== a._id) {
+              if (activeAgent?.id !== a.id) {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
               }
             }}
             onMouseLeave={e => {
-              if (activeAgent?._id !== a._id) {
+              if (activeAgent?.id !== a.id) {
                 e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
                 e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
               }
@@ -233,9 +236,9 @@ function AgentsMap() {
           >
             <p
               className="text-[10px] font-bold uppercase tracking-widest mb-1"
-              style={{ color: a.isHQ ? '#fff' : '#4D9EFF' }}
+              style={{ color: '#4D9EFF' }}
             >
-              {a.label}
+              {a.region}
             </p>
             <p className="font-medium text-sm text-white">{a.name_en}</p>
             <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{a.country}</p>
@@ -243,63 +246,22 @@ function AgentsMap() {
         ))}
       </div>
 
-      {/* Active agent detail panel */}
+      {/* Active location detail panel */}
       {activeAgent && (
         <div
-          className="mt-6 rounded-2xl p-6 grid grid-cols-1 md:grid-cols-2 gap-6 transition-all duration-300"
+          className="mt-6 rounded-2xl p-6 transition-all duration-300"
           style={{ background: 'rgba(26,111,219,0.07)', border: '1px solid rgba(26,111,219,0.2)' }}
         >
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span
-                className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                style={{ background: activeAgent.isHQ ? 'rgba(255,255,255,0.15)' : 'rgba(26,111,219,0.25)', color: activeAgent.isHQ ? 'white' : '#4D9EFF' }}
-              >
-                {activeAgent.type}
-              </span>
-              <span className="text-xs" style={{ color: 'rgba(255,255,255,0.35)' }}>Est. {activeAgent.since}</span>
-            </div>
-            <h3 className="text-2xl font-semibold text-white mb-1">{activeAgent.name_en}</h3>
-            <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.5)' }}>{activeAgent.country} — {activeAgent.region}</p>
-            <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.6)' }}>{activeAgent.desc}</p>
+          <div className="flex items-center gap-2 mb-3">
+            <span
+              className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+              style={{ background: 'rgba(26,111,219,0.25)', color: '#4D9EFF' }}
+            >
+              {activeAgent.region}
+            </span>
           </div>
-          <div className="flex flex-col justify-between">
-            <div className="space-y-3">
-              {[
-                { icon: 'location', val: activeAgent.address },
-                { icon: 'email', val: activeAgent.email },
-                { icon: 'phone', val: activeAgent.phone },
-              ].map(item => (
-                <div key={item.icon} className="flex items-start gap-3">
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ background: 'rgba(26,111,219,0.25)' }}
-                  >
-                    <svg className="w-3.5 h-3.5" style={{ color: '#4D9EFF' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      {item.icon === 'location' && <><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></>}
-                      {item.icon === 'email' && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />}
-                      {item.icon === 'phone' && <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />}
-                    </svg>
-                  </div>
-                  <p className="text-xs leading-relaxed pt-1" style={{ color: 'rgba(255,255,255,0.55)' }}>{item.val}</p>
-                </div>
-              ))}
-            </div>
-            <div className="flex gap-4 mt-5 pt-5" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-              <div>
-                <p className="text-xl font-bold text-white">{activeAgent.team}</p>
-                <p className="text-[10px] uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{t('Team Size', 'حجم الفريق')}</p>
-              </div>
-              <div>
-                <p className="text-xl font-bold text-white">{activeAgent.projects}</p>
-                <p className="text-[10px] uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{t('Projects', 'مشاريع')}</p>
-              </div>
-              <div>
-                <p className="text-xl font-bold text-white">{activeAgent.since}</p>
-                <p className="text-[10px] uppercase tracking-widest mt-0.5" style={{ color: 'rgba(255,255,255,0.35)' }}>{t('Since', 'منذ')}</p>
-              </div>
-            </div>
-          </div>
+          <h3 className="text-2xl font-semibold text-white mb-1">{activeAgent.name_en}</h3>
+          <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{activeAgent.country}</p>
         </div>
       )}
     </div>

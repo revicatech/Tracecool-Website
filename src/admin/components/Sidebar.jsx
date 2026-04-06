@@ -7,7 +7,7 @@ const navItems = [
   { to: '/admin/subcategories', label: 'Subcategories', icon: '◇' },
   { to: '/admin/products', label: 'Products', icon: '◻' },
   { to: '/admin/services', label: 'Services', icon: '◈' },
-  { to: '/admin/agents', label: 'Agents', icon: '◉' },
+  // { to: '/admin/agents', label: 'Agents', icon: '◉' },
   { to: '/admin/contact-info', label: 'Contact Info', icon: '◎' },
 ];
 

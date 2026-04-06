@@ -197,9 +197,9 @@ export default function ContactPage() {
             <div className="lg:col-span-2 space-y-5">
               <h2 className="text-xl font-semibold text-white mb-6">{t('Headquarters', 'المقر الرئيسي')}</h2>
 
-              <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Lutherring 12, 67547 Worms, Germany', 'لوثررينغ 12، 67547 فورمس، ألمانيا')} />
-              <ContactItem icon="email" label={t('Email', 'البريد الإلكتروني')} value="info@tracecool.de" href="mailto:info@tracecool.de" />
-              <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+49 (0) 6241 / 123 456" href="tel:+4962411234556" />
+              <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Beirut, Lebanon, ', 'لوثررينغ 12، 67547 فورمس، ألمانيا')} />
+              <ContactItem icon="email" label={t('Email', 'البريد الإلكتروني')} value="info@tracecool.com" href="mailto:info@tracecool.com" />
+              <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+96171945966" href="tel:+4962411234556" />
               <ContactItem icon="clock" label={t('Office Hours', 'ساعات العمل')} value={t('Mon – Fri, 08:00 – 18:00 CET · Emergency 24/7', 'الاثنين – الجمعة، 08:00 – 18:00 بتوقيت وسط أوروبا · طوارئ 24/7')} />
 
               {/* HQ mini-map */}
@@ -445,7 +445,7 @@ export default function ContactPage() {
             href="tel:+4962411234556"
             className="text-3xl lg:text-4xl font-bold text-white hover:text-[#4D9EFF] transition-colors"
           >
-            +49 (0) 6241 / 123 456
+            +96171945966
           </a>
           <p className="text-xs mt-3" style={{ color: 'rgba(255,255,255,0.35)' }}>
             {t('For urgent HVAC breakdowns and emergency maintenance — round the clock.', 'لأعطال التكييف العاجلة والصيانة الطارئة — على مدار الساعة.')}
