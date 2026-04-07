@@ -35,11 +35,11 @@ const translations = {
     about: {
       badge: 'About TRACECOOL',
       title: 'Precision Climate Control Since 1999',
-      desc: 'TRACECOOL is a privately owned, independent HVAC consulting and engineering company headquartered in Worms, Germany. For over two decades, we have delivered intelligent climate engineering solutions to clients across Europe, the Middle East, and Asia.',
+      desc: 'TRACECOOL is a privately owned, independent HVAC consulting and engineering company headquartered in Beirut, Lebanon. For over two decades, we have delivered intelligent climate engineering solutions to clients across the Middle East, Africa, and Asia.',
       cta: 'Our Services',
       values: [
         {
-          title: 'German Engineering Standard',
+          title: 'The Engineering Standard',
           desc: 'All systems designed and certified to DIN VDE, ASHRAE, and ISO EN standards for uncompromised performance.',
         },
         {
@@ -234,11 +234,11 @@ const translations = {
     about: {
       badge: 'عن تريس كول',
       title: 'التحكم الدقيق في المناخ منذ عام 1999',
-      desc: 'تريس كول شركة استشارات وهندسة متخصصة في أنظمة التكييف، مملوكة بالكامل ومستقلة، مقرها في فورمس بألمانيا. على مدى أكثر من عقدين قدمنا حلولاً ذكية لهندسة المناخ لعملاء في أوروبا والشرق الأوسط وآسيا.',
+      desc: 'تريس كول شركة استشارات وهندسة متخصصة في أنظمة التكييف، مملوكة بالكامل ومستقلة، مقرها في بيروت لبنان. على مدى أكثر من عقدين قدمنا حلولاً ذكية لهندسة المناخ لعملاء في الشرق الأوسط وآسيا و أفريقيا.',
       cta: 'خدماتنا',
       values: [
         {
-          title: 'معيار الهندسة الألمانية',
+          title: 'معيار الهندسة الأول',
           desc: 'جميع الأنظمة مصممة ومعتمدة وفق معايير DIN VDE وASHRAE وISO EN لأداء لا تنازل فيه.',
         },
         {
