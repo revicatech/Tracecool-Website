@@ -183,7 +183,7 @@ export default function ServicesPage() {
               ? 'سيقيّم فريقنا الفني متطلبات مشروعك ويوصي بالنهج الأكثر فعالية.'
               : 'Our technical team will assess your project requirements and recommend the most effective approach.'}
           </p>
-          <Link to="/contact" className="cta-pill text-white text-sm font-medium">
+          <Link to="/contact" className="cta-pill text-black text-sm font-medium">
             <span>{lang === 'ar' ? 'حدد موعداً للاستشارة' : 'Schedule a Consultation'}</span>
             <span className="icon"><ArrowIcon /></span>
           </Link>
