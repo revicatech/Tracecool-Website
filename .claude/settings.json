@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Read(//c/Users/MSI/.claude/projects/c--Users-MSI-Desktop-Tracecool-Website/memory/**)",
+      "Bash(node -e \"const d = require\\('./products-data3.json'\\); console.log\\('products count:', d.products.length\\); console.log\\('subcats:', d.subcategories.map\\(s=>s._refKey\\)\\)\")",
+      "Bash(node -e \"const d = require\\('./products-data4.json'\\); console.log\\('category:', d.category.name_en\\); console.log\\('products count:', d.products.length\\); console.log\\('subcats:', d.subcategories.map\\(s=>s._refKey\\)\\)\")",
+      "Bash(cat /c/Users/MSI/Desktop/Tracecool-Website/src/i18n/*.js)",
+      "Bash(grep -n \"^  {$\\\\|id:\\\\|num:\\\\|title:\\\\|shortDesc:\\\\|imageSide:\" /c/Users/MSI/Desktop/Tracecool-Website/src/data/pageData.js)",
+      "Bash(grep -l \"multer\\\\|upload\" /c/Users/MSI/Desktop/Tracecool-Website/server/routes/*.js)"
+    ]
+  }
+}

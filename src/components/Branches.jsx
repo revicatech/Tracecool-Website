@@ -2,18 +2,18 @@ import { useEffect, useRef, useState } from 'react'
 import L from 'leaflet'
 import { useLanguage } from '../context/LanguageContext'
 
-function makeIcon(isHQ) {
+function makeIcon() {
   return L.divIcon({
     className: 'tc-marker-wrap',
-    html: `<div class="tc-ring"></div><div class="tc-dot${isHQ ? ' hq' : ''}"></div>`,
+    html: `<div class="tc-ring"></div><div class="tc-dot"></div>`,
     iconSize: [20, 20], iconAnchor: [10, 10], popupAnchor: [0, -14],
   })
 }
 
 function makePopupHTML(b) {
-  return `<div style="min-width:90px;padding:2px 0">
-    <p style="font-size:7px;font-weight:700;color:#4D9EFF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px">${b.type}</p>
-    <p style="font-size:11px;font-weight:500;color:#fff;margin-bottom:2px">${b.name}</p>
+  return `<div style="min-width:110px;padding:4px 0">
+    <p style="font-size:7px;font-weight:700;color:#4D9EFF;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px">${b.region}</p>
+    <p style="font-size:13px;font-weight:600;color:#fff;margin-bottom:2px">${b.name_en}</p>
     <p style="font-size:9px;color:rgba(255,255,255,0.45)">${b.country}</p>
   </div>`
 }
@@ -23,8 +23,8 @@ export default function Branches() {
   const mapRef = useRef(null)
   const mapInstanceRef = useRef(null)
   const markersRef = useRef([])
-  const [activeIdx, setActiveIdx] = useState(0)
-  const [filterType, setFilterType] = useState('All')
+  const [activeAgent, setActiveAgent] = useState(null)
+  const [filterRegion, setFilterRegion] = useState('All')
 
   useEffect(() => {
     if (mapInstanceRef.current) {
@@ -34,8 +34,10 @@ export default function Branches() {
     }
 
     const branches = t('branches').items
+    setActiveAgent(branches[0])
+
     const map = L.map(mapRef.current, {
-      center: [30, 20], zoom: 2, scrollWheelZoom: false, zoomControl: false, minZoom: 2,
+      center: [25, 20], zoom: 2, scrollWheelZoom: false, zoomControl: false, minZoom: 2,
     })
     mapInstanceRef.current = map
 
@@ -44,14 +46,14 @@ export default function Branches() {
       attribution: '&copy; CARTO',
     }).addTo(map)
 
-    markersRef.current = branches.map((b, i) =>
-      L.marker([b.lat, b.lng], { icon: makeIcon(i === 0) })
+    markersRef.current = branches.map((b) =>
+      L.marker([b.lat, b.lng], { icon: makeIcon() })
         .addTo(map)
         .bindPopup(makePopupHTML(b), { closeButton: false })
-        .on('click', () => setActiveIdx(i))
+        .on('click', () => setActiveAgent(b))
     )
 
-    setTimeout(() => markersRef.current[0]?.openPopup(), 800)
+    setTimeout(() => markersRef.current[0]?.openPopup(), 600)
 
     return () => {
       map.remove()
@@ -59,20 +61,21 @@ export default function Branches() {
     }
   }, [lang])
 
-  const handleBranchClick = (idx) => {
-    setActiveIdx(idx)
-    const branches = t('branches').items
+  const flyTo = (agent) => {
+    setActiveAgent(agent)
     const map = mapInstanceRef.current
     if (!map) return
-    map.flyTo([branches[idx].lat, branches[idx].lng], 5, { duration: 1.4 })
+    const branches = t('branches').items
+    const idx = branches.findIndex(b => b.id === agent.id)
+    map.flyTo([agent.lat, agent.lng], 5, { duration: 1.4 })
     markersRef.current[idx]?.openPopup()
   }
 
   const br = t('branches')
   const branches = br.items
 
-  const types = [...new Set(branches.map(b => b.type))]
-  const filtered = filterType === 'All' ? branches : branches.filter(b => b.type === filterType)
+  const regions = [...new Set(branches.map(b => b.region).filter(Boolean))]
+  const filtered = filterRegion === 'All' ? branches : branches.filter(b => b.region === filterRegion)
 
   return (
     <section id="branches" className="py-28 bg-primary text-white overflow-hidden relative" style={{ zIndex: 1 }}>
@@ -96,23 +99,23 @@ export default function Branches() {
           </div>
         </div>
 
-        {/* Type filter tabs */}
-        {/* <div className="flex flex-wrap gap-2 mb-6">
-          {['All', ...types].map(tp => (
+        {/* Region filter tabs */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {['All', ...regions].map(r => (
             <button
-              key={tp}
-              onClick={() => setFilterType(tp)}
+              key={r}
+              onClick={() => setFilterRegion(r)}
               className="text-xs font-semibold px-4 py-2 rounded-full transition-all duration-200"
               style={{
-                background: filterType === tp ? '#1A6FDB' : 'rgba(255,255,255,0.05)',
-                color: filterType === tp ? 'white' : 'rgba(255,255,255,0.5)',
-                border: filterType === tp ? '1px solid #1A6FDB' : '1px solid rgba(255,255,255,0.1)',
+                background: filterRegion === r ? '#1A6FDB' : 'rgba(255,255,255,0.05)',
+                color: filterRegion === r ? 'white' : 'rgba(255,255,255,0.5)',
+                border: filterRegion === r ? '1px solid #1A6FDB' : '1px solid rgba(255,255,255,0.1)',
               }}
             >
-              {tp}
+              {r}
             </button>
           ))}
-        </div> */}
+        </div>
 
         <div
           ref={mapRef}
@@ -122,42 +125,38 @@ export default function Branches() {
         />
 
         {/* Branch cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-5">
-          {filtered.map((b, i) => {
-            const globalIdx = branches.indexOf(b)
-            const isActive = activeIdx === globalIdx
-            return (
-              <button
-                key={b.name}
-                onClick={() => handleBranchClick(globalIdx)}
-                className="text-left rounded-xl p-4 transition-all duration-250"
-                style={{
-                  background: isActive ? 'rgba(26,111,219,0.15)' : 'rgba(255,255,255,0.03)',
-                  border: isActive ? '1px solid rgba(26,111,219,0.45)' : '1px solid rgba(255,255,255,0.07)',
-                }}
-                onMouseEnter={e => {
-                  if (!isActive) {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
-                  }
-                }}
-                onMouseLeave={e => {
-                  if (!isActive) {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
-                  }
-                }}
-              >
-                <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: '#4D9EFF' }}>{b.label}</p>
-                <p className="font-medium text-sm text-white">{b.name}</p>
-                <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{b.country}</p>
-              </button>
-            )
-          })}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mt-5">
+          {filtered.map(b => (
+            <button
+              key={b.id}
+              onClick={() => flyTo(b)}
+              className="text-left rounded-xl p-4 transition-all duration-250"
+              style={{
+                background: activeAgent?.id === b.id ? 'rgba(26,111,219,0.15)' : 'rgba(255,255,255,0.03)',
+                border: activeAgent?.id === b.id ? '1px solid rgba(26,111,219,0.45)' : '1px solid rgba(255,255,255,0.07)',
+              }}
+              onMouseEnter={e => {
+                if (activeAgent?.id !== b.id) {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'
+                }
+              }}
+              onMouseLeave={e => {
+                if (activeAgent?.id !== b.id) {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'
+                }
+              }}
+            >
+              <p className="text-[10px] font-bold uppercase tracking-widest mb-1" style={{ color: '#4D9EFF' }}>{b.region}</p>
+              <p className="font-medium text-sm text-white">{b.name_en}</p>
+              <p className="text-xs mt-0.5" style={{ color: 'rgba(255,255,255,0.4)' }}>{b.country}</p>
+            </button>
+          ))}
         </div>
 
         {/* Active branch detail panel */}
-        {branches[activeIdx] && (
+        {activeAgent && (
           <div
             className="mt-6 rounded-2xl p-6 transition-all duration-300"
             style={{ background: 'rgba(26,111,219,0.07)', border: '1px solid rgba(26,111,219,0.2)' }}
@@ -167,11 +166,11 @@ export default function Branches() {
                 className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
                 style={{ background: 'rgba(26,111,219,0.25)', color: '#4D9EFF' }}
               >
-                {branches[activeIdx].type}
+                {activeAgent.region}
               </span>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-1">{branches[activeIdx].name}</h3>
-            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{branches[activeIdx].country}</p>
+            <h3 className="text-2xl font-semibold text-white mb-1">{activeAgent.name_en}</h3>
+            <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)' }}>{activeAgent.country}</p>
           </div>
         )}
       </div>
