@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-
+import video from '../assets/video.mp4'
 export default function Hero() {
   const { t } = useLanguage()
   const hero = t('hero')
@@ -60,7 +60,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         playsInline autoPlay loop muted
       >
-        <source src="/2.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
 
       <div
