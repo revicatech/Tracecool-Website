@@ -65,10 +65,15 @@ router.post('/', protect, upload.array('images', 10), [
       try { features = JSON.parse(req.body.features); } catch {}
     }
 
-    const product = await Product.create({ ...req.body, images, features });
+    const body = { ...req.body };
+    if (!body.category) delete body.category;
+    if (!body.subcategory) delete body.subcategory;
+
+    const product = await Product.create({ ...body, images, features });
     await product.populate('category subcategory', 'name_en name_ar');
     res.status(201).json(product);
   } catch (err) {
+    console.error('POST /products error:', err.message);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -100,6 +105,8 @@ router.put('/:id', protect, upload.array('images', 10), async (req, res) => {
 
     const updates = { ...req.body, images: allImages, features };
     delete updates.keptImages;
+    if (!updates.category) updates.category = null;
+    if (!updates.subcategory) updates.subcategory = null;
 
     Object.assign(product, updates);
     await product.save();
