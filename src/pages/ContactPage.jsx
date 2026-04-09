@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import L from 'leaflet'
 import { gsap } from 'gsap'
+import emailjs from '@emailjs/browser'
 import { useLanguage } from '../context/LanguageContext'
+
+const EMAILJS_SERVICE_ID = 'service_3j4w1wl'
+const EMAILJS_TEMPLATE_ID = 'template_d8le1xe'
+const EMAILJS_PUBLIC_KEY = 'hkCSUwOFuHcjLufQy'
 
 function makeIcon(isHQ) {
   return L.divIcon({
@@ -21,7 +26,7 @@ function HQMap() {
     if (mapInstance.current) { mapInstance.current.remove(); mapInstance.current = null }
 
     const map = L.map(mapRef.current, {
-      center: [49.6317, 8.3575],
+      center: [33.8938, 35.5018],
       zoom: 13,
       scrollWheelZoom: false,
       zoomControl: false,
@@ -35,9 +40,9 @@ function HQMap() {
       attribution: '&copy; CARTO',
     }).addTo(map)
 
-    L.marker([49.6317, 8.3575], { icon: makeIcon(true) })
+    L.marker([33.8938, 35.5018], { icon: makeIcon(true) })
       .addTo(map)
-      .bindPopup('<div style="color:#fff;font-size:11px;padding:2px 0">TRACECOOL HQ<br><span style="color:rgba(255,255,255,0.45);font-size:9px">Worms, Germany</span></div>', { closeButton: false })
+      .bindPopup('<div style="color:#fff;font-size:11px;padding:2px 0">TRACECOOL HQ<br><span style="color:rgba(255,255,255,0.45);font-size:9px">Beirut, Lebanon</span></div>', { closeButton: false })
       .openPopup()
 
     return () => { map.remove(); mapInstance.current = null }
@@ -126,8 +131,11 @@ export default function ContactPage() {
   const { lang, isRTL } = useLanguage()
   const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [formError, setFormError] = useState('')
   const [activeService, setActiveService] = useState('')
   const [agents, setAgents] = useState([])
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', phone: '', message: '' })
 
   useEffect(() => {
     fetch('/api/agents')
@@ -148,9 +156,31 @@ export default function ContactPage() {
     ? ['تصميم نظام التكييف', 'استشارات كفاءة الطاقة', 'التركيب والتشغيل', 'عقد صيانة', 'خدمة الطوارئ', 'أتمتة المباني / BMS', 'أخرى']
     : ['HVAC System Design', 'Energy Efficiency Consulting', 'Installation & Commissioning', 'Maintenance Contract', 'Emergency Service', 'Building Automation / BMS', 'Other']
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
+    setSubmitting(true)
+    setFormError('')
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          phone: formData.phone,
+          service: activeService,
+          message: formData.message,
+          to_email: 'info@tracecool.com',
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setSubmitted(true)
+    } catch {
+      setFormError(t('Failed to send message. Please try again.', 'فشل الإرسال. يرجى المحاولة مرة أخرى.'))
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -241,7 +271,7 @@ export default function ContactPage() {
                     {t('Thank you for reaching out. One of our engineers will respond within one business day.', 'شكراً للتواصل معنا. سيرد أحد مهندسينا خلال يوم عمل واحد.')}
                   </p>
                   <button
-                    onClick={() => setSubmitted(false)}
+                    onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', company: '', phone: '', message: '' }); setActiveService('') }}
                     className="mt-8 text-xs font-medium transition-colors"
                     style={{ color: '#4D9EFF' }}
                     onMouseEnter={e => e.currentTarget.style.color = 'white'}
@@ -262,6 +292,8 @@ export default function ContactPage() {
                         type="text"
                         required
                         placeholder={t('John Smith', 'محمد أحمد')}
+                        value={formData.name}
+                        onChange={e => setFormData(p => ({ ...p, name: e.target.value }))}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -279,6 +311,8 @@ export default function ContactPage() {
                         type="email"
                         required
                         placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={e => setFormData(p => ({ ...p, email: e.target.value }))}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -299,6 +333,8 @@ export default function ContactPage() {
                       <input
                         type="text"
                         placeholder={t('Company name', 'اسم الشركة')}
+                        value={formData.company}
+                        onChange={e => setFormData(p => ({ ...p, company: e.target.value }))}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -315,6 +351,8 @@ export default function ContactPage() {
                       <input
                         type="tel"
                         placeholder="+1 234 567 890"
+                        value={formData.phone}
+                        onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))}
                         className="w-full px-4 py-3 rounded-xl text-sm transition-all duration-200"
                         style={{
                           background: 'rgba(255,255,255,0.05)',
@@ -357,6 +395,8 @@ export default function ContactPage() {
                       required
                       rows={5}
                       placeholder={t('Describe your project or inquiry…', 'صف مشروعك أو استفسارك…')}
+                      value={formData.message}
+                      onChange={e => setFormData(p => ({ ...p, message: e.target.value }))}
                       className="w-full px-4 py-3 rounded-xl text-sm resize-none transition-all duration-200"
                       style={{
                         background: 'rgba(255,255,255,0.05)',
@@ -370,24 +410,15 @@ export default function ContactPage() {
                   </div>
 
                   {/* Privacy + Submit */}
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 pt-2">
-                    <label className="flex items-center gap-3 cursor-pointer group">
-                      <div className="relative">
-                        <input type="checkbox" required className="sr-only peer" />
-                        <div
-                          className="w-5 h-5 rounded-md border transition-colors peer-checked:bg-[#1A6FDB] peer-checked:border-[#1A6FDB]"
-                          style={{ border: '1px solid rgba(255,255,255,0.2)', background: 'transparent' }}
-                        ></div>
-                      </div>
-                      <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>
-                        {t('I agree to the ', 'أوافق على ')}<a href="#" className="underline hover:text-white transition-colors">{t('privacy policy', 'سياسة الخصوصية')}</a>.
-                      </span>
-                    </label>
+                  {formError && <p className="text-sm" style={{ color: '#f87171' }}>{formError}</p>}
+                  <div className="flex justify-end pt-2">
                     <button
                       type="submit"
+                      disabled={submitting}
                       className="cta-pill text-white text-sm font-medium flex-shrink-0"
+                      style={{ opacity: submitting ? 0.6 : 1 }}
                     >
-                      <span>{t('Send Message', 'إرسال الرسالة')}</span>
+                      <span>{submitting ? t('Sending…', 'جارٍ الإرسال…') : t('Send Message', 'إرسال الرسالة')}</span>
                       <span className="icon">
                         <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
