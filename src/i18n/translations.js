@@ -27,14 +27,14 @@ const translations = {
       heading: 'Engineering comfort and efficiency for a smarter, greener world.',
       cta: 'Our Solutions',
       items: [
-        { count: 25, label: 'Years of HVAC Excellence' },
+        { count: 10, label: 'Years of HVAC Excellence' },
         { count: 1000, label: 'Overseas HVAC Projects TRACECOOL Served' },
         { count: 60, label: 'Countries Have Trace Cool Brand Distributor' },
       ],
     },
     about: {
       badge: 'About TRACECOOL',
-      title: 'Precision Climate Control Since 1999',
+      title: 'Precision Climate Control Since 2024',
       desc: 'TRACECOOL is a privately owned, independent HVAC consulting and engineering company headquartered in Beirut, Lebanon. For over two decades, we have delivered intelligent climate engineering solutions to clients across the Middle East, Africa, and Asia.',
       cta: 'Our Services',
       values: [
@@ -169,7 +169,7 @@ const translations = {
       },
     },
     footer: {
-      desc: 'Premium HVAC engineering and consulting. Delivering precision climate solutions for commercial, industrial, and residential environments across Europe, MENA, and Asia since 1999.',
+      desc: 'Premium HVAC engineering and consulting. Delivering precision climate solutions for commercial, industrial, and residential environments across Europe, MENA, and Asia since 2024.',
       company: 'Company',
       companyLinks: [
         { href: '/#about', label: 'About Us' },
@@ -233,7 +233,7 @@ const translations = {
     },
     about: {
       badge: 'عن تريس كول',
-      title: 'التحكم الدقيق في المناخ منذ عام 1999',
+      title: 'التحكم الدقيق في المناخ منذ عام 2024',
       desc: 'تريس كول شركة استشارات وهندسة متخصصة في أنظمة التكييف، مملوكة بالكامل ومستقلة، مقرها في بيروت لبنان. على مدى أكثر من عقدين قدمنا حلولاً ذكية لهندسة المناخ لعملاء في الشرق الأوسط وآسيا و أفريقيا.',
       cta: 'خدماتنا',
       values: [
@@ -367,7 +367,7 @@ branches: {
       },
     },
     footer: {
-      desc: 'هندسة واستشارات التكييف المتميزة. نقدم حلول مناخية دقيقة للبيئات التجارية والصناعية والسكنية في أوروبا والشرق الأوسط وآسيا منذ عام 1999.',
+      desc: 'هندسة واستشارات التكييف المتميزة. نقدم حلول مناخية دقيقة للبيئات التجارية والصناعية والسكنية في أوروبا والشرق الأوسط وآسيا منذ عام 2024.',
       company: 'الشركة',
       companyLinks: [
         { href: '/#about', label: 'عن الشركة' },

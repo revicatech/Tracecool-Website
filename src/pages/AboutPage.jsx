@@ -342,7 +342,7 @@ export default function AboutPage() {
           <div className="section-label light mb-5">{t('About TRACECOOL', 'عن تريس كول')}</div>
           <h1 className="text-5xl lg:text-7xl font-medium text-white mb-6 leading-tight max-w-4xl">
             {t('Precision Climate Control', 'التحكم الدقيق في المناخ')}<br />
-            <span className="text-gradient italic font-light">{t('Since 1999.', 'منذ عام 1999.')}</span>
+            <span className="text-gradient italic font-light">{t('Since 2024.', 'منذ عام 2024.')}</span>
           </h1>
           <p className="text-white/50 max-w-2xl text-sm leading-relaxed mb-12">
             {t(
@@ -353,7 +353,7 @@ export default function AboutPage() {
 
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl">
-            <StatPill value="25+" label={t('Years of Excellence', 'سنوات من التميز')} />
+            <StatPill value="10+" label={t('Years of Excellence', 'سنوات من التميز')} />
             <StatPill value="1,000+" label={t('Projects Delivered', 'مشروع منجز')} />
             <StatPill value="60+" label={t('Countries Served', 'دولة نخدمها')} />
             <StatPill value="8" label={t('Global Offices', 'مكاتب عالمية')} />
@@ -392,8 +392,8 @@ export default function AboutPage() {
               </h2>
               <p className="text-sm leading-loose mb-5" style={{ color: '#5A7896' }}>
                 {t(
-                  'Founded in 1999 , TRACECOOL began as a specialist consultancy for commercial HVAC systems in Lebanon. Our reputation for technical precision and energy-efficient design quickly attracted projects across Lebanon and neighbouring markets.',
-                  'تأسست تريس كول عام 1999، وبدأت كمستشارية متخصصة في أنظمة التكييف التجارية في لبنان. اكتسبنا سمعة في الدقة التقنية والتصميم الموفر للطاقة مما جذب مشاريع عبر لبنان والأسواق المجاورة بسرعة.'
+                  'Founded in 2024 , TRACECOOL began as a specialist consultancy for commercial HVAC systems in Lebanon. Our reputation for technical precision and energy-efficient design quickly attracted projects across Lebanon and neighbouring markets.',
+                  'تأسست تريس كول عام 2024، وبدأت كمستشارية متخصصة في أنظمة التكييف التجارية في لبنان. اكتسبنا سمعة في الدقة التقنية والتصميم الموفر للطاقة مما جذب مشاريع عبر لبنان والأسواق المجاورة بسرعة.'
                 )}
               </p>
               <p className="text-sm leading-loose mb-8" style={{ color: '#5A7896' }}>
