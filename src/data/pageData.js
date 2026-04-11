@@ -1,3 +1,6 @@
+import solutionVrf from '../assets/solution-vrf.jpg';
+import solutionWater from '../assets/solution-water.jpg';
+
 // ─── SOLUTIONS ───────────────────────────────────────────────
 export const solutions = [
   {
@@ -15,7 +18,7 @@ export const solutions = [
       'Start-up assistance',
       'Onsite/remote technical guidance',
     ],
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
+    image: solutionVrf,
     imageSide: 'right',
     sections: [
       {
@@ -66,7 +69,7 @@ export const solutions = [
       'Complete System Support: Cooling towers, pumps, hydraulic modules, and piping.',
       'Project Flexibility: Tailored solutions for private projects or competitive tenders.',
     ],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+    image: solutionWater,
     imageSide: 'left',
     sections: [
       {
