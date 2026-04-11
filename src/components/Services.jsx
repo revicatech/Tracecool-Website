@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -6,33 +6,94 @@ import { useLanguage } from '../context/LanguageContext'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const serviceImages = [
-  'https://i.pinimg.com/1200x/a8/1d/86/a81d86d29618eb2a7224148554e63590.jpg',
-  'https://i.pinimg.com/736x/68/c0/d2/68c0d254ea203ad42d5bdc519f8c02f5.jpg',
-  'https://i.pinimg.com/736x/e2/41/98/e24198b4a5b916ba857015012797a6bf.jpg',
-]
+function ServiceCard({ service }) {
+  const { lang } = useLanguage()
+  const tStr = (en, ar) => (lang === 'ar' && ar) ? ar : en
+  const title = tStr(service.title_en, service.title_ar)
+  const shortDesc = tStr(service.shortDesc_en || service.description_en, service.shortDesc_ar || service.description_ar)
 
-function LocationIcon() {
   return (
-    <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" />
-    </svg>
-  )
-}
+    <div
+      className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 gs_reveal_services"
+      style={{
+        background: 'white',
+        border: '1px solid #E4EBF5',
+        boxShadow: '0 2px 20px rgba(7,21,37,0.05)',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'rgba(26,111,219,0.3)'
+        e.currentTarget.style.boxShadow = '0 20px 60px rgba(26,111,219,0.1)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = '#E4EBF5'
+        e.currentTarget.style.boxShadow = '0 2px 20px rgba(7,21,37,0.05)'
+      }}
+    >
+      {/* Image */}
+      <div className="overflow-hidden" style={{ height: '240px' }}>
+        {service.image ? (
+          <img
+            src={service.image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center"
+            style={{ background: 'linear-gradient(135deg, #071525 0%, #0E2850 100%)' }}>
+            <span className="text-5xl text-white/10 font-bold">{title[0]}</span>
+          </div>
+        )}
+      </div>
 
-function ClockIcon() {
-  return (
-    <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" />
-    </svg>
+      {/* Content */}
+      <div className="p-7">
+        {service.features?.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {service.features.slice(0, 2).map((f, i) => (
+              <span key={i} className="text-xs px-2.5 py-1 rounded-full"
+                style={{ background: 'rgba(26,111,219,0.07)', color: '#1A6FDB' }}>
+                {(lang === 'ar' && f.feature_ar) ? f.feature_ar : f.feature_en}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <h3 className="text-xl font-semibold mb-3" style={{ color: '#071525' }}>{title}</h3>
+        <p className="text-sm leading-relaxed mb-6" style={{ color: '#5A7896' }}>{shortDesc}</p>
+
+        <Link
+          to={`/services/${service._id}`}
+          className="inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          style={{ color: '#1A6FDB' }}
+          onMouseEnter={e => e.currentTarget.style.color = '#4D9EFF'}
+          onMouseLeave={e => e.currentTarget.style.color = '#1A6FDB'}
+        >
+          {lang === 'ar' ? 'اعرف أكثر' : 'Learn More'}
+          <svg className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </Link>
+      </div>
+    </div>
   )
 }
 
 export default function Services() {
   const { t } = useLanguage()
   const services = t('services')
+  const [items, setItems] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    fetch('/api/services')
+      .then(r => r.json())
+      .then(data => setItems(data.filter(s => s.isActive)))
+      .catch(() => {})
+      .finally(() => setLoading(false))
+  }, [])
+
+  useEffect(() => {
+    if (loading || items.length === 0) return
     const ctx = gsap.context(() => {
       gsap.from('.gs_reveal_services', {
         scrollTrigger: {
@@ -48,7 +109,7 @@ export default function Services() {
       })
     }, '#services-sec')
     return () => ctx.revert()
-  }, [])
+  }, [loading, items])
 
   return (
     <section id="services-sec" className="py-32 bg-white relative" style={{ zIndex: 1 }}>
@@ -64,24 +125,17 @@ export default function Services() {
           <p className="text-secondary max-w-2xl mx-auto leading-relaxed text-sm">{services.desc}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
-          {services.items.map(({ title, desc, time }, i) => (
-            <div key={title} className="service-card gs_reveal_services">
-              <div className="beveled-corner overflow-hidden mb-7 bg-gray-100 h-64 shadow-xl">
-                <img src={serviceImages[i]} alt={title} className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">{title}</h3>
-              <p className="text-secondary text-sm mb-5 leading-relaxed">{desc}</p>
-              <div className="flex items-center gap-5 text-xs text-secondary font-medium mb-7">
-                {/* <span className="flex items-center gap-1.5"><LocationIcon />{location}</span> */}
-                <span className="flex items-center gap-1.5"><ClockIcon />{time}</span>
-              </div>
-              <a href="#contact" className="text-accent font-semibold flex items-center gap-2 hover:underline text-sm">
-                {services.requestConsultation} <span>→</span>
-              </a>
-            </div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center py-20">
+            <div className="w-7 h-7 border-2 border-[#1A6FDB] border-t-transparent rounded-full animate-spin" />
+          </div>
+        ) : items.length === 0 ? null : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+            {items.map(service => (
+              <ServiceCard key={service._id} service={service} />
+            ))}
+          </div>
+        )}
 
         <div className="text-center gs_reveal_services">
           <Link to="/services" className="inline-block bg-surface border border-surface-mid px-10 py-4 rounded-xl font-medium hover:bg-surface-mid transition-colors text-sm">

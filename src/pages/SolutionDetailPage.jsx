@@ -110,12 +110,12 @@ export default function SolutionDetailPage() {
                         </span>
                         <span className="h-px w-8" style={{ background: 'rgba(26,111,219,0.3)' }}></span>
                       </div>
-                      <h3 className="text-3xl font-medium mb-5" style={{ color: '#071525' }}>{sec.title}</h3>
+                      <h3 className="text-3xl font-medium mb-5" style={{ color: '#071525' }}>{t(sec.title, sec.title_ar)}</h3>
 
                       {/* Text block */}
-                      <p className="text-base leading-relaxed mb-6" style={{ color: '#5A7896' }}>{sec.description}</p>
+                      <p className="text-base leading-relaxed mb-6" style={{ color: '#5A7896' }}>{t(sec.description, sec.description_ar)}</p>
                       <ul className="space-y-3 mb-10">
-                        {sec.points.map(pt => (
+                        {(lang === 'ar' && sec.points_ar ? sec.points_ar : sec.points).map(pt => (
                           <li key={pt} className="flex items-start gap-3 text-base" style={{ color: '#071525' }}>
                             <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#1A6FDB' }}></span>
                             {pt}
@@ -124,7 +124,7 @@ export default function SolutionDetailPage() {
                       </ul>
 
                       {/* Full-width image(s) below text */}
-                      {sec.images ? (
+                      {/* {sec.images ? (
                         <div className="grid grid-cols-2 gap-4">
                           {sec.images.map((src, idx) => (
                             <div
@@ -151,7 +151,7 @@ export default function SolutionDetailPage() {
                             className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                           />
                         </div>
-                      )}
+                      )} */}
 
                       {/* Divider (not after last) */}
                       {i < solution.sections.length - 1 && (
@@ -169,11 +169,11 @@ export default function SolutionDetailPage() {
                 /* Default layout */
                 <>
                   <h2 className="text-4xl font-medium mb-6" style={{ color: '#071525' }}>{t('Overview', 'نظرة عامة')}</h2>
-                  <p className="text-base leading-relaxed mb-10" style={{ color: '#5A7896' }}>{solution.desc}</p>
+                  <p className="text-base leading-relaxed mb-10" style={{ color: '#5A7896' }}>{t(solution.desc, solution.desc_ar)}</p>
 
                   <h3 className="text-2xl font-medium mb-5" style={{ color: '#071525' }}>{t('What We Deliver', 'ما نقدمه')}</h3>
                   <div className="space-y-3 mb-12">
-                    {solution.features.map((f, i) => (
+                    {(lang === 'ar' && solution.features_ar ? solution.features_ar : solution.features).map((f, i) => (
                       <div
                         key={f}
                         className="flex items-center gap-4 p-5 rounded-xl transition-all duration-300 hover:-translate-y-0.5"

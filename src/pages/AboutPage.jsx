@@ -4,7 +4,10 @@ import L from 'leaflet'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
-
+import About from '../assets/About.webp'
+import About2 from '../assets/About2.webp'
+import About3 from '../assets/About3.jpg'
+import AboutBig from '../assets/AboutBig.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 // ── Map marker factory ────────────────────────────────────────
@@ -364,9 +367,10 @@ export default function AboutPage() {
         <div className="mt-16 overflow-hidden">
           <div className="flex gap-3 px-6 lg:px-8 max-w-7xl mx-auto">
             {[
-              'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80',
-              'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
-              'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80',
+              About,
+              About2,
+              About3,
+
             ].map((src, i) => (
               <div
                 key={i}
@@ -422,7 +426,7 @@ export default function AboutPage() {
             <div className="reveal" style={{ transitionDelay: '150ms' }}>
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1000&q=80"
+                  src={AboutBig}
                   alt="TRACECOOL engineering team"
                   className="w-full rounded-2xl object-cover shadow-2xl"
                   style={{ height: '420px' }}

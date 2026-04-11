@@ -1,6 +1,7 @@
 import solutionVrf from '../assets/solution-vrf.jpg';
 import solutionWater from '../assets/solution-water.jpg';
-
+import control from '../assets/control.jpg'
+import ventilation from '../assets/ventilation.jpg'
 // ─── SOLUTIONS ───────────────────────────────────────────────
 export const solutions = [
   {
@@ -11,6 +12,7 @@ export const solutions = [
     shortDesc: 'Energy-efficient, time-saving VRF systems tailored to your needs with end-to-end technical support.',
     shortDesc_ar: 'أنظمة VRF موفرة للطاقة وموفرة للوقت مصممة وفق احتياجاتك مع دعم تقني شامل.',
     desc: 'At TRACE COOL, we deliver energy-efficient, time-saving VRF systems tailored to your needs. From the moment we receive your building drawings, our experienced technical team provides end-to-end support. Enjoy a smoother project execution and long-term operational savings.',
+    desc_ar: 'في TRACE COOL، نقدم أنظمة VRF موفرة للطاقة وموفرة للوقت مصممة وفق احتياجاتك. من اللحظة التي نتلقى فيها مخططات مبناك، يوفر فريقنا التقني ذو الخبرة دعماً شاملاً من البداية إلى النهاية. استمتع بتنفيذ أسلس للمشروع ووفورات تشغيلية طويلة الأمد.',
     features: [
       'Customized pipeline design',
       'Precise system sizing & model selection',
@@ -18,39 +20,70 @@ export const solutions = [
       'Start-up assistance',
       'Onsite/remote technical guidance',
     ],
+    features_ar: [
+      'تصميم خطوط الأنابيب المخصصة',
+      'تحديد حجم النظام واختيار الموديل بدقة',
+      'حسابات مواد التركيب',
+      'المساعدة في التشغيل',
+      'التوجيه التقني في الموقع وعن بُعد',
+    ],
     image: solutionVrf,
     imageSide: 'right',
     sections: [
       {
         title: 'Consulting & Model Selection',
+        title_ar: 'الاستشارة واختيار الموديل',
         description: 'Expert pre-sales consultation to ensure project success and technical accuracy.',
+        description_ar: 'استشارة احترافية قبل البيع لضمان نجاح المشروع والدقة التقنية.',
         points: [
           'Technical and commercial VRF guidance',
           'Efficient building plan and space analysis',
           'Optimized equipment recommendations',
           'Preliminary system designs and cost estimates',
         ],
+        points_ar: [
+          'إرشادات VRF تقنية وتجارية',
+          'تحليل فعّال لمخطط المبنى والمساحات',
+          'توصيات معدات مُحسّنة',
+          'تصاميم أولية للأنظمة وتقديرات التكاليف',
+        ],
         image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
       },
       {
         title: 'Piping Drawing Design',
+        title_ar: 'تصميم مخططات الأنابيب',
         description: 'Professional engineering layouts tailored to your specific project requirements.',
+        description_ar: 'تخطيطات هندسية احترافية مصممة وفق متطلبات مشروعك المحددة.',
         points: [
           'Detailed schematics and equipment layouts',
           'Accurate material procurement guides',
           'Seamless HVAC implementation plans',
           'Reduction of potential installation errors',
         ],
+        points_ar: [
+          'مخططات تفصيلية ومخططات تجهيزات',
+          'أدلة دقيقة لشراء المواد',
+          'خطط تنفيذ تكييف متكاملة',
+          'تقليل أخطاء التركيب المحتملة',
+        ],
         image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80',
       },
       {
         title: 'After-Sales Technical Support',
+        title_ar: 'الدعم الفني بعد البيع',
         description: 'Comprehensive post-purchase care to ensure long-term system reliability.',
+        description_ar: 'رعاية شاملة بعد الشراء لضمان موثوقية النظام على المدى البعيد.',
         points: [
           'Multichannel support (Email, Phone, Social Media)',
           'Prompt technical problem-solving',
           'Expert assistance throughout product lifecycle',
           'Professional care for total peace of mind',
+        ],
+        points_ar: [
+          'دعم متعدد القنوات (البريد الإلكتروني، الهاتف، وسائل التواصل الاجتماعي)',
+          'حل المشكلات التقنية بسرعة',
+          'مساعدة خبراء طوال دورة حياة المنتج',
+          'رعاية احترافية لراحة البال الكاملة',
         ],
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
       },
@@ -64,44 +97,74 @@ export const solutions = [
     shortDesc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects.',
     shortDesc_ar: 'حلول شاملة لأنظمة المياه مصممة للمشاريع التجارية والصناعية متوسطة وكبيرة الحجم.',
     desc: 'Comprehensive water system solutions designed for mid-to-large-scale commercial and industrial projects — whether for private developments or competitive tender bids. Simplify your project. Maximize your savings. Quality, consistency, and peace of mind.',
+    desc_ar: 'حلول شاملة لأنظمة المياه مصممة للمشاريع التجارية والصناعية متوسطة وكبيرة الحجم — سواء للتطويرات الخاصة أو عروض المناقصات التنافسية. بسّط مشروعك. حقق أقصى قدر من الوفورات. الجودة والاتساق وراحة البال.',
     features: [
       'All-in-One Sourcing: High-efficiency chillers, terminal units, and installation kits in one order.',
       'Complete System Support: Cooling towers, pumps, hydraulic modules, and piping.',
       'Project Flexibility: Tailored solutions for private projects or competitive tenders.',
+    ],
+    features_ar: [
+      'مصدر شامل: مبردات عالية الكفاءة ووحدات طرفية وأطقم تركيب في طلب واحد.',
+      'دعم نظام كامل: أبراج تبريد ومضخات ووحدات هيدروليكية وأنابيب.',
+      'مرونة المشروع: حلول مخصصة للمشاريع الخاصة أو المناقصات التنافسية.',
     ],
     image: solutionWater,
     imageSide: 'left',
     sections: [
       {
         title: 'Consulting & Model Selection',
+        title_ar: 'الاستشارة واختيار الموديل',
         description: 'Expert pre-sales support to design optimized water systems for commercial and industrial use.',
+        description_ar: 'دعم احترافي قبل البيع لتصميم أنظمة مياه مُحسّنة للاستخدام التجاري والصناعي.',
         points: [
           'In-depth building plan analysis and needs assessment',
           'Ideal system configuration recommendations',
           'Tailored solutions balancing performance and efficiency',
           'Integration of engineering expertise with project specs',
         ],
+        points_ar: [
+          'تحليل معمّق لمخطط المبنى وتقييم الاحتياجات',
+          'توصيات بأمثل تكوين للنظام',
+          'حلول مخصصة توازن بين الأداء والكفاءة',
+          'دمج الخبرة الهندسية مع مواصفات المشروع',
+        ],
         image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
       },
       {
         title: 'Project Drawing Design',
+        title_ar: 'تصميم مخططات المشروع',
         description: 'Precision-engineered technical drawings that act as a roadmap for successful installation.',
+        description_ar: 'رسومات تقنية مصممة بدقة هندسية تعمل كخارطة طريق للتركيب الناجح.',
         points: [
           'Detailed piping schematics and equipment layouts',
           'Customized connection diagrams',
           'Guides for accurate material procurement',
           'Minimized installation errors and seamless assembly',
         ],
+        points_ar: [
+          'مخططات أنابيب تفصيلية ومخططات تجهيزات',
+          'مخططات توصيل مخصصة',
+          'أدلة لشراء المواد بدقة',
+          'أخطاء تركيب أقل وتجميع سلس',
+        ],
         image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=900&q=80',
       },
       {
         title: 'After-Sales Technical Support',
+        title_ar: 'الدعم الفني بعد البيع',
         description: 'Streamlined procurement and integrated logistics for faster project completion.',
+        description_ar: 'شراء مُبسَّط ولوجستيات متكاملة لإنجاز المشروع بسرعة أكبر.',
         points: [
           'Complete customized system packages (Units + Accessories)',
           'Coordinated shipments for all-in-one delivery',
           'Elimination of multi-vendor sourcing hassles',
           'Reduced logistical complexity and immediate installation readiness',
+        ],
+        points_ar: [
+          'حزم نظام مخصصة كاملة (وحدات + ملحقات)',
+          'شحنات منسقة للتسليم الكامل في مرة واحدة',
+          'إلغاء متاعب التوريد من موردين متعددين',
+          'تعقيد لوجستي أقل واستعداد فوري للتركيب',
         ],
         image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
       },
@@ -115,22 +178,36 @@ export const solutions = [
     shortDesc: 'Effortless ventilation projects with proven expertise and a full product range — A-to-Z in a single order.',
     shortDesc_ar: 'مشاريع تهوية سلسة بخبرة مُثبتة ومجموعة منتجات كاملة — من الألف إلى الياء في طلب واحد.',
     desc: 'At TRACE COOL, we make ventilation projects effortless with proven expertise and a full product range. A-to-Z solutions in a single order.',
+    desc_ar: 'في TRACE COOL، نجعل مشاريع التهوية سهلة بفضل خبرتنا المثبتة ومجموعة منتجاتنا الكاملة. حلول من الألف إلى الياء في طلب واحد.',
     features: [
       'All-in-One Supply: Fans, diffusers, dampers, and ducts from one trusted partner.',
       'Expert-Backed Efficiency: Leveraging years of project experience for faster timelines.',
       'Hassle-Free Process: Streamlined selection and delivery to focus on your project.',
     ],
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80',
+    features_ar: [
+      'توريد شامل: مراوح ومشتتات وصمامات وقنوات من شريك موثوق واحد.',
+      'كفاءة مدعومة بالخبرة: الاستفادة من سنوات تجربة المشاريع لتسريع الجداول الزمنية.',
+      'عملية خالية من المتاعب: اختيار وتسليم مبسّط للتركيز على مشروعك.',
+    ],
+    image: ventilation,
     imageSide: 'right',
     sections: [
       {
         title: 'Ventilation Solutions',
+        title_ar: 'حلول التهوية',
         description: 'Comprehensive, one-stop ventilation systems backed by a robust supply chain.',
+        description_ar: 'أنظمة تهوية شاملة لمرحلة واحدة مدعومة بسلسلة توريد قوية.',
         points: [
           'Full product range: Fans, diffusers, dampers, and ductwork',
           'Seamless end-to-end service from sourcing to delivery',
           'Elimination of multiple-vendor coordination hassles',
           'Tailored components for specific project requirements',
+        ],
+        points_ar: [
+          'مجموعة منتجات كاملة: مراوح ومشتتات وصمامات وقنوات هواء',
+          'خدمة متكاملة من المصدر إلى التسليم',
+          'إلغاء متاعب تنسيق الموردين المتعددين',
+          'مكونات مخصصة لمتطلبات المشروع المحددة',
         ],
         images: [
           'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=80',
@@ -147,23 +224,38 @@ export const solutions = [
     shortDesc: 'Cutting-edge control solutions delivering precision climate management and seamless BMS integration.',
     shortDesc_ar: 'حلول تحكم متطورة تقدم إدارة دقيقة للمناخ وتكاملاً سلساً مع أنظمة BMS.',
     desc: "In today's era of green buildings, our cutting-edge solutions deliver precision climate management and seamless integration. Experience the future of HVAC Control with smarter, connected systems.",
+    desc_ar: 'في عصر المباني الخضراء الحديث، تقدم حلولنا المتطورة إدارة دقيقة للمناخ وتكاملاً سلساً. اختبر مستقبل التحكم في التكييف مع أنظمة أكثر ذكاءً وترابطاً.',
     features: [
       'Seamless Connectivity: Integrate AC units, BMS systems, and administrators.',
       'Cloud-Based Control: Remote IoT management from anywhere, anytime.',
       'Flexible BMS Integration: Compatible with Modbus and BACnet protocols.',
       'Sustainability & Efficiency: Optimize energy use and contribute to green building certifications.',
     ],
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
+    features_ar: [
+      'اتصال سلس: دمج وحدات التكييف وأنظمة BMS والمشرفين.',
+      'تحكم عبر السحابة: إدارة IoT عن بُعد من أي مكان وفي أي وقت.',
+      'تكامل BMS مرن: متوافق مع بروتوكولات Modbus وBACnet.',
+      'الاستدامة والكفاءة: تحسين استخدام الطاقة والمساهمة في شهادات المباني الخضراء.',
+    ],
+    image: control,
     imageSide: 'left',
     sections: [
       {
         title: 'Control Solutions',
+        title_ar: 'حلول التحكم',
         description: 'Advanced HVAC management using IoT technology for modern green buildings.',
+        description_ar: 'إدارة متقدمة لتكييف الهواء باستخدام تقنية إنترنت الأشياء للمباني الخضراء الحديثة.',
         points: [
           'Seamless integration of AC units, BMS, and facility management',
           'Cloud-based management for remote, real-time adjustments',
           'Data-driven optimization to enhance energy efficiency',
           'Reduced operational costs through intelligent monitoring',
+        ],
+        points_ar: [
+          'تكامل سلس لوحدات التكييف وBMS وإدارة المنشآت',
+          'إدارة عبر السحابة للتعديلات الفورية عن بُعد',
+          'تحسين مدفوع بالبيانات لتعزيز كفاءة الطاقة',
+          'تخفيض تكاليف التشغيل من خلال المراقبة الذكية',
         ],
         image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80',
       },

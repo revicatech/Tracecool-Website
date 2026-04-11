@@ -1,12 +1,10 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import video from '../assets/video.mp4'
 export default function Hero() {
   const { t } = useLanguage()
   const hero = t('hero')
   const videoRef = useRef(null)
-  const [soundOn, setSoundOn] = useState(true)
-  const unlockedRef = useRef(false)
 
   useEffect(() => {
     const video = videoRef.current
@@ -21,33 +19,11 @@ export default function Hero() {
     document.addEventListener('visibilitychange', keepPlaying)
     const interval = setInterval(keepPlaying, 300)
 
-    const enableSound = () => {
-      if (unlockedRef.current) return
-      unlockedRef.current = true
-      ;['click', 'keydown', 'touchstart', 'pointerdown', 'scroll'].forEach(ev =>
-        document.removeEventListener(ev, enableSound)
-      )
-      if (soundOn) video.muted = false
-    }
-    ;['click', 'keydown', 'touchstart', 'pointerdown', 'scroll'].forEach(ev =>
-      document.addEventListener(ev, enableSound, { passive: true })
-    )
-
     return () => {
       document.removeEventListener('visibilitychange', keepPlaying)
       clearInterval(interval)
-      ;['click', 'keydown', 'touchstart', 'pointerdown', 'scroll'].forEach(ev =>
-        document.removeEventListener(ev, enableSound)
-      )
     }
   }, [])
-
-  const toggleSound = () => {
-    unlockedRef.current = true
-    const next = !soundOn
-    setSoundOn(next)
-    if (videoRef.current) videoRef.current.muted = !next
-  }
 
   return (
     <header
@@ -74,33 +50,6 @@ export default function Hero() {
           backgroundSize: '60px 60px',
         }}
       />
-
-      {/* Sound toggle */}
-      <button
-        onClick={toggleSound}
-        title="Toggle sound"
-        style={{
-          position: 'absolute', bottom: '2rem', right: '2rem', zIndex: 20,
-          width: 44, height: 44, borderRadius: '50%',
-          background: 'rgba(7,21,37,0.6)', border: '1px solid rgba(255,255,255,0.2)',
-          backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center',
-          justifyContent: 'center', cursor: 'pointer', transition: 'background 0.25s, border-color 0.25s',
-        }}
-        onMouseEnter={e => { e.currentTarget.style.background = 'rgba(26,111,219,0.55)'; e.currentTarget.style.borderColor = 'rgba(77,158,255,0.6)' }}
-        onMouseLeave={e => { e.currentTarget.style.background = 'rgba(7,21,37,0.6)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
-      >
-        {soundOn ? (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 20, height: 20 }}>
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" /><path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: 20, height: 20 }}>
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-            <line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" />
-          </svg>
-        )}
-      </button>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full z-10 pt-20 sm:pt-24">

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
-
+import energy from '../assets/energy-recovery.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 const productMeta = [
@@ -12,7 +12,7 @@ const productMeta = [
   { cls: 'card-1-3', img: 'https://i.pinimg.com/736x/cd/35/84/cd3584692be0c8de7e00371761265851.jpg', z: 10 },
   { cls: 'card-2-3', img: 'https://i.pinimg.com/1200x/9d/ce/fc/9dcefc29eb5b3148c1adf9aa576afed1.jpg', z: 30 },
   { cls: 'card-2-2', img: 'https://i.pinimg.com/736x/a2/aa/31/a2aa316e8ccf77d886237cc01a38ca57.jpg', z: 20 },
-  { cls: 'card-2-1', img: 'https://i.pinimg.com/1200x/40/88/c3/4088c3d0b109677749a03ce0c5e295e1.jpg', z: 10 },
+  { cls: 'card-2-1', img: energy, z: 10 },
 ]
 
 function BentoCard({ cls, img, title, desc, z }) {
