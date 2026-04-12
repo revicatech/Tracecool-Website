@@ -4,10 +4,10 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
 import energy from '../assets/energy-recovery.jpg'
-import accessory from '../assets/Accessory.jpg'
-import AC_Accessory from '../assets/AC_Accessory.jpg'
-import Airtowater from '../assets/Airtowater.jpg'
-import Roof from '../assets/Roof.jpg'
+import accessory from '../assets/Accessory.webp'
+import AC_Accessory from '../assets/AC_Accessory.webp'
+import Airtowater from '../assets/Airtowater.webp'
+import Roof from '../assets/Roof.webp'
 gsap.registerPlugin(ScrollTrigger)
 
 const productMeta = [
