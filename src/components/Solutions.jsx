@@ -44,6 +44,8 @@ export default function Solutions() {
                   src={solution.image}
                   alt={tStr(solution.title, solution.title_ar)}
                   className="w-full aspect-square object-cover rounded-lg transition-all duration-700 shadow-sm"
+                  loading="lazy"
+                  decoding="async"
                 />
               </Link>
             ))}

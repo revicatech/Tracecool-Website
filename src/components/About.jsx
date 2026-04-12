@@ -37,6 +37,8 @@ export default function About() {
                 src={realImage}
                 alt={about.badge}
                 className="w-full h-48 sm:h-64 md:h-72 object-cover rounded-xl shadow-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
 

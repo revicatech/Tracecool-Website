@@ -3,19 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/src/assets/LOGO.png" />
+
+    <!-- Primary SEO Meta -->
     <title>TRACECOOL — Climate Engineering Excellence</title>
+    <meta name="description" content="TRACECOOL delivers premium HVAC engineering solutions — VRF systems, chillers, precision cooling, and custom climate control for commercial and industrial projects across the Middle East and Africa." />
+    <meta name="keywords" content="HVAC, climate engineering, VRF systems, chillers, air conditioning, heat pumps, TRACECOOL, Middle East, Africa, Lebanon, Beirut" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="TRACECOOL" />
+    <link rel="canonical" href="https://www.tracecool.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tracecool.com/" />
+    <meta property="og:title" content="TRACECOOL — Climate Engineering Excellence" />
+    <meta property="og:description" content="Premium HVAC engineering solutions — VRF systems, chillers, and custom climate control for commercial and industrial projects across the Middle East and Africa." />
+    <meta property="og:image" content="https://www.tracecool.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="TRACECOOL" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_AE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TRACECOOL — Climate Engineering Excellence" />
+    <meta name="twitter:description" content="Premium HVAC engineering solutions — VRF systems, chillers, and custom climate control for commercial and industrial projects." />
+    <meta name="twitter:image" content="https://www.tracecool.com/og-image.png" />
+
+    <!-- Fonts: preconnect for early DNS resolution -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Non-blocking font load (prevents render-blocking) -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      crossorigin=""
-    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- Structured Data: Organization + Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness"],
+      "name": "TRACECOOL",
+      "description": "Premium HVAC engineering solutions provider specializing in VRF systems, chillers, precision cooling, and custom climate control.",
+      "url": "https://www.tracecool.com",
+      "logo": "https://www.tracecool.com/og-image.png",
+      "email": "info@tracecool.com",
+      "telephone": "+96171945966",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Beirut",
+        "addressCountry": "LB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+96171945966",
+        "email": "info@tracecool.com",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Arabic"]
+      },
+      "areaServed": ["Middle East", "Africa"],
+      "knowsAbout": ["HVAC Engineering", "VRF Systems", "Chillers", "Climate Control", "Heat Pumps", "Air Conditioning"],
+      "sameAs": []
+    }
+    </script>
   </head>
   <body class="font-sans text-primary bg-white antialiased">
     <div id="root"></div>

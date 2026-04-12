@@ -44,10 +44,43 @@ function HomePage() {
   )
 }
 
+const PAGE_META = {
+  '/': {
+    title: 'TRACECOOL — Climate Engineering Excellence',
+    desc: 'TRACECOOL delivers premium HVAC engineering solutions — VRF systems, chillers, and custom climate control for commercial and industrial projects across the Middle East and Africa.',
+  },
+  '/about': {
+    title: 'About Us | TRACECOOL HVAC Engineers',
+    desc: "Learn about TRACECOOL's 20+ year legacy of HVAC engineering excellence, global offices, and our commitment to sustainable climate solutions.",
+  },
+  '/solutions': {
+    title: 'HVAC Solutions | TRACECOOL',
+    desc: "Explore TRACECOOL's full range of HVAC solutions: VRF systems, chillers, precision cooling, industrial HVAC, energy recovery, and ventilation.",
+  },
+  '/services': {
+    title: 'Engineering Services | TRACECOOL',
+    desc: 'From design consultation to installation and maintenance, TRACECOOL engineering services cover every phase of your HVAC project.',
+  },
+  '/products': {
+    title: 'HVAC Products | TRACECOOL',
+    desc: 'Browse TRACECOOL catalog of HVAC products: mini-split air conditioners, heat pumps, rooftop units, chillers, accessories, and more.',
+  },
+  '/contact': {
+    title: 'Contact Us | TRACECOOL',
+    desc: 'Get in touch with TRACECOOL for a free consultation or quote. Our team of HVAC engineers is ready to assist with your climate engineering needs.',
+  },
+}
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
     if (pathname !== '/') window.scrollTo(0, 0)
+
+    // Update page title and meta description per route
+    const meta = PAGE_META[pathname] || PAGE_META['/']
+    document.title = meta.title
+    const metaDesc = document.querySelector('meta[name="description"]')
+    if (metaDesc) metaDesc.setAttribute('content', meta.desc)
 
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active') }),
