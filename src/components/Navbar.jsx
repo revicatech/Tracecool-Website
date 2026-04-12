@@ -114,7 +114,7 @@ export default function Navbar() {
         <div id="navbar-pill" className={`rounded-full w-full max-w-5xl px-5 py-3 flex justify-between items-center${scrolled ? ' scrolled' : ''}`}>
           {/* Logo */}
           <Link to="/" className="leading-none">
-            <img src={logo} alt="Tracecool" className="h-8 w-auto" />
+            <img src={logo} alt="Tracecool" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Links */}
@@ -153,7 +153,7 @@ export default function Navbar() {
       {/* Side Drawer */}
       <aside id="side-drawer" className={drawerOpen ? 'open' : ''} aria-label="Navigation menu">
         <div className="flex justify-between items-start mb-6">
-          <img src={logo} alt="Tracecool" className="h-7 w-auto" />
+          <img src={logo} alt="Tracecool" className="h-10 w-auto" />
           <button id="drawer-close-btn" aria-label="Close menu" onClick={closeDrawer}>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

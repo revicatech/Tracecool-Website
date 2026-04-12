@@ -7,6 +7,7 @@ import energy from '../assets/energy-recovery.jpg'
 import accessory from '../assets/Accessory.webp'
 import AC_Accessory from '../assets/AC_Accessory.webp'
 import Airtowater from '../assets/Airtowater.webp'
+import mini from '../assets/mini.webp'
 import Roof from '../assets/Roof.webp'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -15,7 +16,7 @@ const productMeta = [
   { cls: 'card-1-2', img: AC_Accessory, z: 20 },
   { cls: 'card-1-3', img: Airtowater, z: 10 },
   { cls: 'card-2-3', img: energy, z: 30 },
-  { cls: 'card-2-2', img: '', z: 20 },
+  { cls: 'card-2-2', img: mini, z: 20 },
   { cls: 'card-2-1', img: Roof, z: 10 },
 ]
 

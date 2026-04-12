@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="lg:w-5/12">
             <div className="mb-6">
               <a href="/">
-                <img src={logo} alt="Tracecool" className="h-10 w-auto" />
+                <img src={logo} alt="Tracecool" className="h-14 w-auto" />
               </a>
             </div>
             <div className="w-10 h-px bg-accent mb-6"></div>

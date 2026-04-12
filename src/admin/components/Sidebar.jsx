@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../../assets/LOGO.png';
 
 const navItems = [
   { to: '/admin', label: 'Dashboard', icon: '⊞', end: true },
@@ -37,14 +38,9 @@ export default function Sidebar({ open, onClose }) {
       >
         {/* Logo */}
         <div className="px-6 py-5 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[#1A6FDB] rounded flex items-center justify-center">
-              <span className="text-white text-xs font-bold">TC</span>
-            </div>
-            <div>
-              <p className="text-white font-semibold text-sm leading-tight">Tracecool</p>
-              <p className="text-[#5A7896] text-xs">Admin Panel</p>
-            </div>
+          <div className="flex flex-col gap-1">
+            <img src={logo} alt="Tracecool" className="h-10 w-auto" />
+            <p className="text-[#5A7896] text-xs">Admin Panel</p>
           </div>
         </div>
 
