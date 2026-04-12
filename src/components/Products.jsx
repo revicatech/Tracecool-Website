@@ -12,15 +12,14 @@ import Roof from '../assets/Roof.webp'
 gsap.registerPlugin(ScrollTrigger)
 
 const productMeta = [
-  { cls: 'card-1-1', img: accessory, z: 30 },
-  { cls: 'card-1-2', img: AC_Accessory, z: 20 },
-  { cls: 'card-1-3', img: Airtowater, z: 10 },
-  { cls: 'card-2-3', img: energy, z: 30 },
-  { cls: 'card-2-2', img: mini, z: 20 },
-  { cls: 'card-2-1', img: Roof, z: 10 },
+  { cls: 'card-1-1', img: accessory },
+  { cls: 'card-1-2', img: AC_Accessory },
+  { cls: 'card-1-3', img: Airtowater },
+  { cls: 'card-2-3', img: energy },
+  { cls: 'card-2-2', img: mini },
+  { cls: 'card-2-1', img: Roof },
 ]
 
-// Ordered list of category names to display (must match DB name_en exactly)
 const CATEGORY_ORDER = [
   'Accessory & Parts',
   'Air Conditioner Accessories',
@@ -30,14 +29,13 @@ const CATEGORY_ORDER = [
   'Rooftop & Package',
 ]
 
-function BentoCard({ cls, img, title, desc, z, catId }) {
+function BentoCard({ cls, img, title, catId }) {
   const to = catId ? `/products?cat=${catId}` : '/products'
   return (
-    <Link to={to} className={`bento-card ${cls}`} style={{ zIndex: z }}>
+    <Link to={to} className={`bento-card ${cls}`}>
       <img src={img} alt={title} />
       <div className="card-content">
         <h3>{title}</h3>
-        <p>{desc}</p>
       </div>
     </Link>
   )
@@ -51,65 +49,47 @@ export default function Products() {
   useEffect(() => {
     fetch('/api/categories')
       .then(r => r.json())
-      .then(data => {
-        const active = data.filter(c => c.isActive)
-        setCategories(active)
-      })
+      .then(data => setCategories(data.filter(c => c.isActive)))
       .catch(() => {})
   }, [])
 
-  // Always build cards from CATEGORY_ORDER; enrich with DB ids/AR names when available
-  const buildCards = () => {
-    return CATEGORY_ORDER.map((name, i) => {
+  const buildCards = () =>
+    CATEGORY_ORDER.map((name, i) => {
       const meta = productMeta[i]
-      const cat = categories.find(c =>
-        c.name_en?.trim().toLowerCase() === name.toLowerCase()
-      )
+      const cat = categories.find(c => c.name_en?.trim().toLowerCase() === name.toLowerCase())
       return {
         ...meta,
         title: cat ? (lang === 'ar' ? cat.name_ar : cat.name_en) : name,
-        desc: '',
         catId: cat?._id || null,
       }
     })
-  }
 
   const cards = buildCards()
   const row1 = cards.slice(0, 3)
   const row2 = cards.slice(3, 6)
 
   useEffect(() => {
-    const mm = gsap.matchMedia()
-    mm.add('(min-width: 1025px)', () => {
-      gsap.from('#products .mb-14', {
+    const ctx = gsap.context(() => {
+      gsap.from('#products .products-header', {
         scrollTrigger: { trigger: '#products', start: 'top 80%', toggleActions: 'play none none none' },
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out', force3D: true,
+        y: 30, opacity: 0, duration: 0.8, ease: 'power2.out',
       })
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '#products', start: 'top top', end: 'bottom bottom',
-          scrub: 0.5, pin: '.pin-panel', anticipatePin: 0,
-        },
+      gsap.from('#products .bento-card', {
+        scrollTrigger: { trigger: '#products .products-grid', start: 'top 85%', toggleActions: 'play none none none' },
+        y: 40, opacity: 0, duration: 0.6, ease: 'power2.out', stagger: 0.1,
       })
-      const move = 104
-      tl.fromTo('.card-1-1', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none', force3D: true }, 0)
-        .to('.card-1-2', { xPercent: move, ease: 'none', force3D: true }, 0)
-        .to('.card-1-3', { xPercent: move * 2, ease: 'none', force3D: true }, 0)
-      tl.fromTo('.card-2-3', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none', force3D: true }, 0)
-        .to('.card-2-2', { xPercent: -move, ease: 'none', force3D: true }, 0)
-        .to('.card-2-1', { xPercent: -(move * 2), ease: 'none', force3D: true }, 0)
-      tl.fromTo(
-        ['.card-1-2 .card-content', '.card-1-3 .card-content', '.card-2-2 .card-content', '.card-2-1 .card-content'],
-        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, force3D: true }, 0.25,
-      )
+      gsap.from('#products .all-products-btn', {
+        scrollTrigger: { trigger: '#products .all-products-btn', start: 'top 90%', toggleActions: 'play none none none' },
+        y: 20, opacity: 0, duration: 0.6, ease: 'power2.out',
+      })
     })
-    return () => mm.revert()
+    return () => ctx.revert()
   }, [])
 
   return (
-    <section id="products" className="overflow-hidden relative bg-white" style={{ zIndex: 1 }}>
-      <div className="pin-panel h-screen w-full flex flex-col justify-center relative px-6 lg:px-20 max-w-[1600px] mx-auto">
-        <div className="mb-14 relative z-50">
+    <section id="products" className="overflow-hidden relative">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-20 py-24 lg:py-32">
+        <div className="products-header mb-12">
           <div className="section-label light mb-5">{products.badge}</div>
           <h2 className="text-5xl md:text-6xl font-medium tracking-tight text-white">
             {products.titleWord} <span className="text-gradient italic font-light">{products.titleAccent}</span>
@@ -118,15 +98,26 @@ export default function Products() {
         </div>
 
         <div className="products-grid">
-          <div className="row-container row-1 flex relative h-[35vh] min-h-[280px] max-h-[420px] mb-5">
+          <div className="row-container row-1">
             {row1.map(c => <BentoCard key={c.cls} {...c} />)}
           </div>
-          <div className="row-container row-2 flex relative h-[35vh] min-h-[280px] max-h-[420px]">
+          <div className="row-container row-2">
             {row2.map(c => <BentoCard key={c.cls} {...c} />)}
           </div>
         </div>
+
+        <div className="all-products-btn mt-10 flex justify-center">
+          <Link
+            to="/products"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-white/20 text-white text-sm font-medium hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+          >
+            {lang === 'ar' ? 'جميع المنتجات' : 'All Products'}
+            <svg className={`w-4 h-4 ${lang === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
       </div>
-      <div className="scroll-spacer h-[10vh]"></div>
     </section>
   )
 }
