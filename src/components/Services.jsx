@@ -14,7 +14,7 @@ function ServiceCard({ service }) {
 
   return (
     <div
-      className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2 gs_reveal_services"
+      className="group rounded-2xl overflow-hidden transition-all duration-500 hover:-translate-y-2"
       style={{
         background: 'white',
         border: '1px solid #E4EBF5',
@@ -87,7 +87,7 @@ export default function Services() {
   useEffect(() => {
     fetch('/api/services')
       .then(r => r.json())
-      .then(data => setItems(data.filter(s => s.isActive)))
+      .then(data => setItems(data.filter(s => s.isActive).slice(0, 3)))
       .catch(() => {})
       .finally(() => setLoading(false))
   }, [])
@@ -132,7 +132,9 @@ export default function Services() {
         ) : items.length === 0 ? null : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
             {items.map(service => (
-              <ServiceCard key={service._id} service={service} />
+              <div key={service._id} className="gs_reveal_services">
+                <ServiceCard service={service} />
+              </div>
             ))}
           </div>
         )}

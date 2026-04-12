@@ -80,9 +80,9 @@ export default function Branches() {
   return (
     <section id="branches" className="py-28 bg-primary text-white overflow-hidden relative" style={{ zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-start lg:items-end mb-16 gap-8">
           <div className="max-w-xl">
-            <div className="section-label light mb-5">{br.badge}</div>
+            <div className="section-label light mb-5 justify-center lg:justify-start">{br.badge}</div>
             <h2 className="text-4xl md:text-5xl font-medium leading-tight reveal">
               {br.titleLine1}<br />{br.titleLine2}
             </h2>

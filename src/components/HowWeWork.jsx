@@ -30,9 +30,9 @@ export default function HowWeWork() {
   return (
     <section id="how-we-work" className="py-28 bg-white border-t border-gray-100 relative" style={{ zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-start md:items-end mb-16">
           <div>
-            <div className="section-label mb-4">{hw.badge}</div>
+            <div className="section-label mb-4 justify-center md:justify-start">{hw.badge}</div>
             <h2 className="text-4xl md:text-5xl font-medium leading-tight">{hw.title}</h2>
           </div>
           <p className="text-secondary text-sm max-w-xs mt-5 md:mt-0 leading-relaxed">{hw.desc}</p>
