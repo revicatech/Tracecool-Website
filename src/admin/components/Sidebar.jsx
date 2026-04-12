@@ -39,7 +39,7 @@ export default function Sidebar({ open, onClose }) {
         {/* Logo */}
         <div className="px-6 py-5 border-b border-white/10">
           <div className="flex flex-col gap-1">
-            <img src={logo} alt="Tracecool" className="h-10 w-auto" />
+            <img src={logo} alt="Tracecool" className="h-16 w-auto" />
             <p className="text-[#5A7896] text-xs">Admin Panel</p>
           </div>
         </div>
