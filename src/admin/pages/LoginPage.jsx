@@ -39,8 +39,8 @@ export default function LoginPage() {
       <div className="relative w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <img src={logo} alt="Tracecool" className="h-24 w-auto" />
+          <div className="flex justify-center mb-5">
+            <img src={logo} alt="Tracecool" className="w-56 h-auto object-contain" />
           </div>
           <h1 className="text-white text-2xl font-bold">Admin Panel</h1>
           <p className="text-[#5A7896] text-sm mt-1">Sign in to manage Tracecool</p>
