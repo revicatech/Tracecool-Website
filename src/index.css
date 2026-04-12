@@ -211,7 +211,9 @@
   background: #0D2340;
   border: 1px solid rgba(255, 255, 255, 0.07);
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
-  will-change: transform;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .bento-card img {

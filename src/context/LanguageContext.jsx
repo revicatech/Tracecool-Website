@@ -12,6 +12,7 @@ export function LanguageProvider({ children }) {
   }
 
   useEffect(() => {
+    if (window.location.pathname.startsWith('/admin')) return
     const isAr = lang === 'ar'
     document.documentElement.dir = isAr ? 'rtl' : 'ltr'
     document.documentElement.lang = lang

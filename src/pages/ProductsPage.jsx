@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
@@ -194,6 +194,7 @@ function ProductCard({ product, t }) {
 export default function ProductsPage() {
   const { lang, isRTL } = useLanguage()
   const t = (en, ar) => (lang === 'ar' && ar) ? ar : en
+  const [searchParams] = useSearchParams()
 
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
@@ -221,6 +222,15 @@ export default function ProductsPage() {
       setProducts(prods)
       setCategories(cats)
       setSubcategories(subs)
+
+      // Pre-select subcategories if ?cat=<categoryId> is in the URL
+      const catParam = searchParams.get('cat')
+      if (catParam) {
+        const subIds = subs
+          .filter(s => s.category?._id === catParam)
+          .map(s => s._id)
+        if (subIds.length > 0) setSelectedSubcategories(subIds)
+      }
     }).finally(() => setLoading(false))
   }, [])
 

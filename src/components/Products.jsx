@@ -4,20 +4,35 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useLanguage } from '../context/LanguageContext'
 import energy from '../assets/energy-recovery.jpg'
+import accessory from '../assets/Accessory.jpg'
+import AC_Accessory from '../assets/AC_Accessory.jpg'
+import Airtowater from '../assets/Airtowater.jpg'
+import Roof from '../assets/Roof.jpg'
 gsap.registerPlugin(ScrollTrigger)
 
 const productMeta = [
-  { cls: 'card-1-1', img: 'https://i.pinimg.com/1200x/42/4f/37/424f377d8faefd209c891c4b0fa00ac8.jpg', z: 30 },
-  { cls: 'card-1-2', img: 'https://i.pinimg.com/1200x/6f/48/2e/6f482e2464626abdf12a6a5b569f372f.jpg', z: 20 },
-  { cls: 'card-1-3', img: 'https://i.pinimg.com/736x/cd/35/84/cd3584692be0c8de7e00371761265851.jpg', z: 10 },
-  { cls: 'card-2-3', img: 'https://i.pinimg.com/1200x/9d/ce/fc/9dcefc29eb5b3148c1adf9aa576afed1.jpg', z: 30 },
-  { cls: 'card-2-2', img: 'https://i.pinimg.com/736x/a2/aa/31/a2aa316e8ccf77d886237cc01a38ca57.jpg', z: 20 },
-  { cls: 'card-2-1', img: energy, z: 10 },
+  { cls: 'card-1-1', img: accessory, z: 30 },
+  { cls: 'card-1-2', img: AC_Accessory, z: 20 },
+  { cls: 'card-1-3', img: Airtowater, z: 10 },
+  { cls: 'card-2-3', img: energy, z: 30 },
+  { cls: 'card-2-2', img: '', z: 20 },
+  { cls: 'card-2-1', img: Roof, z: 10 },
 ]
 
-function BentoCard({ cls, img, title, desc, z }) {
+// Ordered list of category names to display (must match DB name_en exactly)
+const CATEGORY_ORDER = [
+  'Accessory & Parts',
+  'Air Conditioner Accessories',
+  'Air to water heat pump',
+  'Chiller',
+  'Mini Split Air Conditioner',
+  'Rooftop & Package',
+]
+
+function BentoCard({ cls, img, title, desc, z, catId }) {
+  const to = catId ? `/products?cat=${catId}` : '/products'
   return (
-    <Link to="/products" className={`bento-card ${cls}`} style={{ zIndex: z }}>
+    <Link to={to} className={`bento-card ${cls}`} style={{ zIndex: z }}>
       <img src={img} alt={title} />
       <div className="card-content">
         <h3>{title}</h3>
@@ -42,20 +57,23 @@ export default function Products() {
       .catch(() => {})
   }, [])
 
-  // Build cards: use backend categories when available, fallback to translation data
-  const cards = (categories.length > 0 ? categories : products.items).slice(0, 6).map((item, i) => {
-    const meta = productMeta[i]
-    if (categories.length > 0) {
+  // Always build cards from CATEGORY_ORDER; enrich with DB ids/AR names when available
+  const buildCards = () => {
+    return CATEGORY_ORDER.map((name, i) => {
+      const meta = productMeta[i]
+      const cat = categories.find(c =>
+        c.name_en?.trim().toLowerCase() === name.toLowerCase()
+      )
       return {
         ...meta,
-        title: lang === 'ar' ? item.name_ar : item.name_en,
+        title: cat ? (lang === 'ar' ? cat.name_ar : cat.name_en) : name,
         desc: '',
-        slug: item.slug,
+        catId: cat?._id || null,
       }
-    }
-    return { ...meta, ...item, slug: null }
-  })
+    })
+  }
 
+  const cards = buildCards()
   const row1 = cards.slice(0, 3)
   const row2 = cards.slice(3, 6)
 
@@ -64,24 +82,24 @@ export default function Products() {
     mm.add('(min-width: 1025px)', () => {
       gsap.from('#products .mb-14', {
         scrollTrigger: { trigger: '#products', start: 'top 80%', toggleActions: 'play none none none' },
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out',
+        y: 40, opacity: 0, duration: 1, ease: 'power3.out', force3D: true,
       })
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: '#products', start: 'top top', end: 'bottom bottom',
-          scrub: 1.2, pin: '.pin-panel', anticipatePin: 1,
+          scrub: 0.5, pin: '.pin-panel', anticipatePin: 0,
         },
       })
       const move = 104
-      tl.fromTo('.card-1-1', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none' }, 0)
-        .to('.card-1-2', { xPercent: move, ease: 'none' }, 0)
-        .to('.card-1-3', { xPercent: move * 2, ease: 'none' }, 0)
-      tl.fromTo('.card-2-3', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none' }, 0)
-        .to('.card-2-2', { xPercent: -move, ease: 'none' }, 0)
-        .to('.card-2-1', { xPercent: -(move * 2), ease: 'none' }, 0)
+      tl.fromTo('.card-1-1', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none', force3D: true }, 0)
+        .to('.card-1-2', { xPercent: move, ease: 'none', force3D: true }, 0)
+        .to('.card-1-3', { xPercent: move * 2, ease: 'none', force3D: true }, 0)
+      tl.fromTo('.card-2-3', { scale: 0.92, opacity: 0.5 }, { scale: 1, opacity: 1, ease: 'none', force3D: true }, 0)
+        .to('.card-2-2', { xPercent: -move, ease: 'none', force3D: true }, 0)
+        .to('.card-2-1', { xPercent: -(move * 2), ease: 'none', force3D: true }, 0)
       tl.fromTo(
         ['.card-1-2 .card-content', '.card-1-3 .card-content', '.card-2-2 .card-content', '.card-2-1 .card-content'],
-        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 }, 0.25,
+        { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, force3D: true }, 0.25,
       )
     })
     return () => mm.revert()
