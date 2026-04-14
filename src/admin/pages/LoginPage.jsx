@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../../assets/LOGO.png';
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -38,8 +39,8 @@ export default function LoginPage() {
       <div className="relative w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-[#1A6FDB] rounded-2xl mb-4 shadow-lg shadow-[#1A6FDB]/30">
-            <span className="text-white text-xl font-bold">TC</span>
+          <div className="flex justify-center mb-5">
+            <img src={logo} alt="Tracecool" className="w-36 h-auto object-contain" />
           </div>
           <h1 className="text-white text-2xl font-bold">Admin Panel</h1>
           <p className="text-[#5A7896] text-sm mt-1">Sign in to manage Tracecool</p>

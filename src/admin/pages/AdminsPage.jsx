@@ -3,7 +3,7 @@ import api from '../utils/api';
 import { useAuth } from '../context/AuthContext';
 import ConfirmModal from '../components/ConfirmModal';
 
-const emptyForm = { username: '', name: '', password: '', role: 'admin' };
+const emptyForm = { username: '', name: '', password: '', confirmPassword: '', role: 'admin' };
 
 export default function AdminsPage() {
   const { admin: currentAdmin } = useAuth();
@@ -28,15 +28,19 @@ export default function AdminsPage() {
 
   const openAdd = () => { setForm(emptyForm); setEditing(null); setError(''); setShowForm(true); };
   const openEdit = item => {
-    setForm({ username: item.username, name: item.name, password: '', role: item.role });
+    setForm({ username: item.username, name: item.name, password: '', confirmPassword: '', role: item.role });
     setEditing(item._id); setError(''); setShowForm(true);
   };
   const closeForm = () => setShowForm(false);
 
   const handleSubmit = async e => {
-    e.preventDefault(); setSaving(true); setError('');
+    e.preventDefault();
+    if (form.password && form.password !== form.confirmPassword) {
+      setError('Passwords do not match'); return;
+    }
+    setSaving(true); setError('');
     try {
-      const payload = { ...form };
+      const { confirmPassword, ...payload } = form;
       if (editing && !payload.password) delete payload.password;
 
       if (editing) {
@@ -146,13 +150,9 @@ export default function AdminsPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">
-                  Username *{editing && <span className="text-[#5A7896] normal-case font-normal ml-1">(read-only)</span>}
-                </label>
-                <input name="username" value={form.username} onChange={handleChange}
-                  required={!editing} readOnly={!!editing}
-                  className={`w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]
-                    ${editing ? 'bg-[#F2F6FC] cursor-not-allowed' : ''}`}
+                <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Username *</label>
+                <input name="username" value={form.username} onChange={handleChange} required
+                  className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]"
                   placeholder="john_doe" />
               </div>
 
@@ -171,6 +171,18 @@ export default function AdminsPage() {
                   </button>
                 </div>
               </div>
+
+              {(!editing || form.password) && (
+                <div>
+                  <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Confirm Password</label>
+                  <div className="relative">
+                    <input type={showPass ? 'text' : 'password'} name="confirmPassword" value={form.confirmPassword}
+                      onChange={handleChange} required={!editing || !!form.password} minLength={8}
+                      className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]"
+                      placeholder="Repeat password" />
+                  </div>
+                </div>
+              )}
 
               <div>
                 <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">Role</label>

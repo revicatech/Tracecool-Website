@@ -35,7 +35,7 @@ export default function AdminLayout({ children }) {
           </button>
           <div className="flex-1" />
           <div className="text-sm text-[#5A7896]">
-            Welcome, <span className="font-medium text-[#071525]">Wassef</span>
+            Welcome, <span className="font-medium text-[#071525]">Tracecool</span>
           </div>
         </header>
 

@@ -32,7 +32,7 @@ router.post('/', [
     if (exists) return res.status(409).json({ message: 'Username already exists' });
 
     const admin = await Admin.create({ username, name, password, role });
-    res.status(201).json({ id: admin._id, username: admin.username, name: admin.name, role: admin.role });
+    res.status(201).json({ _id: admin._id, username: admin.username, name: admin.name, role: admin.role, createdAt: admin.createdAt });
   } catch {
     res.status(500).json({ message: 'Server error' });
   }
@@ -40,8 +40,9 @@ router.post('/', [
 
 // PUT /api/admins/:id
 router.put('/:id', [
+  body('username').optional().trim().isLength({ min: 3 }).withMessage('Username must be at least 3 characters'),
   body('name').optional().trim().notEmpty(),
-  body('password').optional().isLength({ min: 8 }),
+  body('password').optional().isLength({ min: 8 }).withMessage('Password must be at least 8 characters'),
   body('role').optional().isIn(['superadmin', 'admin']),
 ], async (req, res) => {
   const errors = validationResult(req);
@@ -52,13 +53,19 @@ router.put('/:id', [
     if (!admin) return res.status(404).json({ message: 'Admin not found' });
     if (admin.hidden) return res.status(403).json({ message: 'Admin not found' });
 
-    const { name, password, role } = req.body;
+    const { username, name, password, role } = req.body;
+
+    if (username && username.toLowerCase() !== admin.username) {
+      const taken = await Admin.findOne({ username: username.toLowerCase(), _id: { $ne: admin._id } });
+      if (taken) return res.status(409).json({ message: 'Username already taken' });
+      admin.username = username.toLowerCase();
+    }
     if (name) admin.name = name;
     if (role) admin.role = role;
     if (password) admin.password = password; // hashed in pre-save
 
     await admin.save();
-    res.json({ id: admin._id, username: admin.username, name: admin.name, role: admin.role });
+    res.json({ _id: admin._id, username: admin.username, name: admin.name, role: admin.role, createdAt: admin.createdAt });
   } catch {
     res.status(500).json({ message: 'Server error' });
   }

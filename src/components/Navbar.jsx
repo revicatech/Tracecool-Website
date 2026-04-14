@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import logo from '../assets/LOGO.png'
 
 function ArrowIcon({ className = 'w-3 h-3' }) {
   return (
@@ -109,10 +110,12 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4" id="navbar">
-        <div id="navbar-pill" className={`rounded-full w-full max-w-5xl px-5 py-3 flex justify-between items-center${scrolled ? ' scrolled' : ''}`}>
+      <nav className="fixed top-0 md:top-4 left-0 right-0 z-50 flex justify-center px-0 md:px-4" id="navbar">
+        <div id="navbar-pill" className={`md:rounded-full w-full md:max-w-5xl px-5 md:px-5 py-2 md:py-1 flex justify-between items-center${scrolled ? ' scrolled' : ''}`}>
           {/* Logo */}
-          <Link to="/" className="text-lg font-bold tracking-tight text-white leading-none">TRACECOOL</Link>
+          <Link to="/" className="leading-none flex items-center">
+            <img src={logo} alt="Tracecool" className="h-16 md:h-20 w-auto" />
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-7 rtl:space-x-reverse text-sm font-medium text-white/80">
@@ -150,7 +153,7 @@ export default function Navbar() {
       {/* Side Drawer */}
       <aside id="side-drawer" className={drawerOpen ? 'open' : ''} aria-label="Navigation menu">
         <div className="flex justify-between items-start mb-6">
-          <span className="text-base font-bold text-white tracking-tight">TRACECOOL</span>
+          <img src={logo} alt="Tracecool" className="h-16 w-auto" />
           <button id="drawer-close-btn" aria-label="Close menu" onClick={closeDrawer}>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

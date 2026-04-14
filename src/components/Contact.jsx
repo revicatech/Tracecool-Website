@@ -106,21 +106,21 @@ export default function Contact() {
             ) : (
               <form className="space-y-7" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                  <input type="text" required placeholder={form.fullName} value={formData.fullName} onChange={e => setFormData(p => ({ ...p, fullName: e.target.value }))} className="form-input text-sm" />
-                  <input type="email" required placeholder={form.email} value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} className="form-input text-sm" />
+                  <input type="text" required aria-label="Full Name" placeholder={form.fullName} value={formData.fullName} onChange={e => setFormData(p => ({ ...p, fullName: e.target.value }))} className="form-input text-sm" />
+                  <input type="email" required aria-label="Email Address" placeholder={form.email} value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} className="form-input text-sm" />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                  <input type="text" placeholder={form.company} value={formData.company} onChange={e => setFormData(p => ({ ...p, company: e.target.value }))} className="form-input text-sm" />
-                  <input type="tel" placeholder={form.phone} value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} className="form-input text-sm" />
+                  <input type="text" aria-label="Company" placeholder={form.company} value={formData.company} onChange={e => setFormData(p => ({ ...p, company: e.target.value }))} className="form-input text-sm" />
+                  <input type="tel" aria-label="Phone Number" placeholder={form.phone} value={formData.phone} onChange={e => setFormData(p => ({ ...p, phone: e.target.value }))} className="form-input text-sm" />
                 </div>
                 <div>
-                  <select className="form-input text-sm" style={{ cursor: 'pointer' }} value={formData.service} onChange={e => setFormData(p => ({ ...p, service: e.target.value }))}>
+                  <select aria-label="Service Interest" className="form-input text-sm" style={{ cursor: 'pointer' }} value={formData.service} onChange={e => setFormData(p => ({ ...p, service: e.target.value }))}>
                     <option value="" disabled>{form.serviceInterest}</option>
                     {form.options.map(opt => <option key={opt}>{opt}</option>)}
                   </select>
                 </div>
                 <div>
-                  <textarea required placeholder={form.message} rows={3} value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} className="form-input text-sm resize-none" />
+                  <textarea required aria-label="Message" placeholder={form.message} rows={3} value={formData.message} onChange={e => setFormData(p => ({ ...p, message: e.target.value }))} className="form-input text-sm resize-none" />
                 </div>
                 {formError && <p className="text-sm text-red-500">{formError}</p>}
                 <div className="flex justify-end pt-4">

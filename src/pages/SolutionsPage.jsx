@@ -65,7 +65,7 @@ function SolutionRow({ solution, index, lang }) {
         {t(solution.desc, solution.desc_ar)}
       </p>
       <ul className="space-y-2.5 mb-8">
-        {solution.features.map((f, i) => (
+        {(lang === 'ar' && solution.features_ar ? solution.features_ar : solution.features).map((f, i) => (
           <li key={i} className="flex items-start gap-2.5 text-sm" style={{ color: '#071525' }}>
             <span className="mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: '#1A6FDB' }}></span>
             {typeof f === 'object' ? t(f.en, f.ar) : f}
