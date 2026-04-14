@@ -8,6 +8,7 @@ const emptyForm = {
   description_en: '', description_ar: '',
   shortDesc_en: '', shortDesc_ar: '',
   category: '', subcategory: '',
+  catalogPdf: '',
   isActive: true, order: 0,
 };
 
@@ -84,6 +85,7 @@ export default function ProductsPage() {
       shortDesc_en: item.shortDesc_en || '', shortDesc_ar: item.shortDesc_ar || '',
       category: item.category?._id || item.category || '',
       subcategory: item.subcategory?._id || item.subcategory || '',
+      catalogPdf: item.catalogPdf || '',
       isActive: item.isActive, order: item.order,
     });
     setFeatures(item.features || []);
@@ -402,6 +404,22 @@ export default function ProductsPage() {
                     <p className="text-sm text-[#5A7896] italic">No features added yet.</p>
                   )}
                 </div>
+              </div>
+
+              {/* Catalogue PDF */}
+              <div>
+                <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">
+                  Catalogue PDF (Google Drive link)
+                </label>
+                <input
+                  type="text"
+                  name="catalogPdf"
+                  value={form.catalogPdf}
+                  onChange={handleChange}
+                  placeholder="https://drive.google.com/file/d/…"
+                  className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                />
+                <p className="text-[11px] text-[#5A7896] mt-1">Leave empty to hide the PDF button on the product page.</p>
               </div>
 
               {/* Order / Status */}
