@@ -325,46 +325,50 @@ export default function ProductDetailPage() {
               </p>
 
               {/* CTA row */}
-              <div className="pdp-cta-row flex flex-wrap items-center gap-4">
-                <Link to="/contact" className="cta-pill text-white text-sm font-medium">
-                  <span>{t('Request a Quote', 'طلب عرض سعر')}</span>
-                  <span className="icon"><ArrowIcon /></span>
-                </Link>
-                {product.catalogPdf && (
-                  <a
-                    href={product.catalogPdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
-                    style={{
-                      background: 'rgba(255,255,255,0.07)',
-                      border: '1px solid rgba(255,255,255,0.18)',
-                      color: 'rgba(255,255,255,0.75)',
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.13)'
-                      e.currentTarget.style.color = 'white'
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
-                      e.currentTarget.style.color = 'rgba(255,255,255,0.75)'
-                    }}
-                  >
-                    <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                        d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    </svg>
-                    {t('Download Catalogue', 'تحميل الكتالوج')}
-                  </a>
-                )}
+              <div className="pdp-cta-row flex flex-col gap-4">
+                {/* Row 1: Request a Quote + PDF */}
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link to="/contact" className="cta-pill text-white text-sm font-medium">
+                    <span>{t('Request a Quote', 'طلب عرض سعر')}</span>
+                    <span className="icon"><ArrowIcon /></span>
+                  </Link>
+                  {product.catalogPdf && (
+                    <a
+                      href={product.catalogPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full transition-all duration-200"
+                      style={{
+                        background: 'rgba(255,255,255,0.07)',
+                        border: '1px solid rgba(255,255,255,0.18)',
+                        color: 'rgba(255,255,255,0.75)',
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.background = 'rgba(255,255,255,0.13)'
+                        e.currentTarget.style.color = 'white'
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.background = 'rgba(255,255,255,0.07)'
+                        e.currentTarget.style.color = 'rgba(255,255,255,0.75)'
+                      }}
+                    >
+                      <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                          d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                      </svg>
+                      {t('Download Catalogue', 'تحميل الكتالوج')}
+                    </a>
+                  )}
+                </div>
+                {/* Row 2: Browse All Products */}
                 <Link
                   to="/products"
-                  className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors self-start"
                   style={{ color: 'rgba(255,255,255,0.35)' }}
                   onMouseEnter={e => e.currentTarget.style.color = 'rgba(255,255,255,0.7)'}
                   onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.35)'}
                 >
-                  {t('Browse catalogue', 'تصفح الكتالوج')}
+                  {t('Browse All Products', 'تصفح جميع المنتجات')}
                   <ArrowIcon className="w-3.5 h-3.5" />
                 </Link>
               </div>

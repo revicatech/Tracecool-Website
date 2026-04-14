@@ -27,6 +27,7 @@ export default function ProductsPage() {
   // Filter state
   const [search, setSearch] = useState('');
   const [filterCat, setFilterCat] = useState('');
+  const [filterSub, setFilterSub] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [page, setPage] = useState(1);
   const [features, setFeatures] = useState([]);
@@ -56,11 +57,17 @@ export default function ProductsPage() {
     }
   }, [form.category, subcategories]);
 
+  // Subcategories available for the selected category filter
+  const filterSubOptions = filterCat
+    ? subcategories.filter(s => (s.category?._id || s.category) === filterCat)
+    : subcategories;
+
   // Derived: filtered + paginated
   const filtered = items.filter(item => {
     if (search && !item.title_en?.toLowerCase().includes(search.toLowerCase()) &&
         !item.title_ar?.includes(search)) return false;
     if (filterCat && (item.category?._id || item.category) !== filterCat) return false;
+    if (filterSub && (item.subcategory?._id || item.subcategory) !== filterSub) return false;
     if (filterStatus === 'active' && !item.isActive) return false;
     if (filterStatus === 'inactive' && item.isActive) return false;
     return true;
@@ -168,10 +175,15 @@ export default function ProductsPage() {
           onChange={e => { setSearch(e.target.value); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] min-w-[180px]"
         />
-        <select value={filterCat} onChange={e => { setFilterCat(e.target.value); resetPage(); }}
+        <select value={filterCat} onChange={e => { setFilterCat(e.target.value); setFilterSub(''); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
           <option value="">All Categories</option>
           {categories.map(c => <option key={c._id} value={c._id}>{c.name_en}</option>)}
+        </select>
+        <select value={filterSub} onChange={e => { setFilterSub(e.target.value); resetPage(); }}
+          className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
+          <option value="">All Subcategories</option>
+          {filterSubOptions.map(s => <option key={s._id} value={s._id}>{s.name_en}</option>)}
         </select>
         <select value={filterStatus} onChange={e => { setFilterStatus(e.target.value); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
@@ -179,8 +191,8 @@ export default function ProductsPage() {
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
         </select>
-        {(search || filterCat || filterStatus) && (
-          <button onClick={() => { setSearch(''); setFilterCat(''); setFilterStatus(''); resetPage(); }}
+        {(search || filterCat || filterSub || filterStatus) && (
+          <button onClick={() => { setSearch(''); setFilterCat(''); setFilterSub(''); setFilterStatus(''); resetPage(); }}
             className="text-xs text-[#5A7896] hover:text-[#071525] border border-[#E4EBF5] rounded-xl px-3 py-2 transition">
             Clear filters
           </button>
