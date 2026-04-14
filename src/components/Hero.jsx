@@ -19,9 +19,31 @@ export default function Hero() {
     document.addEventListener('visibilitychange', keepPlaying)
     const interval = setInterval(keepPlaying, 300)
 
+    const interactionEvents = ['click', 'keydown', 'touchstart', 'pointerdown', 'scroll']
+    let lastTime = 0
+    const onTimeUpdate = () => {
+      if (video.currentTime < lastTime - 0.3) {
+        video.muted = true
+        video.removeEventListener('timeupdate', onTimeUpdate)
+      }
+      lastTime = video.currentTime
+    }
+
+    const enableSound = () => {
+      interactionEvents.forEach(ev => document.removeEventListener(ev, enableSound))
+      video.muted = false
+      lastTime = video.currentTime
+      video.addEventListener('timeupdate', onTimeUpdate)
+    }
+    interactionEvents.forEach(ev =>
+      document.addEventListener(ev, enableSound, { passive: true, once: true })
+    )
+
     return () => {
       document.removeEventListener('visibilitychange', keepPlaying)
       clearInterval(interval)
+      interactionEvents.forEach(ev => document.removeEventListener(ev, enableSound))
+      video.removeEventListener('timeupdate', onTimeUpdate)
     }
   }, [])
 

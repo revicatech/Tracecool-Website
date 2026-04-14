@@ -1,4 +1,4 @@
-import solutionVrf from '../assets/solution-vrf.jpg';
+import solutionVrf2 from '../assets/solution-vrf2.webp';
 import solutionWater from '../assets/solution-water.jpg';
 import control from '../assets/control.jpg'
 import ventilation from '../assets/ventilation.jpg'
@@ -27,7 +27,7 @@ export const solutions = [
       'المساعدة في التشغيل',
       'التوجيه التقني في الموقع وعن بُعد',
     ],
-    image: solutionVrf,
+    image: solutionVrf2,
     imageSide: 'right',
     sections: [
       {

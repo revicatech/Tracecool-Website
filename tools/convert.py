@@ -23,4 +23,4 @@ def convert_jpg_to_webp(input_path, quality=80):
         print(f"An error occurred: {e}")
 
 # Example usage
-convert_jpg_to_webp("C:\\Users\\HP\\Desktop\\Tracecool-Website\\src\\assets\\About2.jpg", quality=85)
+convert_jpg_to_webp("C:\\Users\\HP\\Desktop\\Tracecool-Website\\src\\assets\\solution-vrf2.jpg", quality=85)

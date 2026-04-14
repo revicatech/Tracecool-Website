@@ -176,7 +176,6 @@ const translations = {
         { href: '/#solutions', label: 'Solutions' },
         { href: '/#how-we-work', label: 'Our Process' },
         { href: '/#branches', label: 'Global Offices' },
-        { href: '/#contact', label: 'Careers' },
       ],
       services: 'Services',
       serviceLinks: [
@@ -374,7 +373,6 @@ branches: {
         { href: '/#solutions', label: 'الحلول' },
         { href: '/#how-we-work', label: 'عمليتنا' },
         { href: '/#branches', label: 'المكاتب العالمية' },
-        { href: '/#contact', label: 'الوظائف' },
       ],
       services: 'الخدمات',
       serviceLinks: [

@@ -63,7 +63,9 @@ export default function Footer() {
             <div>
               <h5 className="text-xs uppercase tracking-widest text-white/30 mb-5">{footer.contact}</h5>
               <ul className="space-y-3 text-sm text-white/60">
-                <li className="leading-relaxed whitespace-pre-line">{footer.address}</li>
+                <li className="leading-relaxed whitespace-pre-line">
+                  <a href="https://www.google.com/maps?q=33.835917,35.911889" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{footer.address}</a>
+                </li>
                 <li><a href={`mailto:${footer.email}`} className="hover:text-white transition-colors">{footer.email}</a></li>
                 <li><a href={`tel:${footer.phone.replace(/\s/g, '')}`} className="hover:text-white transition-colors">{footer.phone}</a></li>
                 <li className="pt-2">
@@ -79,13 +81,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/30">
+        <div className="border-t border-white/10 py-6 flex items-center justify-center text-xs text-white/30">
           <span>{footer.copyright}</span>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white/60 transition-colors">{footer.privacy}</a>
-            <a href="#" className="hover:text-white/60 transition-colors">{footer.imprint}</a>
-            <a href="#" className="hover:text-white/60 transition-colors">{footer.cookies}</a>
-          </div>
         </div>
       </div>
     </footer>
