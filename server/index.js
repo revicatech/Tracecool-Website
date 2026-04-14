@@ -28,7 +28,11 @@ app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
 // CORS
 app.use(cors({
-  origin: true,
+  origin: (origin, callback) => {
+    const allowed = ['https://tracecool.com', 'https://www.tracecool.com', 'http://localhost:5173'];
+    if (!origin || allowed.includes(origin)) return callback(null, true);
+    callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
 }));
 
