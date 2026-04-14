@@ -208,6 +208,7 @@ export default function ProductsPage() {
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Title</th>
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Category</th>
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Status</th>
+                      <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">PDF</th>
                       <th className="px-4 py-3" />
                     </tr>
                   </thead>
@@ -231,6 +232,20 @@ export default function ProductsPage() {
                             ${item.isActive ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-500'}`}>
                             {item.isActive ? 'Active' : 'Inactive'}
                           </span>
+                        </td>
+                        <td className="px-4 py-3">
+                          {item.catalogPdf ? (
+                            <a
+                              href={item.catalogPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 rounded-lg text-xs font-medium text-emerald-600 border border-emerald-200 hover:bg-emerald-50 transition inline-block"
+                            >
+                              Catalog
+                            </a>
+                          ) : (
+                            <span className="text-[#5A7896] text-xs">—</span>
+                          )}
                         </td>
                         <td className="px-4 py-3">
                           <div className="flex gap-2 justify-end">
