@@ -53,9 +53,18 @@ export default function Hero() {
       className="sticky top-0 h-screen min-h-[580px] flex items-center overflow-hidden"
       style={{ background: '#071525', zIndex: 0 }}
     >
+      {/* On mobile: static poster only — avoids video download on slow connections */}
+      <img
+        src="/hero-poster.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover block md:hidden"
+        fetchpriority="high"
+      />
+      {/* On desktop: full video */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
         playsInline autoPlay loop muted preload="none"
         poster="/hero-poster.jpg"
       >
