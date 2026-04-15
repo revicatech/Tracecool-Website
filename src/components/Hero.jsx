@@ -57,6 +57,7 @@ export default function Hero() {
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover"
         playsInline autoPlay loop muted preload="none"
+        poster="/hero-poster.jpg"
       >
         <source src={video} type="video/mp4" />
       </video>
