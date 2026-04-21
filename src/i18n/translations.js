@@ -16,8 +16,8 @@ const translations = {
     },
     hero: {
       badge: 'Premium HVAC Engineering',
-      titleLine1: 'Climate. Engineered',
-      titleLine2: 'with Precision.',
+      titleLine1: 'Tracecool: Advanced VRF',
+      titleLine2: '& HVAC Systems.',
       desc: "Lebanese leading HVAC consultancy delivering intelligent heating, ventilation, and air conditioning solutions for commercial, industrial, and residential environments worldwide.",
       cta1: 'Explore Solutions',
       cta2: 'View Services',
