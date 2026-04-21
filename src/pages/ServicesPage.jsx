@@ -67,7 +67,7 @@ function ServiceCard({ service }) {
           </div>
         )}
 
-        <h3 className="text-xl font-semibold mb-3" style={{ color: '#071525' }}>{title}</h3>
+        <h2 className="text-xl font-semibold mb-3" style={{ color: '#071525' }}>{title}</h2>
         <p className="text-sm leading-relaxed mb-6" style={{ color: '#5A7896' }}>{shortDesc}</p>
 
         <Link

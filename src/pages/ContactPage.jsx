@@ -227,7 +227,7 @@ export default function ContactPage() {
             <div className="lg:col-span-2 space-y-5">
               <h2 className="text-xl font-semibold text-white mb-6">{t('Headquarters', 'المقر الرئيسي')}</h2>
 
-              <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Beirut, Lebanon, ', 'بيروت, لبنان، ')} />
+              <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Beirut, Lebanon, ', 'بيروت, لبنان، ')} href="https://www.google.com/maps/place/33%C2%B050'09.3%22N+35%C2%B054'42.8%22E/@33.8359242,35.9093041,17z/data=!3m1!4b1!4m4!3m3!8m2!3d33.8359242!4d35.911879?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D" />
               <ContactItem icon="email" label={t('Email', 'البريد الإلكتروني')} value="info@tracecool.com" href="mailto:info@tracecool.com" />
               <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+96171945966" href="tel:+4962411234556" />
               <ContactItem icon="clock" label={t('Office Hours', 'ساعات العمل')} value={t('Mon – Fri, 08:00 – 18:00 CET · Emergency 24/7', 'الاثنين – الجمعة، 08:00 – 18:00 بتوقيت وسط أوروبا · طوارئ 24/7')} />

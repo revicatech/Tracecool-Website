@@ -80,7 +80,7 @@ export default function Contact() {
             </h2>
             <p className="text-secondary leading-relaxed text-sm max-w-md mb-10">{contact.desc}</p>
             <div className="space-y-4 text-sm text-secondary">
-              <ContactItem icon="location">{contact.address}</ContactItem>
+              <a href="https://www.google.com/maps/place/33%C2%B050'09.3%22N+35%C2%B054'42.8%22E/@33.8359242,35.9093041,17z/data=!3m1!4b1!4m4!3m3!8m2!3d33.8359242!4d35.911879?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><ContactItem icon="location">{contact.address}</ContactItem></a>
               <ContactItem icon="email">{contact.email}</ContactItem>
               <ContactItem icon="phone">{contact.phone}</ContactItem>
             </div>

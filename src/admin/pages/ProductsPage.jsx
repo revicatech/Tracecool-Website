@@ -8,6 +8,7 @@ const emptyForm = {
   description_en: '', description_ar: '',
   shortDesc_en: '', shortDesc_ar: '',
   category: '', subcategory: '',
+  catalogPdf: '',
   isActive: true, order: 0,
 };
 
@@ -26,6 +27,7 @@ export default function ProductsPage() {
   // Filter state
   const [search, setSearch] = useState('');
   const [filterCat, setFilterCat] = useState('');
+  const [filterSub, setFilterSub] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [page, setPage] = useState(1);
   const [features, setFeatures] = useState([]);
@@ -55,11 +57,17 @@ export default function ProductsPage() {
     }
   }, [form.category, subcategories]);
 
+  // Subcategories available for the selected category filter
+  const filterSubOptions = filterCat
+    ? subcategories.filter(s => (s.category?._id || s.category) === filterCat)
+    : subcategories;
+
   // Derived: filtered + paginated
   const filtered = items.filter(item => {
     if (search && !item.title_en?.toLowerCase().includes(search.toLowerCase()) &&
         !item.title_ar?.includes(search)) return false;
     if (filterCat && (item.category?._id || item.category) !== filterCat) return false;
+    if (filterSub && (item.subcategory?._id || item.subcategory) !== filterSub) return false;
     if (filterStatus === 'active' && !item.isActive) return false;
     if (filterStatus === 'inactive' && item.isActive) return false;
     return true;
@@ -84,6 +92,7 @@ export default function ProductsPage() {
       shortDesc_en: item.shortDesc_en || '', shortDesc_ar: item.shortDesc_ar || '',
       category: item.category?._id || item.category || '',
       subcategory: item.subcategory?._id || item.subcategory || '',
+      catalogPdf: item.catalogPdf || '',
       isActive: item.isActive, order: item.order,
     });
     setFeatures(item.features || []);
@@ -166,10 +175,15 @@ export default function ProductsPage() {
           onChange={e => { setSearch(e.target.value); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] min-w-[180px]"
         />
-        <select value={filterCat} onChange={e => { setFilterCat(e.target.value); resetPage(); }}
+        <select value={filterCat} onChange={e => { setFilterCat(e.target.value); setFilterSub(''); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
           <option value="">All Categories</option>
           {categories.map(c => <option key={c._id} value={c._id}>{c.name_en}</option>)}
+        </select>
+        <select value={filterSub} onChange={e => { setFilterSub(e.target.value); resetPage(); }}
+          className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
+          <option value="">All Subcategories</option>
+          {filterSubOptions.map(s => <option key={s._id} value={s._id}>{s.name_en}</option>)}
         </select>
         <select value={filterStatus} onChange={e => { setFilterStatus(e.target.value); resetPage(); }}
           className="border border-[#E4EBF5] rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB] text-[#071525]">
@@ -177,8 +191,8 @@ export default function ProductsPage() {
           <option value="active">Active</option>
           <option value="inactive">Inactive</option>
         </select>
-        {(search || filterCat || filterStatus) && (
-          <button onClick={() => { setSearch(''); setFilterCat(''); setFilterStatus(''); resetPage(); }}
+        {(search || filterCat || filterSub || filterStatus) && (
+          <button onClick={() => { setSearch(''); setFilterCat(''); setFilterSub(''); setFilterStatus(''); resetPage(); }}
             className="text-xs text-[#5A7896] hover:text-[#071525] border border-[#E4EBF5] rounded-xl px-3 py-2 transition">
             Clear filters
           </button>
@@ -206,6 +220,7 @@ export default function ProductsPage() {
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Title</th>
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Category</th>
                       <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">Status</th>
+                      <th className="text-left px-4 py-3 font-semibold text-[#5A7896] text-xs uppercase">PDF</th>
                       <th className="px-4 py-3" />
                     </tr>
                   </thead>
@@ -229,6 +244,20 @@ export default function ProductsPage() {
                             ${item.isActive ? 'bg-emerald-50 text-emerald-600' : 'bg-gray-100 text-gray-500'}`}>
                             {item.isActive ? 'Active' : 'Inactive'}
                           </span>
+                        </td>
+                        <td className="px-4 py-3">
+                          {item.catalogPdf ? (
+                            <a
+                              href={item.catalogPdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="px-3 py-1.5 rounded-lg text-xs font-medium text-emerald-600 border border-emerald-200 hover:bg-emerald-50 transition inline-block"
+                            >
+                              Catalog
+                            </a>
+                          ) : (
+                            <span className="text-[#5A7896] text-xs">—</span>
+                          )}
                         </td>
                         <td className="px-4 py-3">
                           <div className="flex gap-2 justify-end">
@@ -402,6 +431,22 @@ export default function ProductsPage() {
                     <p className="text-sm text-[#5A7896] italic">No features added yet.</p>
                   )}
                 </div>
+              </div>
+
+              {/* Catalogue PDF */}
+              <div>
+                <label className="block text-xs font-semibold text-[#5A7896] uppercase tracking-wide mb-1.5">
+                  Catalogue PDF (Google Drive link)
+                </label>
+                <input
+                  type="text"
+                  name="catalogPdf"
+                  value={form.catalogPdf}
+                  onChange={handleChange}
+                  placeholder="https://drive.google.com/file/d/…"
+                  className="w-full border border-[#E4EBF5] rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#1A6FDB]"
+                />
+                <p className="text-[11px] text-[#5A7896] mt-1">Leave empty to hide the PDF button on the product page.</p>
               </div>
 
               {/* Order / Status */}

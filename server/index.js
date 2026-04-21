@@ -27,14 +27,10 @@ connectDB();
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
 // CORS
-const allowedOrigins = process.env.FRONTEND_URL
-  ? process.env.FRONTEND_URL.split(',').map(o => o.trim())
-  : ['http://localhost:5173'];
-
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow same-origin requests (no origin header) and allowed origins
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+    const allowed = ['https://tracecool.com', 'https://www.tracecool.com', 'http://localhost:5173'];
+    if (!origin || allowed.includes(origin)) return callback(null, true);
     callback(new Error('Not allowed by CORS'));
   },
   credentials: true,

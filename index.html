@@ -5,33 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/src/assets/LOGO.png" />
+    <link rel="icon" type="image/png" href="/LOGO.png" />
 
     <!-- Primary SEO Meta -->
-    <title>TRACECOOL — Climate Engineering Excellence</title>
-    <meta name="description" content="TRACECOOL delivers premium HVAC engineering solutions — VRF systems, chillers, precision cooling, and custom climate control for commercial and industrial projects across the Middle East and Africa." />
-    <meta name="keywords" content="HVAC, climate engineering, VRF systems, chillers, air conditioning, heat pumps, TRACECOOL, Middle East, Africa, Lebanon, Beirut" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="TRACECOOL" />
+    <title>Tracecool | Leading VRP Supplier &amp; HVAC Solutions</title>
+    <meta name="description" content="Tracecool is Lebanon's leading VRP supplier &amp; HVAC solutions provider. Expert climate engineering — VRF systems, chillers &amp; precision cooling across MENA, Africa &amp; Europe." />
+    <meta name="keywords" content="Tracecool, VRP supplier, HVAC solutions, VRF systems, chillers, air conditioning, HVAC engineering, climate control, heat pumps, Middle East HVAC, Lebanon, Beirut, MENA, Africa" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="Tracecool" />
     <link rel="canonical" href="https://www.tracecool.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.tracecool.com/" />
-    <meta property="og:title" content="TRACECOOL — Climate Engineering Excellence" />
-    <meta property="og:description" content="Premium HVAC engineering solutions — VRF systems, chillers, and custom climate control for commercial and industrial projects across the Middle East and Africa." />
-    <meta property="og:image" content="https://www.tracecool.com/og-image.png" />
+    <meta property="og:title" content="Tracecool | Leading VRP Supplier &amp; HVAC Solutions" />
+    <meta property="og:description" content="Tracecool delivers premium VRP supply and HVAC engineering — VRF systems, chillers, and precision climate control for commercial and industrial projects across MENA and Africa." />
+    <meta property="og:image" content="https://www.tracecool.com/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="TRACECOOL" />
+    <meta property="og:image:alt" content="Tracecool — Leading VRP Supplier &amp; HVAC Solutions" />
+    <meta property="og:site_name" content="Tracecool" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ar_AE" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="TRACECOOL — Climate Engineering Excellence" />
-    <meta name="twitter:description" content="Premium HVAC engineering solutions — VRF systems, chillers, and custom climate control for commercial and industrial projects." />
-    <meta name="twitter:image" content="https://www.tracecool.com/og-image.png" />
+    <meta name="twitter:title" content="Tracecool | Leading VRP Supplier &amp; HVAC Solutions" />
+    <meta name="twitter:description" content="Tracecool delivers premium VRP supply and HVAC engineering — VRF systems, chillers, and precision climate control for commercial and industrial projects." />
+    <meta name="twitter:image" content="https://www.tracecool.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Tracecool — Leading VRP Supplier &amp; HVAC Solutions" />
+
+    <!-- LCP: preload hero poster so first paint is instant -->
+    <link rel="preload" as="image" href="/hero-poster.jpg" fetchpriority="high" />
 
     <!-- Fonts: preconnect for early DNS resolution -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,32 +56,151 @@
       />
     </noscript>
 
-    <!-- Structured Data: Organization + Local Business -->
+    <!-- Structured Data: Organization + LocalBusiness + Services -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
-      "name": "TRACECOOL",
-      "description": "Premium HVAC engineering solutions provider specializing in VRF systems, chillers, precision cooling, and custom climate control.",
-      "url": "https://www.tracecool.com",
-      "logo": "https://www.tracecool.com/og-image.png",
-      "email": "info@tracecool.com",
-      "telephone": "+96171945966",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Beirut",
-        "addressCountry": "LB"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+96171945966",
-        "email": "info@tracecool.com",
-        "contactType": "customer service",
-        "availableLanguage": ["English", "Arabic"]
-      },
-      "areaServed": ["Middle East", "Africa"],
-      "knowsAbout": ["HVAC Engineering", "VRF Systems", "Chillers", "Climate Control", "Heat Pumps", "Air Conditioning"],
-      "sameAs": []
+      "@graph": [
+        {
+          "@type": ["Organization", "LocalBusiness"],
+          "@id": "https://www.tracecool.com/#organization",
+          "name": "Tracecool",
+          "legalName": "Tracecool HVAC Engineering & Consulting",
+          "description": "Tracecool is Lebanon's leading VRP supplier and HVAC solutions provider, delivering precision climate engineering for commercial, industrial, and residential environments across MENA, Africa, and Europe.",
+          "url": "https://www.tracecool.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.tracecool.com/LOGO.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://www.tracecool.com/og-image.jpg",
+          "email": "info@tracecool.com",
+          "telephone": "+96171945966",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Beirut",
+            "addressLocality": "Beirut",
+            "addressCountry": "LB"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+96171945966",
+            "email": "info@tracecool.com",
+            "contactType": "customer service",
+            "availableLanguage": ["English", "Arabic"]
+          },
+          "areaServed": [
+            { "@type": "Country", "name": "Lebanon" },
+            { "@type": "Country", "name": "United Arab Emirates" },
+            { "@type": "Country", "name": "Saudi Arabia" },
+            { "@type": "Country", "name": "Iraq" },
+            { "@type": "Country", "name": "Oman" },
+            { "@type": "Country", "name": "Syria" },
+            { "@type": "Country", "name": "Angola" },
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "AdministrativeArea", "name": "Middle East" },
+            { "@type": "AdministrativeArea", "name": "Africa" },
+            { "@type": "AdministrativeArea", "name": "Europe" }
+          ],
+          "knowsAbout": [
+            "VRP Systems",
+            "VRP Supply",
+            "HVAC Engineering",
+            "HVAC Solutions",
+            "VRF Systems",
+            "Variable Refrigerant Flow",
+            "Chillers",
+            "Climate Control",
+            "Heat Pumps",
+            "Air Conditioning",
+            "Building Automation Systems",
+            "Energy Recovery Ventilation",
+            "HVAC Maintenance",
+            "Industrial Cooling",
+            "Commercial HVAC",
+            "HVAC Drawing Design",
+            "HVAC Technical Support"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Tracecool VRP & HVAC Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.tracecool.com/#service-vrp",
+                  "name": "VRP Supply",
+                  "serviceType": "VRP Systems Supply",
+                  "description": "Tracecool is a leading VRP supplier providing variable refrigerant pipe systems for commercial and industrial HVAC applications across the Middle East and Africa.",
+                  "provider": { "@id": "https://www.tracecool.com/#organization" },
+                  "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Middle East" },
+                    { "@type": "AdministrativeArea", "name": "Africa" }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "@id": "https://www.tracecool.com/#service-hvac",
+                  "name": "HVAC Solutions",
+                  "serviceType": "HVAC Engineering",
+                  "description": "Full-spectrum HVAC engineering, design, supply, installation, and maintenance for commercial, industrial, and residential environments.",
+                  "provider": { "@id": "https://www.tracecool.com/#organization" },
+                  "areaServed": [
+                    { "@type": "AdministrativeArea", "name": "Middle East" },
+                    { "@type": "AdministrativeArea", "name": "Africa" },
+                    { "@type": "AdministrativeArea", "name": "Europe" }
+                  ]
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "HVAC Maintenance",
+                  "serviceType": "HVAC Maintenance",
+                  "description": "24/7 preventive and emergency HVAC maintenance, remote monitoring, and performance optimisation for all active contracts.",
+                  "provider": { "@id": "https://www.tracecool.com/#organization" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Drawing Design",
+                  "serviceType": "HVAC Drawing Design",
+                  "description": "Customised HVAC piping designs using professional software, based on client project drawings.",
+                  "provider": { "@id": "https://www.tracecool.com/#organization" }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Model Selection",
+                  "serviceType": "HVAC Equipment Selection",
+                  "description": "Expert HVAC product model selection aligned to client requirements and Tracecool engineering experience.",
+                  "provider": { "@id": "https://www.tracecool.com/#organization" }
+                }
+              }
+            ]
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.tracecool.com/#website",
+          "url": "https://www.tracecool.com",
+          "name": "Tracecool",
+          "description": "Tracecool | Leading VRP Supplier & HVAC Solutions",
+          "publisher": { "@id": "https://www.tracecool.com/#organization" },
+          "inLanguage": ["en", "ar"]
+        }
+      ]
     }
     </script>
   </head>
