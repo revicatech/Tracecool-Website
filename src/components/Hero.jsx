@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-import video from '../assets/video.mp4'
+
+const heroVideoUrl = 'https://res.cloudinary.com/dyxdenjm4/video/upload/v1784016848/video_hhoqy5.mp4'
 export default function Hero() {
   const { t } = useLanguage()
   const hero = t('hero')
@@ -59,7 +60,7 @@ export default function Hero() {
         playsInline autoPlay loop muted preload="none"
         poster="/hero-poster.jpg"
       >
-        <source src={video} type="video/mp4" />
+        <source src={heroVideoUrl} type="video/mp4" />
       </video>
 
       <div
