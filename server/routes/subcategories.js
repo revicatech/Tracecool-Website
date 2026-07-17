@@ -2,11 +2,12 @@ const express = require('express');
 const { body, validationResult } = require('express-validator');
 const Subcategory = require('../models/Subcategory');
 const { protect } = require('../middleware/auth');
+const edgeCache = require('../middleware/cache');
 
 const router = express.Router();
 
 // GET /api/subcategories?category=id (public)
-router.get('/', async (req, res) => {
+router.get('/', edgeCache(300), async (req, res) => {
   try {
     const filter = req.query.category ? { category: req.query.category } : {};
     const subs = await Subcategory.find(filter).populate('category', 'name_en name_ar').sort({ order: 1, createdAt: -1 });

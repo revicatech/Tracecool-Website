@@ -3,11 +3,12 @@ const { body, validationResult } = require('express-validator');
 const Category = require('../models/Category');
 const Subcategory = require('../models/Subcategory');
 const { protect } = require('../middleware/auth');
+const edgeCache = require('../middleware/cache');
 
 const router = express.Router();
 
 // GET /api/categories (public)
-router.get('/', async (req, res) => {
+router.get('/', edgeCache(300), async (req, res) => {
   try {
     const cats = await Category.find().sort({ order: 1, createdAt: -1 });
     res.json(cats);

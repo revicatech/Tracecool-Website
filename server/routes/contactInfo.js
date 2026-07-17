@@ -1,11 +1,12 @@
 const express = require('express');
 const ContactInfo = require('../models/ContactInfo');
 const { protect } = require('../middleware/auth');
+const edgeCache = require('../middleware/cache');
 
 const router = express.Router();
 
 // GET /api/contact-info (public)
-router.get('/', async (req, res) => {
+router.get('/', edgeCache(600), async (req, res) => {
   try {
     let info = await ContactInfo.findOne();
     if (!info) info = await ContactInfo.create({});

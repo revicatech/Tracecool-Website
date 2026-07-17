@@ -4,6 +4,7 @@ const Product = require('../models/Product');
 const upload = require('../middleware/upload');
 const cloudinary = require('../config/cloudinary');
 const { protect } = require('../middleware/auth');
+const edgeCache = require('../middleware/cache');
 
 const router = express.Router();
 
@@ -20,7 +21,7 @@ const deleteFromCloudinary = async (url) => {
 };
 
 // GET /api/products (public)
-router.get('/', async (req, res) => {
+router.get('/', edgeCache(300), async (req, res) => {
   try {
     const filter = {};
     if (req.query.category) filter.category = req.query.category;
@@ -36,7 +37,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET /api/products/:id (public)
-router.get('/:id', async (req, res) => {
+router.get('/:id', edgeCache(300), async (req, res) => {
   try {
     const product = await Product.findById(req.params.id)
       .populate('category', 'name_en name_ar')

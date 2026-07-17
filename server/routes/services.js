@@ -4,6 +4,7 @@ const Service = require('../models/Service');
 const upload = require('../middleware/upload');
 const cloudinary = require('../config/cloudinary');
 const { protect } = require('../middleware/auth');
+const edgeCache = require('../middleware/cache');
 
 const router = express.Router();
 
@@ -43,7 +44,7 @@ const buildSections = (sectionsMeta, files) => {
 };
 
 // GET /api/services  (public)
-router.get('/', async (req, res) => {
+router.get('/', edgeCache(300), async (req, res) => {
   try {
     const services = await Service.find().sort({ order: 1, createdAt: -1 });
     res.json(services);
@@ -53,7 +54,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET /api/services/:id  (public)
-router.get('/:id', async (req, res) => {
+router.get('/:id', edgeCache(300), async (req, res) => {
   try {
     const s = await Service.findById(req.params.id);
     if (!s) return res.status(404).json({ message: 'Service not found' });
