@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { useLanguage } from '../context/LanguageContext'
+import { trackContactConversion } from '../utils/analytics'
 
 const EMAILJS_SERVICE_ID = 'service_3j4w1wl'
 const EMAILJS_TEMPLATE_ID = 'template_d8le1xe'
@@ -60,6 +61,7 @@ export default function Contact() {
         EMAILJS_PUBLIC_KEY
       )
       setSubmitted(true)
+      trackContactConversion()
     } catch {
       setFormError('Failed to send message. Please try again.')
     } finally {

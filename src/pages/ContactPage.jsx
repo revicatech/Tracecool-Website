@@ -4,6 +4,7 @@ import L from 'leaflet'
 import { gsap } from 'gsap'
 import emailjs from '@emailjs/browser'
 import { useLanguage } from '../context/LanguageContext'
+import { trackContactConversion } from '../utils/analytics'
 
 const EMAILJS_SERVICE_ID = 'service_3j4w1wl'
 const EMAILJS_TEMPLATE_ID = 'template_d8le1xe'
@@ -36,8 +37,9 @@ function HQMap() {
     })
     mapInstance.current = map
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; CARTO',
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      attribution: 'Tiles &copy; Esri',
     }).addTo(map)
 
     L.marker([33.8938, 35.5018], { icon: makeIcon(true) })
@@ -176,6 +178,7 @@ export default function ContactPage() {
         EMAILJS_PUBLIC_KEY
       )
       setSubmitted(true)
+      trackContactConversion()
     } catch {
       setFormError(t('Failed to send message. Please try again.', 'فشل الإرسال. يرجى المحاولة مرة أخرى.'))
     } finally {
@@ -229,7 +232,7 @@ export default function ContactPage() {
 
               <ContactItem icon="location" label={t('Address', 'العنوان')} value={t('Beirut, Lebanon, ', 'بيروت, لبنان، ')} href="https://www.google.com/maps/place/33%C2%B050'09.3%22N+35%C2%B054'42.8%22E/@33.8359242,35.9093041,17z/data=!3m1!4b1!4m4!3m3!8m2!3d33.8359242!4d35.911879?hl=en&entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D" />
               <ContactItem icon="email" label={t('Email', 'البريد الإلكتروني')} value="info@tracecool.com" href="mailto:info@tracecool.com" />
-              <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+96171945966" href="tel:+4962411234556" />
+              <ContactItem icon="phone" label={t('Phone', 'الهاتف')} value="+96171945966" href="tel:+96171945966" />
               <ContactItem icon="clock" label={t('Office Hours', 'ساعات العمل')} value={t('Mon – Fri, 08:00 – 18:00 CET · Emergency 24/7', 'الاثنين – الجمعة، 08:00 – 18:00 بتوقيت وسط أوروبا · طوارئ 24/7')} />
 
               {/* HQ mini-map */}
@@ -473,7 +476,7 @@ export default function ContactPage() {
         <div className="max-w-2xl mx-auto px-6">
           <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#4D9EFF' }}>{t('24 / 7 Emergency Line', 'خط الطوارئ 24 / 7')}</p>
           <a
-            href="tel:+4962411234556"
+            href="tel:+96171945966"
             className="text-3xl lg:text-4xl font-bold text-white hover:text-[#4D9EFF] transition-colors"
           >
             +96171945966

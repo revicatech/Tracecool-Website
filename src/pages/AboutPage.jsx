@@ -120,7 +120,7 @@ const LOCATIONS = [
   { id: '6', name_en: 'Oman', country: 'Oman', region: 'Middle East', lat: 23.58, lng: 58.41 },
   { id: '7', name_en: 'Iraq', country: 'Iraq', region: 'Middle East', lat: 33.34, lng: 44.40 },
   { id: '8', name_en: 'Syria', country: 'Syria', region: 'Middle East', lat: 33.51, lng: 36.29 },
-  { id: '9', name_en: 'Angola', country: 'Angola', region: 'Africa', lat: -8.84, lng: 13.23 },
+  { id: '9', name_en: 'Angola', country: 'Angola', region: 'Africa', lat: -8.9443, lng: 13.3972 },
   { id: '10', name_en: 'Kinshasa', country: 'DR Congo', region: 'Africa', lat: -4.32, lng: 15.32 },
   { id: '11', name_en: 'Ivory Coast', country: 'Ivory Coast', region: 'Africa', lat: 5.35, lng: -4.00 },
 ]
@@ -157,8 +157,9 @@ function AgentsMap() {
     mapInstanceRef.current = map
     L.control.zoom({ position: 'topright' }).addTo(map)
 
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; CARTO',
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 16,
+      attribution: 'Tiles &copy; Esri',
     }).addTo(map)
 
     markersRef.current = agents
