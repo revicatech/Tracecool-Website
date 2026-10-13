@@ -14,6 +14,7 @@ import HowWeWork from './components/HowWeWork'
 import Branches from './components/Branches'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 
 import SolutionsPage from './pages/SolutionsPage'
 import SolutionDetailPage from './pages/SolutionDetailPage'
@@ -129,6 +130,7 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }
